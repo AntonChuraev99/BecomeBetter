@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BecomeBetter</string>
+    <string name="bottom_navigation_home">Все цели</string>
+    <string name="bottom_navigation_profile">Профиль</string>
+    <string name="bottom_navigation_add_goal">Добавить цель</string>
+    <string name="all_goals">Все цели</string>
+</resources>

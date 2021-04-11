@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="grey">#e0ffff</color>
+    <color name="aston_martin">#008b8b</color>
+
+
+    <color name="black">#000000</color>
+    <color name="black_background">#161616</color>
+
+    <color name="main_blue">#00BFFF</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
