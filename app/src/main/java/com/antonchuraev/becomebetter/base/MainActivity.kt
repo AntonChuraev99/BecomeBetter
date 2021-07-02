@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.antonchuraev.becomebetter.R
+import com.antonchuraev.becomebetter.views.toolbar.CustomToolbar
 import moxy.MvpAppCompatActivity
 import moxy.MvpView
 import moxy.presenter.InjectPresenter
@@ -48,13 +49,13 @@ class MainActivity:MvpAppCompatActivity() , MvpView
     private val currentFragment: BaseFragment<*>?
         get() = supportFragmentManager.findFragmentById(R.id.container) as? BaseFragment<*>
 
-
+    var toolbar:CustomToolbar?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //presenter.onAppStartSplash()
+        toolbar = findViewById<CustomToolbar>(R.id.customToolbar)
 
         // TODO: 10.04.2021 проверка стартового экрана
         presenter.onAppStartBottomNavigation()

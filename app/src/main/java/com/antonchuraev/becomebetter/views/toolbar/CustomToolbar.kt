@@ -12,5 +12,9 @@ import com.antonchuraev.becomebetter.views.CustomView
 
 class CustomToolbar @JvmOverloads constructor(context: Context , attrs: AttributeSet? = null , defStyleAttr: Int = 0 ): CustomView<ViewCustomToolbarBinding>(context, attrs, defStyleAttr ) {
 
+	fun setTittle(text:String?){
+		binding.tittle.text = text
+	}
+
 	override fun getLayoutRes(): Int = R.layout.view_custom_toolbar
 }

@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.antonchuraev.becomebetter.views.toolbar.CustomToolbar
 import com.historic.app.global.navigation.FlowCiceroneViewModel
 import com.historic.app.global.navigation.FlowRouter
 import moxy.MvpAppCompatFragment
@@ -18,6 +19,7 @@ import ru.terrakok.cicerone.Router
 
 abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
 {
+    var toolbar:CustomToolbar? = null
 
     val appRouter: Router by inject()
 
@@ -55,6 +57,7 @@ abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
             savedInstanceState: Bundle?
     ): View? {
         initBinding(inflater, container!!)
+        toolbar = (activity as MainActivity).toolbar
         val root = binding.root
         onCreateView(root)
         return root
