@@ -58,6 +58,7 @@ abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
     ): View? {
         initBinding(inflater, container!!)
         toolbar = (activity as MainActivity).toolbar
+        toolbar?.clearData()
         val root = binding.root
         onCreateView(root)
         return root
