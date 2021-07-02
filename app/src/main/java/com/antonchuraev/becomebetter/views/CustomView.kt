@@ -9,12 +9,20 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 
 
-abstract class CustomView<B : ViewDataBinding>(context: Context,
-                                               attrs: AttributeSet? = null,
-                                               defStyleAttr: Int = 0,
-                                               var layout: Int) : FrameLayout(context, attrs, defStyleAttr) {
+abstract class CustomView<B : ViewDataBinding>(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 1) : FrameLayout(context, attrs, defStyleAttr) {
 
-    protected var binding: B = DataBindingUtil.inflate( LayoutInflater.from(context) , layout , null , false)
+    protected lateinit var binding: B
 
+    init {
+        initBinding()
+    }
 
+    private fun initBinding() {
+        binding = DataBindingUtil.inflate(
+            LayoutInflater.from(this.context),
+            getLayoutRes(), this, true
+        )
+    }
+
+    @LayoutRes protected abstract fun getLayoutRes(): Int
 }

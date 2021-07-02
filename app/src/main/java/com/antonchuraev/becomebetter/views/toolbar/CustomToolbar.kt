@@ -10,10 +10,7 @@ import com.antonchuraev.becomebetter.helpers.extensions.toast
 import com.antonchuraev.becomebetter.views.CustomView
 
 
-class CustomToolbar(context: Context , attrs: AttributeSet? = null , defStyleAttr: Int = 0 ): CustomView<ViewCustomToolbarBinding>(context, attrs, defStyleAttr , R.layout.view_custom_toolbar) {
+class CustomToolbar @JvmOverloads constructor(context: Context , attrs: AttributeSet? = null , defStyleAttr: Int = 0 ): CustomView<ViewCustomToolbarBinding>(context, attrs, defStyleAttr ) {
 
-
-
-
-
+	override fun getLayoutRes(): Int = R.layout.view_custom_toolbar
 }

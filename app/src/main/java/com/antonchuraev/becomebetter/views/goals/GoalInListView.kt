@@ -9,9 +9,9 @@ import com.antonchuraev.becomebetter.helpers.extensions.toast
 import com.antonchuraev.becomebetter.views.CustomView
 
 
-class GoalInListView(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0 ): CustomView<ViewGoalInListBinding>(context, attrs, defStyleAttr , R.layout.view_goal_in_list) {
-    //override val layoutRes: Int = R.layout.view_goal_in_list
+class GoalInListView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0 ): CustomView<ViewGoalInListBinding>(context, attrs, defStyleAttr) {
 
+    override fun getLayoutRes() = R.layout.view_goal_in_list
 
     fun setData(goal:Goal){
         context.toast("setData:${goal}")

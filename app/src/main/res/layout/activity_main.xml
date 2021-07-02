@@ -9,11 +9,6 @@
     android:orientation="vertical"
     >
 
-    <com.antonchuraev.becomebetter.views.toolbar.CustomToolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
-
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
