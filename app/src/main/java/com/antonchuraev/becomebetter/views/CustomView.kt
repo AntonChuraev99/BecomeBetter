@@ -16,8 +16,5 @@ abstract class CustomView<B : ViewDataBinding>(context: Context,
 
     protected var binding: B = DataBindingUtil.inflate( LayoutInflater.from(context) , layout , null , false)
 
-    /*@get:LayoutRes
-    protected abstract val layoutRes: Int*/
-
 
 }
