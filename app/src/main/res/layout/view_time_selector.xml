@@ -22,11 +22,13 @@
             android:layout_height="wrap_content"
             android:max="5"
             android:progress="0"
-
             android:stepSize="1"
             android:valueFrom="0"
             android:valueTo="5"
-            app:values="@array/initial_slider_values" />
+            app:thumbColor="@color/aston_martin"
+            app:trackColorActive="@color/aston_martin"
+            app:thumbStrokeColor="@color/white"
+            />
 
         <TextView
             android:id="@+id/selectedSize"
