@@ -56,7 +56,7 @@ abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        initBinding(inflater, container!!)
+        initBinding(inflater, container)
         toolbar = (activity as MainActivity).toolbar
         toolbar?.clearData()
         onCreateView(binding.root)
@@ -66,7 +66,7 @@ abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
     abstract fun onCreateView(rootView: View)
 
 
-    private fun initBinding(inflater: LayoutInflater, container: ViewGroup) {
+    private fun initBinding(inflater: LayoutInflater, container: ViewGroup?) {
         binding = DataBindingUtil.inflate(inflater, layoutView, container, false)
     }
 
