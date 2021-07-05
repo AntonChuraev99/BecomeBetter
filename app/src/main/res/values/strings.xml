@@ -7,4 +7,11 @@
     <string name="add_goal">Создать цель</string>
     <string name="create_name">Придумайте имя</string>
     <string name="name">Имя</string>
+    <string name="forever">Бессрочно</string>
+    <string name="one_day">Один день</string>
+    <string name="one_week">Одна неделя</string>
+    <string name="three_days">Три дня</string>
+    <string name="one_month">Одна неделя</string>
+    <string name="one_year">Один год</string>
+    <string name="select_date">Выберите срок выполнения</string>
 </resources>

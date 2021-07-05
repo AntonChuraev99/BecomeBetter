@@ -32,7 +32,7 @@
                 android:id="@+id/secondPassword"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/shape_rectangle_r_8"
                 android:hint="@string/name"
                 android:textColorHint="@color/с717685"
@@ -42,9 +42,19 @@
                 android:maxLength="10"
                 android:translationY="3dp" />
 
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/select_date"
+                android:textSize="18sp" />
+
             <com.antonchuraev.becomebetter.views.utils.TimeSelectorView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content" >
+
+            </com.antonchuraev.becomebetter.views.utils.TimeSelectorView>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
