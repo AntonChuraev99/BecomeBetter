@@ -42,6 +42,10 @@
                 android:maxLength="10"
                 android:translationY="3dp" />
 
+            <com.antonchuraev.becomebetter.views.utils.TimeSelectorView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
