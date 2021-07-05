@@ -6,6 +6,9 @@ import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BaseFragment
 import com.antonchuraev.becomebetter.databinding.FragmentAddGoalBinding
 import com.antonchuraev.becomebetter.databinding.FragmentAllGoalsBinding
+import com.antonchuraev.becomebetter.helpers.extensions.gone
+import com.antonchuraev.becomebetter.helpers.extensions.show
+import com.antonchuraev.becomebetter.helpers.extensions.toast
 import moxy.presenter.InjectPresenter
 
 
@@ -18,10 +21,28 @@ class AddGoalFragment : BaseFragment<FragmentAddGoalBinding>() , AddGoalView {
 
     override fun onCreateView(rootView: View) {
 
+        setListeners()
+    }
+
+    private fun setListeners() {
+        log("init $binding ${binding.button}")
+
+        binding.button.setOnClickListener {
+            log("init pressed")
+        }
+
+        binding.btCreateYour.setOnClickListener {
+            context.toast("pressed")
+            log("pressed")
+            presenter.createYourGoalPressed()
+        }
     }
 
 
-
+    override fun showCreateYourGoal() {
+        binding.llChooseWhatCreate.gone()
+        binding.llCreate.show()
+    }
 
     companion object {
 
