@@ -5,4 +5,5 @@
     <string name="bottom_navigation_add_goal">Добавить цель</string>
     <string name="all_goals">Все цели</string>
     <string name="add_goal">Создать цель</string>
+    <string name="create_name">Придумайте имя</string>
 </resources>
