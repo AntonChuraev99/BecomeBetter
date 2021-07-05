@@ -17,8 +17,7 @@ class AddGoalFragment : BaseFragment<FragmentAddGoalBinding>() , AddGoalView {
     override val layoutView: Int = R.layout.fragment_add_goal
 
     override fun onCreateView(rootView: View) {
-        Log.e("tag" , "onCreateView $toolbar");
-        toolbar?.setTittle("AddGoalFragment")
+
     }
 
 
@@ -29,6 +28,7 @@ class AddGoalFragment : BaseFragment<FragmentAddGoalBinding>() , AddGoalView {
         fun newInstance() = AddGoalFragment().apply {
 
         }
+
     }
 
 }

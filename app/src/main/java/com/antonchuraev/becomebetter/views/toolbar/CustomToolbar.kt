@@ -2,6 +2,7 @@ package com.antonchuraev.becomebetter.views.toolbar
 
 import android.content.Context
 import android.util.AttributeSet
+import androidx.core.view.isVisible
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.databinding.ViewCustomToolbarBinding
 import com.antonchuraev.becomebetter.views.CustomView
@@ -14,6 +15,7 @@ class CustomToolbar @JvmOverloads constructor(context: Context , attrs: Attribut
 	}
 
 	fun clearData() {
+		this.isVisible = false
 		binding.tittle.text = ""
 	}
 	override fun getLayoutRes(): Int = R.layout.view_custom_toolbar
