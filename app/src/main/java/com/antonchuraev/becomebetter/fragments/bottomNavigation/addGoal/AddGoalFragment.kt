@@ -25,15 +25,9 @@ class AddGoalFragment : BaseFragment<FragmentAddGoalBinding>() , AddGoalView {
     }
 
     private fun setListeners() {
-        log("init $binding ${binding.button}")
 
-        binding.button.setOnClickListener {
-            log("init pressed")
-        }
 
-        binding.btCreateYour.setOnClickListener {
-            context.toast("pressed")
-            log("pressed")
+        binding.addGoalContainer.setOnClickListener {
             presenter.createYourGoalPressed()
         }
     }

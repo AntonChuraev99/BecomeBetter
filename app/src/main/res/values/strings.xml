@@ -17,4 +17,6 @@
     <string name="set_description">Введите описание (необязательно)</string>
     <string name="description">Описание</string>
     <string name="create_your">Создать собственную</string>
+    <string name="create_your_goal">Создать собственную цель</string>
+    <string name="choose_goal_from_asset">Выбрать цель из шаблонов</string>
 </resources>
