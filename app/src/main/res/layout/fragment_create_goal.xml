@@ -4,20 +4,23 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<FrameLayout
+<androidx.appcompat.widget.LinearLayoutCompat
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     >
 
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:layout_weight="1"
+        >
 
         <LinearLayout
             android:id="@+id/llCreate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="30dp">
 
@@ -89,10 +92,12 @@
             <com.antonchuraev.becomebetter.views.utils.TimeSelectorView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:type="priority" />
+                app:type="priority">
+
+            </com.antonchuraev.becomebetter.views.utils.TimeSelectorView>
 
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 
     <com.antonchuraev.becomebetter.views.utils.ButtonView
         android:id="@+id/btCreate"
@@ -104,6 +109,6 @@
         android:text="@string/create"
         />
 
-</FrameLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
 
 </layout>
