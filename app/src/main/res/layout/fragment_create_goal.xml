@@ -53,8 +53,7 @@
             <com.antonchuraev.becomebetter.views.utils.TimeSelectorView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:type="duration"
-                >
+                app:type="duration">
 
             </com.antonchuraev.becomebetter.views.utils.TimeSelectorView>
 
@@ -94,6 +93,11 @@
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <com.antonchuraev.becomebetter.views.utils.ButtonView
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="wrap_content" />
 
 </FrameLayout>
 
