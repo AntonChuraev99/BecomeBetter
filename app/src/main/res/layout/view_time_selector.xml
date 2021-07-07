@@ -34,7 +34,7 @@
             android:id="@+id/selectedSize"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/forever"
+            tools:text="@string/forever"
             android:gravity="center"
             android:textSize="16sp"
             android:textColor="@color/white"

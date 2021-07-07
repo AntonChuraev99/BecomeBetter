@@ -20,4 +20,8 @@
     <string name="create_your_goal">Создать собственную цель</string>
     <string name="choose_goal_from_asset">Выбрать цель из шаблонов</string>
     <string name="create_goal">Создать цель</string>
+    <string name="small_prority">Маленький</string>
+    <string name="standart_prority">Обычный</string>
+    <string name="higherst_prority">Высокий</string>
+    <string name="set_priority">Устновите приоритет (необязательно)</string>
 </resources>

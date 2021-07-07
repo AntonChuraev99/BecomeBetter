@@ -46,20 +46,22 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="30dp"
                 android:text="@string/select_date"
                 android:textSize="18sp" />
 
             <com.antonchuraev.becomebetter.views.utils.TimeSelectorView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:type="duration"
+                >
 
             </com.antonchuraev.becomebetter.views.utils.TimeSelectorView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="30dp"
                 android:text="@string/set_description"
                 android:textSize="18sp" />
 
@@ -77,6 +79,18 @@
                 android:textColor="@color/black"
                 android:textColorHint="@color/с717685"
                 android:translationY="3dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/set_priority"
+                android:textSize="18sp" />
+
+            <com.antonchuraev.becomebetter.views.utils.TimeSelectorView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:type="priority" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
