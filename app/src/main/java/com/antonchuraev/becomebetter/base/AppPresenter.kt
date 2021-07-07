@@ -8,8 +8,10 @@ class AppPresenter: BasePresenter<MvpView>() {
 
     private val router: Router by inject()
 
-    fun onAppStartSplash() = router.newRootScreen( Screens.Flow.SplashFlow() )
-
-    fun onAppStartBottomNavigation() = router.newRootScreen( Screens.Screen.BottomNavigation() )
+    fun onAppStartOpenScreen() {
+        // TODO: 07.07.2021 можно сделать превь на 1 экране
+        //router.newRootScreen( Screens.Flow.SplashFlow() )
+        router.newRootScreen( Screens.Screen.BottomNavigation() )
+    }
 
 }

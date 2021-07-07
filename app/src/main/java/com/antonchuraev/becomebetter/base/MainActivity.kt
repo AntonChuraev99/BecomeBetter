@@ -58,7 +58,7 @@ class MainActivity:MvpAppCompatActivity() , MvpView
         toolbar = findViewById<CustomToolbar>(R.id.customToolbar)
 
         // TODO: 10.04.2021 проверка стартового экрана
-        presenter.onAppStartBottomNavigation()
+        presenter.onAppStartOpenScreen()
 
     }
 
