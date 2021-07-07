@@ -14,7 +14,7 @@ class GoalInListView @JvmOverloads constructor(context: Context, attrs: Attribut
     override fun getLayoutRes() = R.layout.view_goal_in_list
 
     fun setData(goal:Goal){
-        context.toast("setData:${goal}")
+        //context.toast("setData:${goal}")
         binding.name.text = goal.name
     }
 

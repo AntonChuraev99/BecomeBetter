@@ -38,7 +38,7 @@ class AllGoalsFragment : BaseFragment<FragmentAllGoalsBinding>() , AllGoalsView 
     }
 
     override fun setThreeFirstGoalViews(goals: List<Goal>) {
-        context?.toast("${goals.size}")
+        //context?.toast("${goals.size}")
 
         goals.forEach { goal->
             context?.let {
