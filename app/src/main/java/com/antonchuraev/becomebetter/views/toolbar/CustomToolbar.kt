@@ -11,6 +11,7 @@ import com.antonchuraev.becomebetter.databinding.ViewCustomToolbarBinding
 import com.antonchuraev.becomebetter.helpers.extensions.show
 import com.antonchuraev.becomebetter.views.CustomView
 import com.historic.app.global.navigation.FlowRouter
+import ru.terrakok.cicerone.Router
 
 
 class CustomToolbar @JvmOverloads constructor(context: Context , attrs: AttributeSet? = null , defStyleAttr: Int = 0) : CustomView<ViewCustomToolbarBinding>(context , attrs , defStyleAttr) {
@@ -19,7 +20,7 @@ class CustomToolbar @JvmOverloads constructor(context: Context , attrs: Attribut
 		this.isVisible = true
 	}
 
-	fun defaultBackButton(presenter: FlowRouter?) {
+	fun defaultBackButton(presenter: Router?) {
 		setLeftButton(R.drawable.ic_arrow_back) { presenter?.exit() }
 	}
 

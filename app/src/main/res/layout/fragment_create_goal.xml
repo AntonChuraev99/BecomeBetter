@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/llCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/create_name"
+                android:textSize="18sp"
+
+                />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edName"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_rectangle_r_8"
+                android:hint="@string/name"
+                android:inputType="text"
+                android:maxLength="10"
+                android:paddingStart="16dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/с717685"
+                android:translationY="3dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/select_date"
+                android:textSize="18sp" />
+
+            <com.antonchuraev.becomebetter.views.utils.TimeSelectorView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.antonchuraev.becomebetter.views.utils.TimeSelectorView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/set_description"
+                android:textSize="18sp" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_rectangle_r_8"
+                android:gravity="start"
+                android:hint="@string/description"
+                android:inputType="textMultiLine"
+                android:maxLength="300"
+                android:padding="16dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/с717685"
+                android:translationY="3dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>
+
+</layout>
