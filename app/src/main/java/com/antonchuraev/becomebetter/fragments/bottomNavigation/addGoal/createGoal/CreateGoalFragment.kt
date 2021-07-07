@@ -28,6 +28,7 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
     private fun enableToolbar() {
         toolbar?.let { toolbar->
             toolbar.show()
+            toolbar.setTittle(context?.getString(R.string.create_goal))
             toolbar.defaultBackButton(appRouter)
         }
     }

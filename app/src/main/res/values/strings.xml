@@ -19,4 +19,5 @@
     <string name="create_your">Создать собственную</string>
     <string name="create_your_goal">Создать собственную цель</string>
     <string name="choose_goal_from_asset">Выбрать цель из шаблонов</string>
+    <string name="create_goal">Создать цель</string>
 </resources>
