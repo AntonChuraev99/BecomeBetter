@@ -9,7 +9,6 @@
     android:layout_height="66dp"
     android:background="@color/black"
     android:paddingTop="10dp"
-    android:paddingHorizontal="30dp"
     >
 
     <ImageButton
@@ -20,7 +19,9 @@
         android:background="@android:color/transparent"
         android:visibility="gone"
         app:srcCompat="@drawable/ic_arrow_back"
-        tools:visibility="visible" />
+        tools:visibility="visible"
+        android:padding="30dp"
+        />
 
     <TextView
         android:id="@+id/tittle"
