@@ -1,6 +1,7 @@
 package com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createGoal
 
 import android.view.View
+import androidx.core.widget.addTextChangedListener
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BaseFragment
 import com.antonchuraev.becomebetter.databinding.FragmentAddGoalBinding
@@ -34,7 +35,9 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
     }
 
     private fun setListeners() {
-
+        binding.edName.addTextChangedListener {
+            binding.btCreate.setState(it.toString().isNotBlank())
+        }
     }
 
 

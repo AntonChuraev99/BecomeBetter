@@ -53,4 +53,7 @@ class ButtonView @JvmOverloads constructor(
 		}
 	}
 
+	fun setState(isEnabled:Boolean){
+		style = if (isEnabled) Type.ACTIVE else Type.DISABLE
+	}
 }

@@ -95,6 +95,7 @@
     </androidx.core.widget.NestedScrollView>
 
     <com.antonchuraev.becomebetter.views.utils.ButtonView
+        android:id="@+id/btCreate"
         android:layout_width="match_parent"
         android:layout_gravity="bottom"
         android:layout_height="wrap_content"
