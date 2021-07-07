@@ -9,5 +9,12 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="ButtonView">
+        <attr name="android:text" format="string"/>
+        <attr name="buttonType" format="enum" >
+            <enum name="disable" value="0"/>
+            <enum name="active" value="1"/>
+        </attr>
+    </declare-styleable>
 
 </resources>

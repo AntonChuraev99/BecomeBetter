@@ -1,12 +1,12 @@
 package com.antonchuraev.becomebetter.views.utils
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.util.AttributeSet
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.databinding.ViewButtonBinding
-import com.antonchuraev.becomebetter.databinding.ViewTimeSelectorBinding
 import com.antonchuraev.becomebetter.views.CustomView
-import java.util.*
+import kotlin.properties.Delegates
 
 
 class ButtonView @JvmOverloads constructor(
@@ -15,8 +15,9 @@ class ButtonView @JvmOverloads constructor(
 
 	override fun getLayoutRes() = R.layout.view_button
 
-	private enum class Type(val referenceToAttr: Int , val startFrom:Int,val values: Map<Float , Int>) {
-		;
+	enum class Type(val referenceToAttr: Int , val backgroundColor: Int ,val textColor: Int) {
+		DISABLE (0 , R.color.F0F0F5 , R.color.с9FA2B4) ,
+		ACTIVE(1 , R.color.aston_martin , R.color.main_blue);
 
 		companion object {
 			fun findByAttrs(attrReference: Int) =
@@ -27,10 +28,29 @@ class ButtonView @JvmOverloads constructor(
 
 	}
 
+	var style by Delegates.observable(Type.DISABLE){ _ , _ ,new ->
+		updateStyle(new)
+	}
 
 	init {
+		context.theme.obtainStyledAttributes(
+			attrs , R.styleable.ButtonView , 0 , 0
+											).apply {
+			try {
+				binding.button.text = getString(R.styleable.ButtonView_android_text)
+				style = Type.findByAttrs(getInteger(R.styleable.ButtonView_buttonType , 0))
+			} finally {
+				recycle()
+			}
+		}
+	}
 
+	private fun updateStyle(type: Type) {
+		binding.button.apply {
+			backgroundTintList = ColorStateList.valueOf(context.getColor(type.backgroundColor))
+			setTextColor(context.getColor(type.textColor))
 
+		}
 	}
 
 }

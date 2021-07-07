@@ -24,4 +24,5 @@
     <string name="standart_prority">Обычный</string>
     <string name="higherst_prority">Высокий</string>
     <string name="set_priority">Устновите приоритет (необязательно)</string>
+    <string name="create">Создать</string>
 </resources>
