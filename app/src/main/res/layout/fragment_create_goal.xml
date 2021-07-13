@@ -32,19 +32,27 @@
 
                 />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edName"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameLayout"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/shape_rectangle_r_8"
-                android:hint="@string/name"
-                android:inputType="text"
-                android:maxLength="10"
-                android:paddingStart="16dp"
-                android:textColor="@color/black"
-                android:textColorHint="@color/с717685"
-                android:translationY="3dp" />
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edName"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shape_rectangle_r_8"
+                    android:hint="@string/name"
+                    android:inputType="text"
+                    android:maxLength="10"
+                    android:paddingStart="16dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/с717685"
+                    android:translationY="3dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
 
             <TextView
                 android:layout_width="match_parent"
