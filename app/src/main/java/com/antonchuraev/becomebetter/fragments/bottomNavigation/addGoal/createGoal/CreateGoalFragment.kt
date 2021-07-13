@@ -43,7 +43,7 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
         var allFieldsChecked = true
 
         if (binding.edName.text.toString().isBlank()){
-
+            // TODO: 13.07.2021 error view
             allFieldsChecked = false
         }
 
