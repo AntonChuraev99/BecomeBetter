@@ -4,12 +4,7 @@ import android.view.View
 import androidx.core.widget.addTextChangedListener
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BaseFragment
-import com.antonchuraev.becomebetter.databinding.FragmentAddGoalBinding
 import com.antonchuraev.becomebetter.databinding.FragmentCreateGoalBinding
-import com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.AddGoalPresenter
-import com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.AddGoalView
-import com.antonchuraev.becomebetter.helpers.extensions.gone
-import com.antonchuraev.becomebetter.helpers.extensions.show
 import moxy.presenter.InjectPresenter
 
 
@@ -38,6 +33,24 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
         binding.edName.addTextChangedListener {
             binding.btCreate.setState(it.toString().isNotBlank())
         }
+
+        binding.btCreate.onClickListener {
+            checkFields()
+        }
+    }
+
+    private fun checkFields() {
+        var allFieldsChecked = true
+
+        if (binding.edName.text.toString().isBlank()){
+            binding.edName.error = "Обязательное поле"
+            allFieldsChecked = false
+        }
+
+        if (allFieldsChecked){
+            // TODO: 13.07.2021 save to database
+        }
+
     }
 
 

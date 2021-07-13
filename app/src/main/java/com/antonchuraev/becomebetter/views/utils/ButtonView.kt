@@ -49,11 +49,16 @@ class ButtonView @JvmOverloads constructor(
 		binding.button.apply {
 			backgroundTintList = ColorStateList.valueOf(context.getColor(type.backgroundColor))
 			setTextColor(context.getColor(type.textColor))
-
 		}
 	}
 
 	fun setState(isEnabled:Boolean){
 		style = if (isEnabled) Type.ACTIVE else Type.DISABLE
+	}
+
+	fun onClickListener(action:(()->Unit)?){
+		binding.button.setOnClickListener {
+			action?.invoke()
+		}
 	}
 }

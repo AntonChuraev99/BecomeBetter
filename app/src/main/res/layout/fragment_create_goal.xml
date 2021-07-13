@@ -105,7 +105,6 @@
         android:layout_gravity="bottom"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-
         android:text="@string/create"
         />
 
