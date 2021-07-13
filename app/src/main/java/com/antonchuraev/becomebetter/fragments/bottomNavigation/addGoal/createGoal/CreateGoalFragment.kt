@@ -31,7 +31,6 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
 
     private fun setListeners() {
         binding.edName.addTextChangedListener {
-            binding.nameLayout.error = ""
             binding.btCreate.setState(it.toString().isNotBlank())
         }
 
@@ -44,7 +43,7 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
         var allFieldsChecked = true
 
         if (binding.edName.text.toString().isBlank()){
-            binding.nameLayout.error = "Обязательное поле"
+
             allFieldsChecked = false
         }
 
