@@ -31,6 +31,7 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
 
     private fun setListeners() {
         binding.edName.addTextChangedListener {
+            binding.edName.background = context?.getDrawable(R.drawable.shape_rectangle_r_8)
             binding.btCreate.setState(it.toString().isNotBlank())
         }
 
@@ -44,7 +45,11 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
 
         if (binding.edName.text.toString().isBlank()){
             // TODO: 13.07.2021 error view
+            binding.edName.background = context?.getDrawable(R.drawable.shape_rectangle_r_8_error)
             allFieldsChecked = false
+        }
+        else{
+            binding.edName.background = context?.getDrawable(R.drawable.shape_rectangle_r_8)
         }
 
         if (allFieldsChecked){
