@@ -15,55 +15,25 @@ class CreateGoalFromTemplatesFragment : BaseFragment<FragmentCreateGoalBinding>(
     @InjectPresenter
     lateinit var presenter: CreateGoalFromTemplatesPresenter
 
-    override val layoutView: Int = R.layout.fragment_create_goal
+    override val layoutView: Int = R.layout.fragment_create_goal_from_templates
 
     override fun onCreateView(rootView: View) {
-
-        setListeners()
         enableToolbar()
     }
 
     private fun enableToolbar() {
         toolbar?.let { toolbar->
             toolbar.show()
-            toolbar.setTittle(context?.getString(R.string.create_goal))
+            toolbar.setTittle(context?.getString(R.string.choose_template))
             toolbar.defaultBackButton(appRouter)
         }
     }
 
-    private fun setListeners() {
-        binding.edName.addTextChangedListener {
-            binding.edName.background = context?.getDrawable(R.drawable.shape_rectangle_r_8)
-            binding.btCreate.setState(it.toString().isNotBlank())
-        }
-
-        binding.btCreate.onClickListener {
-            checkFields()
-        }
-    }
-
-    private fun checkFields() {
-        var allFieldsChecked = true
-
-        if (binding.edName.text.toString().isBlank()){
-            // TODO: 13.07.2021 error view
-            binding.edName.background = context?.getDrawable(R.drawable.shape_rectangle_r_8_error)
-            allFieldsChecked = false
-        }
-        else{
-            binding.edName.background = context?.getDrawable(R.drawable.shape_rectangle_r_8)
-        }
-
-        if (allFieldsChecked){
-            // TODO: 13.07.2021 save to database
-        }
-
-    }
 
 
     companion object {
 
-        fun newInstance() = CreateGoalFragment().apply {
+        fun newInstance() = CreateGoalFromTemplatesFragment().apply {
 
         }
 
