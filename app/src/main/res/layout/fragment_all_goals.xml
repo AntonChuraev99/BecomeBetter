@@ -25,18 +25,6 @@
             android:textColor="@color/aston_martin"
             android:textSize="32sp" />
 
-        <LinearLayout
-            android:id="@+id/allGoalsContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/white"
-            >
-
-            <com.antonchuraev.becomebetter.views.goals.GoalInListView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </LinearLayout>
     </LinearLayout>
 
 </FrameLayout>
