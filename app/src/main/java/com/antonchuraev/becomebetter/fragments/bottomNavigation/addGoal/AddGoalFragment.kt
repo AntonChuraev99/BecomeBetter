@@ -5,8 +5,6 @@ import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BaseFragment
 import com.antonchuraev.becomebetter.base.Screens
 import com.antonchuraev.becomebetter.databinding.FragmentAddGoalBinding
-import com.antonchuraev.becomebetter.helpers.extensions.gone
-import com.antonchuraev.becomebetter.helpers.extensions.show
 import moxy.presenter.InjectPresenter
 
 
@@ -22,15 +20,22 @@ class AddGoalFragment : BaseFragment<FragmentAddGoalBinding>() , AddGoalView {
     }
 
     private fun setListeners() {
-
         binding.addGoalContainer.setOnClickListener {
-            presenter.createYourGoalPressed()
+            presenter.toCreateYourGoalPressed()
+        }
+
+        binding.createGoalFromAssetsContainer.setOnClickListener {
+            presenter.toCreateGoalFromTemplatesPressed()
         }
     }
 
 
-    override fun showCreateYourGoal() {
+    override fun toCreateYourGoal() {
         appRouter.navigateTo(Screens.Screen.AddGoals.CreateGoal())
+    }
+
+    override fun toCreateGoalFromTemplates() {
+        appRouter.navigateTo(Screens.Screen.AddGoals.CreateGoalFromTemplate())
     }
 
     companion object {

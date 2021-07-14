@@ -7,6 +7,8 @@ import moxy.viewstate.strategy.StateStrategyType
 interface AddGoalView: MvpView {
 
 	@StateStrategyType(OneExecutionStateStrategy::class )
-	fun showCreateYourGoal()
+	fun toCreateYourGoal()
 
+	@StateStrategyType(OneExecutionStateStrategy::class )
+	fun toCreateGoalFromTemplates()
 }

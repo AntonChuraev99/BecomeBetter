@@ -2,6 +2,7 @@ package com.antonchuraev.becomebetter.base
 
 import androidx.fragment.app.Fragment
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createGoal.CreateGoalFragment
+import com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createGoalFromTemplate.CreateGoalFromTemplatesFragment
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.BottomNavigationFragment
 import com.antonchuraev.becomebetter.fragments.splash.SplashFlowFragment
 import com.antonchuraev.becomebetter.fragments.splash.SplashFragment
@@ -45,6 +46,9 @@ object Screens {
                 override fun getFragment(): Fragment = CreateGoalFragment.newInstance()
             }
 
+            class CreateGoalFromTemplate: SupportAppScreen(){
+                override fun getFragment(): Fragment = CreateGoalFromTemplatesFragment.newInstance()
+            }
         }
 
     }
