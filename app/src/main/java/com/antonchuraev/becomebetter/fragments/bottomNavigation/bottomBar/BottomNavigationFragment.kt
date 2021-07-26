@@ -48,9 +48,6 @@ class BottomNavigationFragment : BaseFragment<FragmentMainBinding>() , BottomNav
 
     override val layoutView: Int = R.layout.fragment_main
 
-
-
-
     override fun onCreateView(rootView: View) {
         setBottomListener()
         presenter.selectedNavigationTab = presenter.selectedNavigationTab
