@@ -6,5 +6,10 @@ import moxy.InjectViewState
 @InjectViewState
 class CreateGoalFromTemplatesPresenter: BasePresenter<CreateGoalFromTemplatesView>() {
 
+    fun loadTemplates(){
+        val templates = mutableListOf<String>()
+
+        viewState.showTemplates(templates)
+    }
 
 }

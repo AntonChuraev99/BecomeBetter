@@ -19,6 +19,7 @@ class CreateGoalFromTemplatesFragment : BaseFragment<FragmentCreateGoalBinding>(
 
     override fun onCreateView(rootView: View) {
         enableToolbar()
+        presenter.loadTemplates()
     }
 
     private fun enableToolbar() {
@@ -29,7 +30,9 @@ class CreateGoalFromTemplatesFragment : BaseFragment<FragmentCreateGoalBinding>(
         }
     }
 
+    override fun showTemplates(templates: MutableList<String>) {
 
+    }
 
     companion object {
 
