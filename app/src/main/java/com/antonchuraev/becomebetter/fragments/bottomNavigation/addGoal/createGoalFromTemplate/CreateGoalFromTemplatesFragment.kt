@@ -3,6 +3,7 @@ package com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createG
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.antonchuraev.becomebetter.R
@@ -46,7 +47,7 @@ class CreateGoalFromTemplatesFragment : BaseFragment<FragmentCreateGoalFromTempl
 
     private fun bindRv() {
         binding.rvTemplates.apply {
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = GridLayoutManager(context , 3)
             adapter = templatesAdapter
         }
     }
