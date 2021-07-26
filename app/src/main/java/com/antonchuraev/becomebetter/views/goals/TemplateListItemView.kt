@@ -16,7 +16,7 @@ class TemplateListItemView @JvmOverloads constructor(context: Context, attrs: At
     override fun getLayoutRes() = R.layout.view_template_list_item
 
     fun setData(template:Template){
-
+        binding.tvName.text = template.tittle
     }
 
 }

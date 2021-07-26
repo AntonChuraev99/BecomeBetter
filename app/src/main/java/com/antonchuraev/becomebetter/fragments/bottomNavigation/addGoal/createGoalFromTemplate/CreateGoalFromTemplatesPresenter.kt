@@ -10,6 +10,13 @@ class CreateGoalFromTemplatesPresenter: BasePresenter<CreateGoalFromTemplatesVie
     fun loadTemplates(){
         val templates = mutableListOf<Template>()
 
+        templates.add(Template("Бросить курить"))
+        templates.add(Template("Начать бегать") )
+        templates.add(Template("Начать читать") )
+        templates.add(Template("Бросить курить") )
+        templates.add(Template("Бросить курить") )
+        templates.add(Template("Бросить курить") )
+
         viewState.showTemplates(templates)
     }
 
