@@ -13,9 +13,9 @@ class CreateGoalFromTemplatesPresenter: BasePresenter<CreateGoalFromTemplatesVie
         templates.add(Template("Бросить курить"))
         templates.add(Template("Начать бегать") )
         templates.add(Template("Начать читать") )
-        templates.add(Template("Бросить курить") )
-        templates.add(Template("Бросить курить") )
-        templates.add(Template("Бросить курить") )
+        templates.add(Template("Кушать только здоровую пищу") )
+        templates.add(Template("TODO Придумать") )
+        templates.add(Template("TODO Придумать") )
 
         viewState.showTemplates(templates)
     }
