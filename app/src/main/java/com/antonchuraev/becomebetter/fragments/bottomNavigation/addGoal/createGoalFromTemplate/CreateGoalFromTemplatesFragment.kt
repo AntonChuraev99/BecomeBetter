@@ -47,7 +47,7 @@ class CreateGoalFromTemplatesFragment : BaseFragment<FragmentCreateGoalFromTempl
 
     private fun bindRv() {
         binding.rvTemplates.apply {
-            layoutManager = GridLayoutManager(context , 3)
+            layoutManager = GridLayoutManager(context , 2) //3
             adapter = templatesAdapter
         }
     }

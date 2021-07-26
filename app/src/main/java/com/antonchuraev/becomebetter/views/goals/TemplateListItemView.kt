@@ -7,11 +7,17 @@ import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.dataClasses.Template
 import com.antonchuraev.becomebetter.databinding.ViewGoalInListBinding
 import com.antonchuraev.becomebetter.databinding.ViewTemplateListItemBinding
+import com.antonchuraev.becomebetter.helpers.extensions.setMatchMatch
+import com.antonchuraev.becomebetter.helpers.extensions.setMatchWrap
 import com.antonchuraev.becomebetter.helpers.extensions.toast
 import com.antonchuraev.becomebetter.views.CustomView
 
 
 class TemplateListItemView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0 ): CustomView<ViewTemplateListItemBinding>(context, attrs, defStyleAttr) {
+
+    init {
+        this.setMatchWrap()
+    }
 
     override fun getLayoutRes() = R.layout.view_template_list_item
 
