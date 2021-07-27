@@ -14,7 +14,7 @@ class TimeSelectorView @JvmOverloads constructor(
 
 	override fun getLayoutRes() = R.layout.view_time_selector
 
-	private enum class Type(val referenceToAttr: Int , val startFrom:Int,val values: Map<Float , Int>) {
+	public enum class Type(val referenceToAttr: Int , val startFrom:Int,val values: Map<Float , Int>) {
 		GOAL_DURATION(
 			0 , 0, mapOf(
 				0F to R.string.forever , 1F to R.string.one_day , 2F to R.string.three_days ,
@@ -37,10 +37,9 @@ class TimeSelectorView @JvmOverloads constructor(
 
 	}
 
+	var style = Type.GOAL_DURATION
 
 	init {
-        var style = Type.GOAL_DURATION
-
          context.theme.obtainStyledAttributes(
 			attrs , R.styleable.TimeSelectorView , 0 , 0
                                                         ).apply {
@@ -62,7 +61,13 @@ class TimeSelectorView @JvmOverloads constructor(
 	}
 
 	fun setDuration(value:Float){
-		binding.slider.value = value
+		binding.slider.apply {
+			this.value = value
+			binding.selectedSize.text = generateTextForSlider(style.referenceToAttr , value)
+			setLabelFormatter {
+				generateTextForSlider(style.referenceToAttr , it).apply { binding.selectedSize.text = this }
+			}
+		}
 	}
 
 	private fun generateTextForSlider(styleValue: Int , sliderValue: Float): String {
