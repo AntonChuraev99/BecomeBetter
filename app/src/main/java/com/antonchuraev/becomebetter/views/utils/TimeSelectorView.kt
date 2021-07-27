@@ -61,6 +61,10 @@ class TimeSelectorView @JvmOverloads constructor(
 		}
 	}
 
+	fun setDuration(value:Float){
+		binding.slider.value = value
+	}
+
 	private fun generateTextForSlider(styleValue: Int , sliderValue: Float): String {
 		return context.getString(Type.findByAttrs(styleValue).values[sliderValue]!!)
 	}

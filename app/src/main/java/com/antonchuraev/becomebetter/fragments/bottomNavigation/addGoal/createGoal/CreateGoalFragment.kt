@@ -1,9 +1,11 @@
 package com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createGoal
 
+import android.os.Bundle
 import android.view.View
 import androidx.core.widget.addTextChangedListener
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BaseFragment
+import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.FragmentCreateGoalBinding
 import moxy.presenter.InjectPresenter
 
@@ -16,9 +18,19 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
     override val layoutView: Int = R.layout.fragment_create_goal
 
     override fun onCreateView(rootView: View) {
-
+        initArgs()
         setListeners()
         enableToolbar()
+    }
+
+    private fun initArgs() {
+        arguments?.let { args->
+            (args.getSerializable(GOAL_TAG) as? Goal)?.let { goal: Goal ->
+                binding.edName.setText(goal.name)
+                binding.durationTimeSelector.setDuration(1F)
+
+            }
+        }
     }
 
     private fun enableToolbar() {
@@ -60,9 +72,15 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
 
 
     companion object {
+        private const val GOAL_TAG = "GOAL_TAG"
 
-        fun newInstance() = CreateGoalFragment().apply {
-
+        /**
+         * если приходит item то редактирование или создание из шаблона
+         */
+        fun newInstance(item: Goal?) = CreateGoalFragment().apply {
+            arguments = Bundle().apply {
+                putSerializable(GOAL_TAG , item)
+            }
         }
 
     }

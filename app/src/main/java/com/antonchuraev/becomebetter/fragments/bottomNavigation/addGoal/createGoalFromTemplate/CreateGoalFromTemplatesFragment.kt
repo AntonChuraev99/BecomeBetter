@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BaseFragment
+import com.antonchuraev.becomebetter.base.Screens
 import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.FragmentCreateGoalFromTemplatesBinding
 import com.antonchuraev.becomebetter.views.goals.TemplateListItemView
@@ -21,9 +22,13 @@ class CreateGoalFromTemplatesFragment : BaseFragment<FragmentCreateGoalFromTempl
     override val layoutView: Int = R.layout.fragment_create_goal_from_templates
 
     val templatesAdapter = TemplatesAdapter().apply {
-        onItemClickListener = {item->
-
+        onItemClickListener = { item->
+            onTemplateClick(item)
         }
+    }
+
+    private fun onTemplateClick(item: Goal) {
+        appRouter.navigateTo(Screens.Screen.AddGoals.CreateGoal(item))
     }
 
     override fun onCreateView(rootView: View) {
