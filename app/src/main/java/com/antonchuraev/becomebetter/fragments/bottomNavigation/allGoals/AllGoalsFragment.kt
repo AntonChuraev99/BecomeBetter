@@ -3,6 +3,7 @@ package com.antonchuraev.becomebetter.fragments.bottomNavigation.allGoals
 import android.view.View
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BaseFragment
+import com.antonchuraev.becomebetter.base.Screens
 import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.FragmentAllGoalsBinding
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.BottomNavigationPresenter
@@ -29,7 +30,7 @@ class AllGoalsFragment : BaseFragment<FragmentAllGoalsBinding>() , AllGoalsView 
 
     private fun setListeners() {
         binding.llCreateFirstGoal.setOnClickListener {
-
+            appRouter.navigateTo(Screens.Screen.AddGoals.CreateGoal())
         }
     }
 

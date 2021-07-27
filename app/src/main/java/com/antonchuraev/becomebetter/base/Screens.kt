@@ -2,6 +2,7 @@ package com.antonchuraev.becomebetter.base
 
 import androidx.fragment.app.Fragment
 import com.antonchuraev.becomebetter.dataClasses.Goal
+import com.antonchuraev.becomebetter.fragments.bottomNavigation.NavigationTab
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createGoal.CreateGoalFragment
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createGoalFromTemplate.CreateGoalFromTemplatesFragment
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.BottomNavigationFragment
@@ -37,8 +38,8 @@ object Screens {
         /**
          * главный экран с нижней навигацией
          */
-        class BottomNavigation: SupportAppScreen(){
-            override fun getFragment(): Fragment = BottomNavigationFragment.newInstance()
+        class BottomNavigation(val tab: NavigationTab? = null): SupportAppScreen(){
+            override fun getFragment(): Fragment = BottomNavigationFragment.newInstance(tab)
         }
 
         object AddGoals{
