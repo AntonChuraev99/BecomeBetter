@@ -60,7 +60,7 @@ class TimeSelectorView @JvmOverloads constructor(
 		}
 	}
 
-	fun setDuration(value:Float){
+	fun setValue(value:Float){
 		binding.slider.apply {
 			this.value = value
 			binding.selectedSize.text = generateTextForSlider(style.referenceToAttr , value)

@@ -27,8 +27,9 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
         arguments?.let { args->
             (args.getSerializable(GOAL_TAG) as? Goal)?.let { goal: Goal ->
                 binding.edName.setText(goal.name)
-                binding.durationTimeSelector.setDuration(1F)
-
+                binding.durationTimeSelector.setValue(goal.duration)
+                binding.edDescription.setText(goal.description)
+                binding.priorityTimeSelector.setValue(goal.priority)
             }
         }
     }

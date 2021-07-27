@@ -93,6 +93,7 @@
                 android:textSize="18sp" />
 
             <com.antonchuraev.becomebetter.views.utils.TimeSelectorView
+                android:id="@+id/priorityTimeSelector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:type="priority">
