@@ -56,19 +56,14 @@ class BottomNavigationFragment : BaseFragment<FragmentMainBinding>() , BottomNav
     }
 
     private fun setBottomListener() {
-
         binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when(item.itemId) {
                 R.id.page_home -> {
-
                     openFragmentByTab(NavigationTab.ALL_GOALS)
-
                     true
                 }
                 R.id.page_add -> {
-
                     openFragmentByTab(NavigationTab.ADD_GOAL)
-
                     true
                 }
                 R.id.page_profile -> {
@@ -97,7 +92,6 @@ class BottomNavigationFragment : BaseFragment<FragmentMainBinding>() , BottomNav
     }
 
     override fun openFragmentByTab(tab: NavigationTab?) {
-
         childFragmentManager.commitNow {
             tabFragments.forEach {
                 if (it.key == tab)

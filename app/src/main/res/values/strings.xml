@@ -26,4 +26,7 @@
     <string name="set_priority">Устновите приоритет (необязательно)</string>
     <string name="create">Создать</string>
     <string name="choose_template">Выберите шаблон</string>
+    <string name="all_my_goals">Все мои цели</string>
+    <string name="active_goals">Активные цели</string>
+    <string name="select_or_create_goal">Выберите или создайте первую цель</string>
 </resources>

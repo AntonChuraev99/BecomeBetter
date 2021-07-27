@@ -18,13 +18,92 @@
         android:paddingHorizontal="20dp"
         >
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/all_goals"
-            android:textColor="@color/aston_martin"
-            android:textSize="32sp" />
+            android:orientation="horizontal"
+            android:background="@drawable/shape_rectangle_r_8_stroke_aston_martin"
+            android:paddingHorizontal="15dp"
+            >
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/all_my_goals"
+                android:layout_gravity="center"
+                android:textSize="24sp"
+                android:textColor="@color/aston_martin"
+                />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/ic_folder_24" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:background="@drawable/shape_rectangle_r_8_stroke_aston_martin"
+            android:padding="15dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/active_goals"
+                android:layout_gravity="center"
+                android:textSize="24sp"
+                android:textColor="@color/aston_martin"
+                />
+
+            <LinearLayout
+                android:id="@+id/llCreateFirstGoal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/shape_rectangle_r_8"
+                android:backgroundTint="@color/white"
+
+                >
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="15dp"
+                    app:srcCompat="@drawable/bottom_bar_add_goal"
+                    app:tint="@color/aston_martin"
+                    />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+
+                    android:background="@android:color/transparent"
+
+                    android:text="@string/select_or_create_goal"
+
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="19sp" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+        </LinearLayout>
     </LinearLayout>
 
 </FrameLayout>
