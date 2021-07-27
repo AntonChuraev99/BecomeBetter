@@ -18,28 +18,19 @@ class AllGoalsFragment : BaseFragment<FragmentAllGoalsBinding>() , AllGoalsView 
 
     override val layoutView: Int = R.layout.fragment_all_goals
 
-
-
-
     override fun onCreateView(rootView: View) {
         presenter.initializeThreeFirstGoalsData()
-
 
     }
 
 
-
-
     companion object {
-
         fun newInstance() = AllGoalsFragment().apply {
 
         }
     }
 
     override fun setThreeFirstGoalViews(goals: List<Goal>) {
-        //context?.toast("${goals.size}")
-
 
     }
 
