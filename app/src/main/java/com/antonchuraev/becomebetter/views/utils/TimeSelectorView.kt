@@ -71,6 +71,6 @@ class TimeSelectorView @JvmOverloads constructor(
 	}
 
 	private fun generateTextForSlider(styleValue: Int , sliderValue: Float): String {
-		return context.getString(Type.findByAttrs(styleValue).values[sliderValue]!!)
+		return context.getString(Type.findByAttrs(styleValue).values[sliderValue] ?: throw Exception("value больше допустимых значений") )
 	}
 }
