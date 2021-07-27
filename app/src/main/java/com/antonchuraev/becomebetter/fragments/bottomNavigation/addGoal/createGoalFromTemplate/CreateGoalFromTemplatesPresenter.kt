@@ -1,21 +1,21 @@
 package com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createGoalFromTemplate
 
 import com.antonchuraev.becomebetter.base.BasePresenter
-import com.antonchuraev.becomebetter.dataClasses.Template
+import com.antonchuraev.becomebetter.dataClasses.Goal
 import moxy.InjectViewState
 
 @InjectViewState
 class CreateGoalFromTemplatesPresenter: BasePresenter<CreateGoalFromTemplatesView>() {
 
     fun loadTemplates(){
-        val templates = mutableListOf<Template>()
+        val templates = mutableListOf<Goal>()
 
-        templates.add(Template("Бросить курить"))
-        templates.add(Template("Начать бегать") )
-        templates.add(Template("Начать читать") )
-        templates.add(Template("Кушать только здоровую пищу") )
-        templates.add(Template("TODO Придумать") )
-        templates.add(Template("TODO Придумать") )
+        templates.add(Goal("Бросить курить"))
+        templates.add(Goal("Начать бегать") )
+        templates.add(Goal("Начать читать") )
+        templates.add(Goal("Кушать только здоровую пищу") )
+        templates.add(Goal("TODO Придумать") )
+        templates.add(Goal("TODO Придумать") )
 
         viewState.showTemplates(templates)
     }

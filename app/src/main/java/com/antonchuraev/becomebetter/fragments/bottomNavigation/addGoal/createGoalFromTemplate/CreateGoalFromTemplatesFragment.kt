@@ -2,16 +2,12 @@ package com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createG
 
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BaseFragment
-import com.antonchuraev.becomebetter.dataClasses.Template
-import com.antonchuraev.becomebetter.databinding.FragmentCreateGoalBinding
+import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.FragmentCreateGoalFromTemplatesBinding
-import com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createGoal.CreateGoalFragment
 import com.antonchuraev.becomebetter.views.goals.TemplateListItemView
 import moxy.presenter.InjectPresenter
 
@@ -52,15 +48,15 @@ class CreateGoalFromTemplatesFragment : BaseFragment<FragmentCreateGoalFromTempl
         }
     }
 
-    override fun showTemplates(templates: MutableList<Template>) {
+    override fun showTemplates(templates: MutableList<Goal>) {
         templatesAdapter.items = templates
     }
 
     class TemplatesAdapter:RecyclerView.Adapter<TemplatesAdapter.TemplateViewHolder>(){
 
-        var onItemClickListener: ((Template) -> Unit)? = null
+        var onItemClickListener: ((Goal) -> Unit)? = null
 
-        var items = mutableListOf<Template>()
+        var items = mutableListOf<Goal>()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -80,7 +76,7 @@ class CreateGoalFromTemplatesFragment : BaseFragment<FragmentCreateGoalFromTempl
         override fun getItemCount() = items.size
 
         class TemplateViewHolder(val templateView:TemplateListItemView):RecyclerView.ViewHolder(templateView){
-            fun bind(template:Template){
+            fun bind(template:Goal){
                 templateView.setData(template)
             }
 

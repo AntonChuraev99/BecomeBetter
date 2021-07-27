@@ -4,12 +4,8 @@ import android.content.Context
 import android.util.AttributeSet
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.dataClasses.Goal
-import com.antonchuraev.becomebetter.dataClasses.Template
-import com.antonchuraev.becomebetter.databinding.ViewGoalInListBinding
 import com.antonchuraev.becomebetter.databinding.ViewTemplateListItemBinding
-import com.antonchuraev.becomebetter.helpers.extensions.setMatchMatch
 import com.antonchuraev.becomebetter.helpers.extensions.setMatchWrap
-import com.antonchuraev.becomebetter.helpers.extensions.toast
 import com.antonchuraev.becomebetter.views.CustomView
 
 
@@ -21,8 +17,8 @@ class TemplateListItemView @JvmOverloads constructor(context: Context, attrs: At
 
     override fun getLayoutRes() = R.layout.view_template_list_item
 
-    fun setData(template:Template){
-        binding.tvName.text = template.tittle
+    fun setData(template: Goal){
+        binding.tvName.text = template.name
     }
 
 }

@@ -15,7 +15,7 @@ class AllGoalsPresenter: BasePresenter<AllGoalsView>() {
      */
     fun initializeThreeFirstGoalsData(){
 
-        val testGoals = listOf<Goal>( Goal(1, "первая") , Goal(2, "вторая") )
+        val testGoals = listOf<Goal>( Goal( "первая") , Goal( "вторая") )
 
         viewState.setThreeFirstGoalViews( testGoals )
     }
