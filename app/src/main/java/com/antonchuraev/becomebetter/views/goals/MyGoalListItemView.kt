@@ -16,6 +16,10 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 
     init {
         this.setMatchWrap()
+
+         binding.llContainer.setOnClickListener {
+            binding.checkBox.isChecked = !binding.checkBox.isChecked
+        }
     }
 
     override fun getLayoutRes() = R.layout.view_my_goal_list_item
