@@ -11,38 +11,62 @@
         android:layout_margin="15dp"
         >
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/llContainer"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingVertical="15dp"
-            android:paddingHorizontal="15dp"
+            android:layout_height="match_parent"
             >
-            <TextView
-                android:id="@+id/tvName"
-                android:layout_width="wrap_content"
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llContainer"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:textColor="@color/white"
-                android:textSize="16sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                android:textStyle="bold"
-                tools:text="name" />
-            <com.google.android.material.checkbox.MaterialCheckBox
-                android:id="@+id/checkBox"
-                android:layout_gravity="center"
-                android:gravity="center"
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
 
-                android:minHeight="0dp"
-                android:minWidth="0dp"
+                    android:textStyle="bold"
+                    tools:text="name" />
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+                    android:layout_gravity="center"
+                    android:gravity="center"
 
+                    android:minWidth="0dp"
+                    android:minHeight="0dp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="100"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/llContainer"
+                app:layout_constraintStart_toStartOf="@+id/llContainer"
+                app:layout_constraintTop_toBottomOf="@+id/llContainer" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </FrameLayout>

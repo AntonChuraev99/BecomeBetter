@@ -15,8 +15,8 @@ data class Goal(
          * 0F to R.string.small_prority , 1F to R.string.standart_prority ,
                 2F to R.string.higherst_prority
          */
-        val priority:Float = 1F
-
+        val priority:Float = 1F,
+        var progress:Int = 0 //прогресс от  0%=0 до 100%=100
 ):Serializable {
 
 
