@@ -32,6 +32,17 @@
         android:textColor="@color/white"
         android:layout_gravity="center"
         />
+
+    <ImageButton
+        android:id="@+id/rigthtImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:background="@android:color/transparent"
+        android:padding="30dp"
+        android:visibility="gone"
+        app:srcCompat="@drawable/ic_arrow_back"
+        tools:visibility="visible" />
 </FrameLayout>
 
 </layout>

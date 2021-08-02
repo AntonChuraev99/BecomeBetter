@@ -30,6 +30,12 @@ class CustomToolbar @JvmOverloads constructor(context: Context , attrs: Attribut
 		setOnClickListener { clickListener?.invoke() }
 	}
 
+	fun setRightButton(@DrawableRes drawableRes: Int , clickListener: (() -> Unit)? = null) = binding.rigthtImage.apply {
+		show()
+		setImageDrawable(ContextCompat.getDrawable(context , drawableRes))
+		setOnClickListener { clickListener?.invoke() }
+	}
+
 
 	fun setTittle(text: String?) {
 		binding.tittle.text = text

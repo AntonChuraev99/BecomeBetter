@@ -20,7 +20,7 @@ import com.antonchuraev.becomebetter.views.goals.TemplateListItemView
 import moxy.presenter.InjectPresenter
 
 
-class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>() , MyGoalsView {
+class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
 
     @InjectPresenter
     lateinit var presenter: MyGoalsGoalsPresenter
@@ -28,7 +28,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>() , MyGoalsView {
     override val layoutView: Int = R.layout.fragment_my_goals
 
     val goalsAdapter = GoalsAdapter().apply {
-        onItemClickListener = { item->
+        onItemClickListener = { item ->
 
         }
     }
@@ -49,6 +49,9 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>() , MyGoalsView {
 
     private fun enableToolbar() {
         setDefaultToolbar(R.string.all_my_goals)
+        toolbar?.setRightButton(R.drawable.ic_edit) {
+            goalsAdapter.isSelectionEnabled = !goalsAdapter.isSelectionEnabled
+        }
     }
 
     private fun setListeners() {
@@ -59,9 +62,13 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>() , MyGoalsView {
         goalsAdapter.items = templates
     }
 
-    class GoalsAdapter: RecyclerView.Adapter<GoalsAdapter.GoalViewHolder>(){
+    class GoalsAdapter : RecyclerView.Adapter<GoalsAdapter.GoalViewHolder>() {
 
         var isSelectionEnabled = false
+            set(value) {
+                field = value
+                notifyDataSetChanged()
+            }
 
         var onItemClickListener: ((Goal) -> Unit)? = null
 
@@ -81,18 +88,24 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>() , MyGoalsView {
             holder.bind(items[position])
             holder.goalView.apply {
                 setOnClickListener {
-                    onItemClickListener?.invoke(items[position])
+                    if (isSelectionEnabled) {
+                        items[position].isSelected = !items[position].isSelected
+                        notifyItemChanged(position)
+                    }
+                    else{
+                        onItemClickListener?.invoke(items[position])
+                    }
                 }
                 setSelectionMode(isSelectionEnabled)
-                setChecked( items[position].isSelected )
+                setChecked(items[position].isSelected)
             }
 
         }
 
         override fun getItemCount() = items.size
 
-        class GoalViewHolder(val goalView: MyGoalListItemView): RecyclerView.ViewHolder(goalView){
-            fun bind(template:Goal){
+        class GoalViewHolder(val goalView: MyGoalListItemView) : RecyclerView.ViewHolder(goalView) {
+            fun bind(template: Goal) {
                 goalView.setData(template)
             }
 

@@ -24,9 +24,6 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
         binding.tvName.text = goal.name
         binding.progressBar.progress = goal.progress
 
-        binding.checkBox.setOnCheckedChangeListener { compoundButton, b ->
-            goal.isSelected = b
-        }
     }
 
     fun setSelectionMode(state:Boolean){
