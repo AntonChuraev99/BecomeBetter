@@ -74,6 +74,10 @@ abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
         router?.exit()
     }
 
+    fun setDefaultToolbar(tittleRes:Int?){
+
+    }
+
     fun <D> log(text:D){
         Log.e(this.javaClass.simpleName, "${text.toString()}");
     }

@@ -5,6 +5,7 @@ import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.NavigationTab
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createGoal.CreateGoalFragment
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createGoalFromTemplate.CreateGoalFromTemplatesFragment
+import com.antonchuraev.becomebetter.fragments.bottomNavigation.allGoals.myGoals.MyGoalsFragment
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.BottomNavigationFragment
 import com.antonchuraev.becomebetter.fragments.splash.SplashFlowFragment
 import com.antonchuraev.becomebetter.fragments.splash.SplashFragment
@@ -42,8 +43,14 @@ object Screens {
             override fun getFragment(): Fragment = BottomNavigationFragment.newInstance(tab)
         }
 
-        object AddGoals{
+        object AllGoals{
+            class MyGoals():SupportAppScreen(){
+                override fun getFragment(): Fragment = MyGoalsFragment.newInstance()
+            }
 
+        }
+
+        object AddGoals{
             class CreateGoal(val item: Goal? = null) : SupportAppScreen(){
                 override fun getFragment(): Fragment = CreateGoalFragment.newInstance(item)
             }

@@ -19,22 +19,21 @@
         >
 
         <LinearLayout
+            android:id="@+id/llAllMyGoals"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:background="@drawable/shape_rectangle_r_8_stroke_aston_martin"
-            android:paddingHorizontal="15dp"
-            >
+            android:orientation="horizontal"
+            android:paddingHorizontal="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:text="@string/all_my_goals"
-                android:layout_gravity="center"
-                android:textSize="24sp"
                 android:textColor="@color/aston_martin"
-                />
+                android:textSize="24sp" />
 
             <ImageView
                 android:layout_width="100dp"
@@ -70,6 +69,10 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/shape_rectangle_r_8"
                 android:backgroundTint="@color/white"
+                android:padding="20dp"
+
+
+                android:foreground="?android:attr/selectableItemBackground"
 
                 >
 
@@ -82,16 +85,13 @@
                     app:tint="@color/aston_martin"
                     />
 
-                <androidx.appcompat.widget.AppCompatButton
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="15dp"
-
-                    android:background="@android:color/transparent"
-
                     android:text="@string/select_or_create_goal"
-
+                    android:gravity="center"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="19sp" />
