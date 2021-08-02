@@ -29,7 +29,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
 
     val goalsAdapter = GoalsAdapter().apply {
         onItemClickListener = { item ->
-
+            appRouter.navigateTo(Screens.Screen.AddGoals.CreateGoal(item))
         }
     }
 
