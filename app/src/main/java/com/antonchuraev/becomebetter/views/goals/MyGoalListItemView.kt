@@ -7,6 +7,7 @@ import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.ViewMyGoalListItemBinding
 import com.antonchuraev.becomebetter.databinding.ViewTemplateListItemBinding
 import com.antonchuraev.becomebetter.helpers.extensions.setMatchWrap
+import com.antonchuraev.becomebetter.helpers.extensions.setWrapWrap
 import com.antonchuraev.becomebetter.views.CustomView
 
 
