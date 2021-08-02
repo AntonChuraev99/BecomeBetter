@@ -27,11 +27,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>() , MyGoalsView {
     }
 
     private fun enableToolbar() {
-        toolbar?.let { toolbar->
-            toolbar.show()
-            toolbar.setTittle(context?.getString(R.string.create_goal))
-            toolbar.defaultBackButton(appRouter)
-        }
+        setDefaultToolbar(R.string.all_my_goals)
     }
 
     private fun setListeners() {

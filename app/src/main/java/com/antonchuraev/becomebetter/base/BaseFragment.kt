@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.views.toolbar.CustomToolbar
 import com.historic.app.global.navigation.FlowCiceroneViewModel
 import com.historic.app.global.navigation.FlowRouter
@@ -75,7 +76,11 @@ abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
     }
 
     fun setDefaultToolbar(tittleRes:Int?){
-
+        toolbar?.let { toolbar->
+            toolbar.show()
+            tittleRes?.let { tittleRes-> toolbar.setTittle(context?.getString(tittleRes)) }
+            toolbar.defaultBackButton(appRouter)
+        }
     }
 
     fun <D> log(text:D){

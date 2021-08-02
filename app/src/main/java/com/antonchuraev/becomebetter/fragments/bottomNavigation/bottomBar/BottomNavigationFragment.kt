@@ -53,6 +53,7 @@ class BottomNavigationFragment : BaseFragment<FragmentMainBinding>() , BottomNav
         setBottomListener()
         presenter.selectedNavigationTab = presenter.selectedNavigationTab
                 ?: NavigationTab[requireArguments().getString(KEY_TAB)!!]
+        log("selected bottom tab:${presenter.selectedNavigationTab}")
         binding.bottomNavigation.selectedItemId = presenter.selectedNavigationTab!!.menuId
 
     }
@@ -61,15 +62,15 @@ class BottomNavigationFragment : BaseFragment<FragmentMainBinding>() , BottomNav
         binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when(item.itemId) {
                 R.id.page_home -> {
-                    openFragmentByTab(NavigationTab.ALL_GOALS)
+                    presenter.selectedNavigationTab = NavigationTab.ALL_GOALS
                     true
                 }
                 R.id.page_add -> {
-                    openFragmentByTab(NavigationTab.ADD_GOAL)
+                    presenter.selectedNavigationTab = NavigationTab.ADD_GOAL
                     true
                 }
                 R.id.page_profile -> {
-                    openFragmentByTab(NavigationTab.PROFILE)
+                    presenter.selectedNavigationTab = NavigationTab.PROFILE
                     true
                 }
                 else -> false
