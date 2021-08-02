@@ -61,6 +61,8 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>() , MyGoalsView {
 
     class GoalsAdapter: RecyclerView.Adapter<GoalsAdapter.GoalViewHolder>(){
 
+        var isSelectionEnabled = false
+
         var onItemClickListener: ((Goal) -> Unit)? = null
 
         var items = mutableListOf<Goal>()
@@ -77,9 +79,14 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>() , MyGoalsView {
 
         override fun onBindViewHolder(holder: GoalViewHolder, position: Int) {
             holder.bind(items[position])
-            holder.goalView.setOnClickListener {
-                onItemClickListener?.invoke(items[position])
+            holder.goalView.apply {
+                setOnClickListener {
+                    onItemClickListener?.invoke(items[position])
+                }
+                setSelectionMode(isSelectionEnabled)
+                setChecked( items[position].isSelected )
             }
+
         }
 
         override fun getItemCount() = items.size

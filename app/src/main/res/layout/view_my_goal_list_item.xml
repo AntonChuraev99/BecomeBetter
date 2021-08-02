@@ -47,7 +47,8 @@
                     android:gravity="center"
 
                     android:minWidth="0dp"
-                    android:minHeight="0dp" />
+                    android:minHeight="0dp"
+                    android:visibility="gone" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
