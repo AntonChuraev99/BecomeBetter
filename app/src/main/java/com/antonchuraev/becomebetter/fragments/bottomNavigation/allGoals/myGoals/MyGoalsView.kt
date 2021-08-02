@@ -8,5 +8,6 @@ import moxy.viewstate.strategy.StateStrategyType
 
 interface MyGoalsView: MvpView {
 
-
+    @StateStrategyType(OneExecutionStateStrategy::class )
+    fun showAllTemplates(templates: MutableList<Goal>)
 }
