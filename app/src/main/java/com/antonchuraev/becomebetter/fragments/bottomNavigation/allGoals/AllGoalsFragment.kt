@@ -30,7 +30,7 @@ class AllGoalsFragment : BaseFragment<FragmentAllGoalsBinding>() , AllGoalsView 
 
     private fun setListeners() {
         binding.llCreateFirstGoal.setOnClickListener {
-            appRouter.navigateTo(Screens.Screen.AddGoals.CreateGoal())
+            appRouter.replaceScreen ( Screens.Screen.BottomNavigation( NavigationTab.ADD_GOAL ) )
         }
     }
 

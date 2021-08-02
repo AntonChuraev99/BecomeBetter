@@ -38,7 +38,7 @@ object Screens {
         /**
          * главный экран с нижней навигацией
          */
-        class BottomNavigation(val tab: NavigationTab? = null): SupportAppScreen(){
+        class BottomNavigation(val tab: NavigationTab = NavigationTab.ALL_GOALS): SupportAppScreen(){
             override fun getFragment(): Fragment = BottomNavigationFragment.newInstance(tab)
         }
 

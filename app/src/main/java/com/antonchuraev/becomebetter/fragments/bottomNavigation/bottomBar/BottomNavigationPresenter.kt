@@ -1,5 +1,6 @@
 package com.antonchuraev.becomebetter.fragments.bottomNavigation
 
+import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BasePresenter
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.BottomNavigationView
 import moxy.InjectViewState
@@ -16,10 +17,10 @@ class BottomNavigationPresenter: BasePresenter<BottomNavigationView>() {
 
 }
 
-enum class NavigationTab(val code: String) {
-    ALL_GOALS("Все цели"),
-    ADD_GOAL("Добавить цель"),
-    PROFILE("Профиль");
+enum class NavigationTab(val code: String ,val menuId:Int) {
+    ALL_GOALS("Все цели" , R.id.page_home),
+    ADD_GOAL("Добавить цель" , R.id.page_add),
+    PROFILE("Профиль" , R.id.page_profile);
 
     companion object {
         operator fun get(code: String) = values().first { it.code == code }

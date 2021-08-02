@@ -17,6 +17,5 @@
         android:enabled="true"
         android:icon="@drawable/bottom_bar_profile"
         android:title="@string/bottom_navigation_profile"
-
         />
 </menu>

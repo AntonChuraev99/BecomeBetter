@@ -15,6 +15,7 @@ import com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.AddGoalV
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.allGoals.AllGoalsFragment
 import com.antonchuraev.becomebetter.fragments.test.TestFragment
 import moxy.presenter.InjectPresenter
+import org.koin.ext.getScopeId
 
 
 class BottomNavigationFragment : BaseFragment<FragmentMainBinding>() , BottomNavigationView {
@@ -52,6 +53,7 @@ class BottomNavigationFragment : BaseFragment<FragmentMainBinding>() , BottomNav
         setBottomListener()
         presenter.selectedNavigationTab = presenter.selectedNavigationTab
                 ?: NavigationTab[requireArguments().getString(KEY_TAB)!!]
+        binding.bottomNavigation.selectedItemId = presenter.selectedNavigationTab!!.menuId
 
     }
 
@@ -106,7 +108,7 @@ class BottomNavigationFragment : BaseFragment<FragmentMainBinding>() , BottomNav
     companion object {
         private const val KEY_TAB = "tab"
         fun newInstance(tab: NavigationTab = NavigationTab.ALL_GOALS) = BottomNavigationFragment().apply {
-            arguments = bundleOf(KEY_TAB to tab.code)
+            arguments = bundleOf(KEY_TAB to tab.code )
         }
     }
 
