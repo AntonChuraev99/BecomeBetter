@@ -36,6 +36,9 @@ class CustomToolbar @JvmOverloads constructor(context: Context , attrs: Attribut
 		setOnClickListener { clickListener?.invoke() }
 	}
 
+	fun setRightVisible(isVisible:Boolean) = binding.rigthtImage.apply {
+		this.isVisible = isVisible
+	}
 
 	fun setTittle(text: String?) {
 		binding.tittle.text = text
