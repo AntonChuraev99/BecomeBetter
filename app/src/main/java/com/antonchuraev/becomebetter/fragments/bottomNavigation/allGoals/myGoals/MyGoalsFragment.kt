@@ -121,7 +121,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
                     if (isSelectionEnabled) {
                         items[position].isSelected = !items[position].isSelected
                         onItemSelectionChange?.invoke(items[position] , items[position].isSelected )
-                        notifyItemChanged(position)
+                        notifyDataSetChanged() // TODO: 09.08.2021 optimize 
                     }
                     else{
                         onItemClickListener?.invoke(items[position])
