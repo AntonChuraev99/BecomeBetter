@@ -78,8 +78,8 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
 
     private fun chekAdaptersChangeVisibility() {
         log("size ${activeGoalsAdapter.items.isNotEmpty()} ${disabledGoalsAdapter.items.isNotEmpty()}")
-        binding.rvActiveGoals.isVisible = activeGoalsAdapter.items.isNotEmpty()
-        binding.rvDisabledGoals.isVisible = disabledGoalsAdapter.items.isNotEmpty()
+        binding.llActiveGoals.isVisible = activeGoalsAdapter.items.isNotEmpty()
+        binding.llDisabledGoals.isVisible = disabledGoalsAdapter.items.isNotEmpty()
     }
 
     override fun showActiveGoals(templates: MutableList<Goal>) {
