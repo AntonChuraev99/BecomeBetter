@@ -68,7 +68,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
             }
         }
         disabledGoalsAdapter.onItemSelectionChange = { item,state ->
-            if (!state){
+            if (state){
                 disabledGoalsAdapter.items.remove(item)
                 activeGoalsAdapter.items.add(item)
                 chekAdaptersChangeVisibility()
@@ -77,6 +77,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
     }
 
     private fun chekAdaptersChangeVisibility() {
+        log("size ${activeGoalsAdapter.items.isNotEmpty()} ${disabledGoalsAdapter.items.isNotEmpty()}")
         binding.rvActiveGoals.isVisible = activeGoalsAdapter.items.isNotEmpty()
         binding.rvDisabledGoals.isVisible = disabledGoalsAdapter.items.isNotEmpty()
     }
