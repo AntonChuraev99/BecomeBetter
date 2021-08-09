@@ -29,4 +29,5 @@
     <string name="all_my_goals">Все мои цели</string>
     <string name="active_goals">Активные цели</string>
     <string name="select_or_create_goal">Выберите или создайте первую цель</string>
+    <string name="disabled_goals">Неактивные цели</string>
 </resources>

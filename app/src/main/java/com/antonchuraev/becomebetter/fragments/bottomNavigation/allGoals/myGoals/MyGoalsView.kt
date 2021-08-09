@@ -9,5 +9,8 @@ import moxy.viewstate.strategy.StateStrategyType
 interface MyGoalsView: MvpView {
 
     @StateStrategyType(OneExecutionStateStrategy::class )
-    fun showAllTemplates(templates: MutableList<Goal>)
+    fun showActiveGoals(goals: MutableList<Goal>)
+
+    @StateStrategyType(OneExecutionStateStrategy::class )
+    fun showDisabledGoals(goals: MutableList<Goal>)
 }
