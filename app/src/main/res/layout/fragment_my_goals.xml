@@ -10,65 +10,70 @@
     android:background="@color/black_background"
     >
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:fillViewport="true">
 
         <LinearLayout
-            android:id="@+id/llActiveGoals"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/shape_rectangle_r_8_stroke_aston_martin"
-            android:orientation="vertical"
-            android:padding="15dp">
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="@string/active_goals"
-                android:textColor="@color/aston_martin"
-                android:textSize="24sp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvActiveGoals"
+            <LinearLayout
+                android:id="@+id/llActiveGoals"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_rectangle_r_8_stroke_aston_martin"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="@string/active_goals"
+                    android:textColor="@color/aston_martin"
+                    android:textSize="24sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvActiveGoals"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llDisabledGoals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_rectangle_r_8_stroke_aston_martin"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="@string/disabled_goals"
+                    android:textColor="@color/aston_martin"
+                    android:textSize="24sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvDisabledGoals"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
 
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/llDisabledGoals"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/shape_rectangle_r_8_stroke_aston_martin"
-            android:orientation="vertical"
-            android:padding="15dp"
-            android:visibility="gone"
-            tools:visibility="visible">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="@string/disabled_goals"
-                android:textColor="@color/aston_martin"
-                android:textSize="24sp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvDisabledGoals"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>
 
