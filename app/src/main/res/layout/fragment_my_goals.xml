@@ -18,7 +18,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingHorizontal="15dp">
 
             <LinearLayout
                 android:id="@+id/llActiveGoals"
@@ -27,7 +28,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/shape_rectangle_r_8_stroke_aston_martin"
                 android:orientation="vertical"
-                android:padding="15dp">
+                android:paddingVertical="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -51,9 +52,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/shape_rectangle_r_8_stroke_aston_martin"
+                android:background="@drawable/shape_rectangle_r_8_stroke_gray"
                 android:orientation="vertical"
-                android:padding="15dp"
+                android:paddingVertical="15dp"
                 android:visibility="gone"
                 tools:visibility="visible">
 
@@ -62,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/disabled_goals"
-                    android:textColor="@color/aston_martin"
+                    android:textColor="@color/с717685"
                     android:textSize="24sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
