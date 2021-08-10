@@ -120,21 +120,23 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
         }
 
         override fun onBindViewHolder(holder: GoalViewHolder, position: Int) {
-            holder.bind(items[position])
-            holder.goalView.apply {
-                setOnClickListener {
-                    if (isSelectionEnabled) {
-                        items[position].isSelected = !items[position].isSelected
-                        onItemSelectionChange?.invoke(items[position] , items[position].isSelected )
-                        notifyDataSetChanged() // TODO: 09.08.2021 optimize 
+            items[position]?.let { item->
+                holder.bind(item)
+                holder.goalView.apply {
+                    setOnClickListener {
+                        if (isSelectionEnabled) {
+                            item.isSelected = !item.isSelected
+                            onItemSelectionChange?.invoke(item , item.isSelected )
+                            notifyDataSetChanged() // TODO: 09.08.2021 optimize
+                        }
+                        else{
+                            onItemClickListener?.invoke(item)
+                        }
                     }
-                    else{
-                        onItemClickListener?.invoke(items[position])
-                    }
+                    setSelectionMode(isSelectionEnabled)
+                    setChecked(item.isSelected)
+                    isInActiveMode(isActiveMode)
                 }
-                setSelectionMode(isSelectionEnabled)
-                setChecked(items[position].isSelected)
-                isInActiveMode(isActiveMode)
             }
 
         }
