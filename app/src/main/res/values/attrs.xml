@@ -6,6 +6,7 @@
         <attr name="type" format="enum" >
             <enum name="duration" value="0"/>
             <enum name="priority" value="1"/>
+            <enum name="progress" value="2"/>
         </attr>
     </declare-styleable>
 

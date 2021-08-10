@@ -31,4 +31,5 @@
     <string name="select_or_create_goal">Выберите или создайте первую цель</string>
     <string name="disabled_goals">Неактивные цели</string>
     <string name="edit_goal">Изменить цель</string>
+    <string name="set_progress">"Установите прогресс "</string>
 </resources>

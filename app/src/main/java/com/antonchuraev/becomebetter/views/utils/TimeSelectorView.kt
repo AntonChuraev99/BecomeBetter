@@ -2,10 +2,10 @@ package com.antonchuraev.becomebetter.views.utils
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.databinding.ViewTimeSelectorBinding
 import com.antonchuraev.becomebetter.views.CustomView
-import java.util.*
 
 
 class TimeSelectorView @JvmOverloads constructor(
@@ -55,26 +55,39 @@ class TimeSelectorView @JvmOverloads constructor(
 		}
 
 		binding.slider.apply {
-			valueTo = style.values.size.toFloat() - 1F
-			value = style.startFrom.toFloat()
-			binding.selectedSize.text = generateTextForSlider(style.ordinal	 , value)
-			setLabelFormatter {
-				generateTextForSlider(style.ordinal , it).apply { binding.selectedSize.text = this }
+			if (style != Type.PROGRESS){
+				valueTo = style.values.size.toFloat() - 1F
+				value = style.startFrom.toFloat()
+				binding.selectedSize.text = generateTextForSlider(style	 , value)
+				setLabelFormatter {
+					generateTextForSlider(style , it).apply { binding.selectedSize.text = this }
+				}
 			}
+			else{
+				valueTo = 100F
+				value = style.startFrom.toFloat()
+				binding.selectedSize.text = generateTextForSlider(style , value)
+				setLabelFormatter {
+					generateTextForSlider(style , it).apply { binding.selectedSize.text = this }
+				}
+			}
+
+
 		}
 	}
 
 	fun setValue(value:Float){
 		binding.slider.apply {
 			this.value = value
-			binding.selectedSize.text = generateTextForSlider(style.ordinal , value)
+			binding.selectedSize.text = generateTextForSlider(style , value)
 			setLabelFormatter {
-				generateTextForSlider(style.ordinal , it).apply { binding.selectedSize.text = this }
+				generateTextForSlider(style , it).apply { binding.selectedSize.text = this }
 			}
 		}
 	}
 
-	private fun generateTextForSlider(styleValue: Int , sliderValue: Float): String {
-		return context.getString(Type.findByAttrs(styleValue).values[sliderValue] ?: throw Exception("value больше допустимых значений") )
+	private fun generateTextForSlider(styleValue: Type , value:Float): String {
+		if (styleValue == Type.PROGRESS) return value.toInt().toString()
+		return context.getString(styleValue.values[value] ?: throw Exception("value больше допустимых значений") )
 	}
 }
