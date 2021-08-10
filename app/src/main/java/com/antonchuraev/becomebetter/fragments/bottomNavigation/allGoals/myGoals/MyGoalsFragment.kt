@@ -10,6 +10,7 @@ import com.antonchuraev.becomebetter.base.BaseFragment
 import com.antonchuraev.becomebetter.base.Screens
 import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.FragmentMyGoalsBinding
+import com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createGoal.CreateGoalFragment
 import com.antonchuraev.becomebetter.views.goals.MyGoalListItemView
 import moxy.presenter.InjectPresenter
 
@@ -23,14 +24,14 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
 
     val activeGoalsAdapter = GoalsAdapter().apply {
         onItemClickListener = { item ->
-            appRouter.navigateTo(Screens.Screen.AddGoals.CreateGoal(item))
+            appRouter.navigateTo(Screens.Screen.AddGoals.CreateGoal(item , CreateGoalFragment.Companion.Mode.EDIT))
         }
     }
 
     val disabledGoalsAdapter = GoalsAdapter().apply {
         isActiveMode = false
         onItemClickListener = { item ->
-            appRouter.navigateTo(Screens.Screen.AddGoals.CreateGoal(item))
+            appRouter.navigateTo(Screens.Screen.AddGoals.CreateGoal(item , CreateGoalFragment.Companion.Mode.EDIT))
         }
     }
 
