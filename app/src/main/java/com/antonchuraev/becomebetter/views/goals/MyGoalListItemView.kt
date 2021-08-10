@@ -25,7 +25,7 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
     fun setData(goal: Goal) {
         binding.tvName.text = goal.name
         binding.progressBar.progress = goal.progress
-
+        binding.tvProgress.text = "${goal.progress}%"
     }
 
     fun setSelectionMode(state: Boolean) {

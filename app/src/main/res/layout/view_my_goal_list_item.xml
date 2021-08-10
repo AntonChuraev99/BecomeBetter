@@ -32,12 +32,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
+
                     android:textColor="@color/white"
                     android:textSize="16sp"
 
                     android:textStyle="bold"
                     tools:text="name" />
+
+                <TextView
+                    android:id="@+id/tvProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    tools:text="0%"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="@color/aston_martin"
+                    android:textSize="18sp"
+                    />
 
                 <com.google.android.material.checkbox.MaterialCheckBox
                     android:id="@+id/checkBox"
@@ -45,14 +58,14 @@
                     android:layout_height="wrap_content"
 
                     android:layout_gravity="center"
-                    android:gravity="center"
+                    android:clickable="false"
 
+                    android:gravity="center"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:visibility="gone"
 
-                    android:clickable="false"
-                    />
+                    android:visibility="gone"
+                    tools:visibility="visible" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
