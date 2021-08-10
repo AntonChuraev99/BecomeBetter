@@ -49,6 +49,7 @@ class CustomToolbar @JvmOverloads constructor(context: Context , attrs: Attribut
 	}
 
 	fun setTittle(text: String?) {
+		binding.tittle.show()
 		binding.tittle.text = text
 	}
 
