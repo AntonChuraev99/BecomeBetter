@@ -41,7 +41,8 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvActiveGoals"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:nestedScrollingEnabled="false"
                     />
 
@@ -69,7 +70,8 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvDisabledGoals"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:nestedScrollingEnabled="false"
                     />
 
