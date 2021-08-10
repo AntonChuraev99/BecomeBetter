@@ -58,6 +58,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
         setDefaultToolbar(R.string.all_my_goals)
         toolbar?.setRightButton(R.drawable.ic_edit) {
             activeGoalsAdapter.isSelectionEnabled = !activeGoalsAdapter.isSelectionEnabled
+            disabledGoalsAdapter.isSelectionEnabled = !disabledGoalsAdapter.isSelectionEnabled
         }
     }
 
@@ -79,7 +80,6 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
     }
 
     private fun chekAdaptersChangeVisibility() {
-        log("size ${activeGoalsAdapter.items.isNotEmpty()} ${disabledGoalsAdapter.items.isNotEmpty()}")
         binding.llActiveGoals.isVisible = activeGoalsAdapter.items.isNotEmpty()
         binding.llDisabledGoals.isVisible = disabledGoalsAdapter.items.isNotEmpty()
     }
