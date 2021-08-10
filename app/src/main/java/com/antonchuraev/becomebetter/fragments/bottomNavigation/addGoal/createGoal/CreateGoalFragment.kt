@@ -18,6 +18,8 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
 
     override val layoutView: Int = R.layout.fragment_create_goal
 
+    lateinit var screenType:Mode
+
     override fun onCreateView(rootView: View) {
         initArgs()
         setListeners()
@@ -32,13 +34,17 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
                 binding.edDescription.setText(goal.description)
                 binding.priorityTimeSelector.setValue(goal.priority)
             }
+
+            (args.getSerializable(MODE_TAG) as? Mode)?.let { mode:Mode ->
+                screenType = mode
+            }
         }
     }
 
     private fun enableToolbar() {
         toolbar?.let { toolbar->
             toolbar.show()
-            toolbar.setTittle(context?.getString(R.string.create_goal))
+            toolbar.setTittle(context?.getString(screenType.toolbarTittle))
             toolbar.defaultBackButton(appRouter)
         }
     }
@@ -80,7 +86,6 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
         enum class Mode(@StringRes val toolbarTittle:Int){
             CREATE_NEW(R.string.create_goal),
             EDIT(R.string.edit_goal),
-
         }
 
         /**

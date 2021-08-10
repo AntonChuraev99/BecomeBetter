@@ -52,7 +52,7 @@ object Screens {
 
         object AddGoals{
             class CreateGoal(val item: Goal? = null , val mode: CreateGoalFragment.Companion.Mode = CreateGoalFragment.Companion.Mode.CREATE_NEW) : SupportAppScreen(){
-                override fun getFragment(): Fragment = CreateGoalFragment.newInstance(item)
+                override fun getFragment(): Fragment = CreateGoalFragment.newInstance(item , mode)
             }
 
             class CreateGoalFromTemplate: SupportAppScreen(){
