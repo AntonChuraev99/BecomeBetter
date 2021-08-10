@@ -76,10 +76,14 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
                 activeGoalsAdapter.items.add(item)
                 chekAdaptersChangeVisibility()
             }
+
         }
     }
 
     private fun chekAdaptersChangeVisibility() {
+        activeGoalsAdapter.notifyDataSetChanged()
+        disabledGoalsAdapter.notifyDataSetChanged()
+
         binding.llActiveGoals.isVisible = activeGoalsAdapter.items.isNotEmpty()
         binding.llDisabledGoals.isVisible = disabledGoalsAdapter.items.isNotEmpty()
     }
@@ -127,11 +131,11 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
                         if (isSelectionEnabled) {
                             item.isSelected = !item.isSelected
                             onItemSelectionChange?.invoke(item , item.isSelected )
-                            notifyDataSetChanged() // TODO: 09.08.2021 optimize
                         }
                         else{
                             onItemClickListener?.invoke(item)
                         }
+
                     }
                     setSelectionMode(isSelectionEnabled)
                     setChecked(item.isSelected)
