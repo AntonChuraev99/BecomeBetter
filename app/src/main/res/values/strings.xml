@@ -32,4 +32,6 @@
     <string name="disabled_goals">Неактивные цели</string>
     <string name="edit_goal">Изменить цель</string>
     <string name="set_progress">"Установите прогресс "</string>
+    <string name="delete">Удалить</string>
+    <string name="save">"Сохранить "</string>
 </resources>

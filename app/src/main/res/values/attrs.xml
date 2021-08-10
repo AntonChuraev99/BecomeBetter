@@ -15,6 +15,8 @@
         <attr name="buttonType" format="enum" >
             <enum name="disable" value="0"/>
             <enum name="active" value="1"/>
+            <enum name="delete" value="2"/>
+            <enum name="save" value="3"/>
         </attr>
     </declare-styleable>
 

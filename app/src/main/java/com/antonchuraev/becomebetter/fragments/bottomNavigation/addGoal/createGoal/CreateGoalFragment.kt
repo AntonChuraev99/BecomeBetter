@@ -3,11 +3,13 @@ package com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createG
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.StringRes
+import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BaseFragment
 import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.FragmentCreateGoalBinding
+import com.antonchuraev.becomebetter.views.utils.ButtonView
 import moxy.presenter.InjectPresenter
 
 
@@ -22,8 +24,20 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
 
     override fun onCreateView(rootView: View) {
         initArgs()
+        setScreenType()
+        setData()
+        refreshButton()
         setListeners()
         enableToolbar()
+    }
+
+    private fun setData() {
+
+    }
+
+    private fun setScreenType() {
+        binding.btCreate.style = screenType.buttonStyle
+        binding.btDelete.isVisible = screenType == Mode.EDIT
     }
 
     private fun initArgs() {
@@ -51,13 +65,17 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
 
     private fun setListeners() {
         binding.edName.addTextChangedListener {
+            refreshButton()
             binding.edName.background = context?.getDrawable(R.drawable.shape_rectangle_r_8)
-            binding.btCreate.setState(it.toString().isNotBlank())
         }
 
         binding.btCreate.onClickListener {
             checkFields()
         }
+    }
+
+    private fun refreshButton() {
+        binding.btCreate.setActiveState(binding.edName.text.toString().isNotBlank())
     }
 
     private fun checkFields() {
@@ -83,9 +101,9 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
         private const val GOAL_TAG = "GOAL_TAG"
         private const val MODE_TAG = "MODE_TAG"
 
-        enum class Mode(@StringRes val toolbarTittle:Int){
-            CREATE_NEW(R.string.create_goal),
-            EDIT(R.string.edit_goal),
+        enum class Mode(@StringRes val toolbarTittle:Int , val buttonStyle :ButtonView.Type){
+            CREATE_NEW(R.string.create_goal , ButtonView.Type.DISABLE),
+            EDIT(R.string.edit_goal , ButtonView.Type.SAVE),
         }
 
         /**

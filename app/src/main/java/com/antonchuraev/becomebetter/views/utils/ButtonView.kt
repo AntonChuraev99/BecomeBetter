@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.databinding.ViewButtonBinding
 import com.antonchuraev.becomebetter.views.CustomView
+import java.nio.file.Files.delete
 import kotlin.properties.Delegates
 
 
@@ -15,9 +16,12 @@ class ButtonView @JvmOverloads constructor(
 
 	override fun getLayoutRes() = R.layout.view_button
 
-	enum class Type(val referenceToAttr: Int , val backgroundColor: Int ,val textColor: Int) {
-		DISABLE (0 , R.color.F0F0F5 , R.color.с9FA2B4) ,
-		ACTIVE(1 , R.color.aston_martin , R.color.main_blue);
+	enum class Type(val referenceToAttr: Int , val backgroundColor: Int ,val textRes:Int ,val textColor: Int , val isEnableToChange:Boolean = false) {
+		DISABLE (0 , R.color.F0F0F5 , R.string.create ,  R.color.с9FA2B4 , isEnableToChange = true) ,
+		ACTIVE(1 , R.color.aston_martin , R.string.create, R.color.main_blue , isEnableToChange = true),
+		DELETE(2 , R.color.F0F0F5 , R.string.delete, R.color.error),
+		SAVE(3 ,R.color.aston_martin , R.string.save, R.color.main_blue)
+		;
 
 		companion object {
 			fun findByAttrs(attrReference: Int) =
@@ -47,13 +51,14 @@ class ButtonView @JvmOverloads constructor(
 
 	private fun updateStyle(type: Type) {
 		binding.button.apply {
+			text = context.getString(type.textRes)
 			backgroundTintList = ColorStateList.valueOf(context.getColor(type.backgroundColor))
 			setTextColor(context.getColor(type.textColor))
 		}
 	}
 
-	fun setState(isEnabled:Boolean){
-		style = if (isEnabled) Type.ACTIVE else Type.DISABLE
+	fun setActiveState(isEnabled:Boolean){
+		if (style.isEnableToChange) style = if (isEnabled) Type.ACTIVE else Type.DISABLE
 	}
 
 	fun onClickListener(action:(()->Unit)?){
