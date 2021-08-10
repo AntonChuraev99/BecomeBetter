@@ -47,6 +47,7 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
                 binding.durationTimeSelector.setValue(goal.duration)
                 binding.edDescription.setText(goal.description)
                 binding.priorityTimeSelector.setValue(goal.priority)
+                binding.progressSelector.setValue(goal.progress.toFloat())
             }
 
             (args.getSerializable(MODE_TAG) as? Mode)?.let { mode:Mode ->
