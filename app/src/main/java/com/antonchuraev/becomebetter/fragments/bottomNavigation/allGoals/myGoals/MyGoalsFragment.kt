@@ -28,6 +28,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
     }
 
     val disabledGoalsAdapter = GoalsAdapter().apply {
+        isActiveMode = false
         onItemClickListener = { item ->
             appRouter.navigateTo(Screens.Screen.AddGoals.CreateGoal(item))
         }
@@ -93,6 +94,8 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
 
     class GoalsAdapter : RecyclerView.Adapter<GoalsAdapter.GoalViewHolder>() {
 
+        var isActiveMode = true
+
         var isSelectionEnabled = false
             set(value) {
                 field = value
@@ -130,6 +133,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
                 }
                 setSelectionMode(isSelectionEnabled)
                 setChecked(items[position].isSelected)
+                isInActiveMode(isActiveMode)
             }
 
         }
