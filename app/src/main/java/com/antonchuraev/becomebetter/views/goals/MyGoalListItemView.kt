@@ -26,9 +26,12 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
         binding.tvName.text = goal.name
         binding.progressBar.progress = goal.progress
         binding.tvProgress.text = "${goal.progress}%"
+        binding.progressSelector.setValue(goal.progress.toFloat())
     }
 
     fun setSelectionMode(state: Boolean) {
+        binding.progressSelector.isVisible  = state
+        binding.linearLayout.isVisible = !state
         binding.checkBox.isVisible = state
     }
 
