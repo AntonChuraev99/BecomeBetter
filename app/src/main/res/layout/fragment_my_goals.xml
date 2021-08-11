@@ -19,13 +19,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="15dp">
+            android:padding="15dp"
+            >
 
             <LinearLayout
                 android:id="@+id/llActiveGoals"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:background="@drawable/shape_rectangle_r_8_stroke_aston_martin"
                 android:orientation="vertical"
                 android:paddingVertical="15dp">
