@@ -40,7 +40,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
         setListeners()
         setRv()
         presenter.loadActiveGoals()
-        presenter.loadActiveGoals()
+        presenter.loadDisabledGoals()
     }
 
     private fun setRv() {
