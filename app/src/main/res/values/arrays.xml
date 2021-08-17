@@ -6,7 +6,10 @@
     </array>
 
     <array name="progress_type">
-        <item>Проценты</item>
-        <item>дни</item>
+        <item>@string/percents</item>
+        <item>@string/days</item>
     </array>
+
+    <string name="percents">Проценты</string>
+    <string name="days">Дни</string>
 </resources>

@@ -101,7 +101,7 @@
             </com.antonchuraev.becomebetter.views.utils.TimeSelectorView>
 
             <Spinner
-                android:id="@+id/sphereSpinner"
+                android:id="@+id/progressTypeSelector"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
                 android:textSize="14sp"

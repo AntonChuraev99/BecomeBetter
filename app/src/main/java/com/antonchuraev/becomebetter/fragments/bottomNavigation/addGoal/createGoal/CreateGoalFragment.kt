@@ -2,6 +2,7 @@ package com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createG
 
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
 import androidx.annotation.StringRes
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
@@ -48,6 +49,8 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
                 binding.edDescription.setText(goal.description)
                 binding.priorityTimeSelector.setValue(goal.priority)
                 binding.progressSelector.setValue(goal.progress.toFloat())
+
+                binding.progressTypeSelector.setSelection(goal.progressType.ordinal)
             }
 
             (args.getSerializable(MODE_TAG) as? Mode)?.let { mode:Mode ->
@@ -72,6 +75,16 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
 
         binding.btCreate.onClickListener {
             checkFields()
+        }
+
+        binding.progressTypeSelector.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, selectedItemPosition: Int, p3: Long) {
+
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+
+            }
         }
     }
 
