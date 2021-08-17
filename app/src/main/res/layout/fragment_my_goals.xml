@@ -42,7 +42,7 @@
                     android:id="@+id/rvActiveGoals"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:nestedScrollingEnabled="false"
+                    android:nestedScrollingEnabled="true"
                     />
 
             </LinearLayout>
@@ -70,7 +70,7 @@
                     android:id="@+id/rvDisabledGoals"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:nestedScrollingEnabled="false"
+                    android:nestedScrollingEnabled="true"
                     />
 
             </LinearLayout>
