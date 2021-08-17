@@ -100,12 +100,27 @@
 
             </com.antonchuraev.becomebetter.views.utils.TimeSelectorView>
 
+            <Spinner
+                android:id="@+id/sphereSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:textSize="14sp"
+                />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="@string/set_progress"
+                android:text="@string/set_current_progress"
                 android:textSize="18sp" />
+
+            <com.antonchuraev.becomebetter.views.utils.TimeSelectorView
+                android:id="@+id/progressDaysSelector"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:type="progress">
+
+            </com.antonchuraev.becomebetter.views.utils.TimeSelectorView>
 
             <com.antonchuraev.becomebetter.views.utils.TimeSelectorView
                 android:id="@+id/progressSelector"
