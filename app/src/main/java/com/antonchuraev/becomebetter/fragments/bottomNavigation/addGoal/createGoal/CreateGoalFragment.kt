@@ -51,6 +51,7 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
                 binding.progressSelector.setValue(goal.progress.toFloat())
 
                 binding.progressTypeSelector.setSelection(goal.progressType.ordinal)
+                setProgressTypeVisible(goal.progressType.ordinal)
             }
 
             (args.getSerializable(MODE_TAG) as? Mode)?.let { mode:Mode ->
@@ -79,13 +80,18 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
 
         binding.progressTypeSelector.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, selectedItemPosition: Int, p3: Long) {
-
+                setProgressTypeVisible(selectedItemPosition)
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
 
             }
         }
+    }
+
+    private fun setProgressTypeVisible(ordinal: Int) {
+        binding.progressSelector.isVisible = ordinal == 0
+        binding.progressDaysSelector.isVisible = ordinal == 1
     }
 
     private fun refreshButton() {
