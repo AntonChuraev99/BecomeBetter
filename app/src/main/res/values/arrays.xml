@@ -4,4 +4,9 @@
         <item>1</item>
         <item>2</item>
     </array>
+
+    <array name="progress_type">
+        <item>Проценты</item>
+        <item>дни</item>
+    </array>
 </resources>

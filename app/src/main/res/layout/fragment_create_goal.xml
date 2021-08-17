@@ -105,6 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
                 android:textSize="14sp"
+                android:entries="@array/progress_type"
                 />
 
             <TextView
