@@ -22,6 +22,8 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
 
     override val layoutView: Int = R.layout.fragment_create_goal
 
+    lateinit var editedGoal: Goal
+
     lateinit var screenType:Mode
 
     override fun onCreateView(rootView: View) {
@@ -45,12 +47,12 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
     private fun initArgs() {
         arguments?.let { args->
             (args.getSerializable(GOAL_TAG) as? Goal)?.let { goal: Goal ->
+                editedGoal = goal
                 binding.edName.setText(goal.name)
                 binding.durationTimeSelector.setValue(goal.duration)
                 binding.edDescription.setText(goal.description)
                 binding.priorityTimeSelector.setValue(goal.priority)
                 binding.progressSelector.setValue(goal.progress.toFloat())
-
                 binding.progressTypeSelector.setSelection(goal.progressType.ordinal)
                 setProgressTypeVisible(goal.progressType.ordinal)
             }
@@ -128,18 +130,25 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
         }
 
         if (allFieldsChecked){
-            createGoal()
+            when(screenType){
+                Mode.EDIT->editGoal()
+                Mode.CREATE_NEW->createGoal()
+            }
         }
 
     }
 
-    /**
-     * binding.priorityTimeSelector.setValue(goal.priority)
-    binding.progressSelector.setValue(goal.progress.toFloat())
+    private fun editGoal() {
+        editedGoal.name = binding.edName.text.toString()
+        editedGoal.duration = binding.durationTimeSelector.getValue()
+        editedGoal.description = binding.edDescription.text.toString()
+        editedGoal.priority = binding.priorityTimeSelector.getValue()
+        editedGoal.progressType = if (binding.progressTypeSelector.selectedItemPosition==0) Goal.ProgressType.PERCENTS else Goal.ProgressType.DAYS
+        editedGoal.progress = if (binding.progressTypeSelector.selectedItemPosition==0) binding.progressSelector.getValue().toInt() else binding.tvDaysCount.text.toString().toInt()
 
-    binding.progressTypeSelector.setSelection(goal.progressType.ordinal)
-    setProgressTypeVisible(goal.progressType.ordinal)
-     */
+        presenter.updateGoal(editedGoal , requireContext())
+    }
+
     private fun createGoal() {
         val goal = Goal(
             name = binding.edName.text.toString() ,
@@ -154,7 +163,7 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
         presenter.createGoal(goal , requireContext())
     }
 
-    override fun goalCreated() {
+    override fun finishWork() {
         appRouter.exit()
     }
 

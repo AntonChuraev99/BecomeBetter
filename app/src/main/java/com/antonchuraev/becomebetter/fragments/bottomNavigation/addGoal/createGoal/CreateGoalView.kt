@@ -8,6 +8,6 @@ import moxy.viewstate.strategy.StateStrategyType
 interface CreateGoalView: MvpView {
 
     @StateStrategyType(AddToEndStrategy::class )
-    fun goalCreated()
+    fun finishWork()
 
 }

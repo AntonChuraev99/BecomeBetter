@@ -13,12 +13,36 @@ class CreateGoalPresenter: BasePresenter<CreateGoalView>() {
 
     fun createGoal(goal:Goal , context:Context){
         CoroutineScope(Dispatchers.IO).launch {
+            var newId = 0
+
+            while (getDatabase(context).goalsDao().getGoals().map { it.id }.contains(newId) ){
+                newId++
+            }
+
+            goal.id = newId
+
             getDatabase(context).goalsDao().insert(goal)
+
             CoroutineScope(Dispatchers.Main).launch {
-                viewState.goalCreated()
+                viewState.finishWork()
             }
 
         }
     }
+
+    fun updateGoal(goal:Goal , context:Context){
+        CoroutineScope(Dispatchers.IO).launch {
+
+            getDatabase(context).goalsDao().update(goal)
+
+            CoroutineScope(Dispatchers.Main).launch {
+                viewState.finishWork()
+            }
+
+        }
+    }
+
+
+
 
 }
