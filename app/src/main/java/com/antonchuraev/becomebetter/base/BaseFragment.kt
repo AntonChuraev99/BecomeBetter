@@ -11,6 +11,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.antonchuraev.becomebetter.R
+import com.antonchuraev.becomebetter.database.GoalsDatabase
 import com.antonchuraev.becomebetter.views.toolbar.CustomToolbar
 import com.historic.app.global.navigation.FlowCiceroneViewModel
 import com.historic.app.global.navigation.FlowRouter
@@ -20,6 +21,9 @@ import ru.terrakok.cicerone.Router
 
 abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
 {
+
+    fun getDatabase() = GoalsDatabase.getDatabase(requireContext())
+
     var toolbar:CustomToolbar? = null
 
     val appRouter: Router by inject()
