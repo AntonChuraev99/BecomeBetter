@@ -100,25 +100,34 @@
 
             </com.antonchuraev.becomebetter.views.utils.TimeSelectorView>
 
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/select_progress_type"
+                android:textSize="18sp" />
             <Spinner
                 android:id="@+id/progressTypeSelector"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
                 android:textSize="14sp"
+                android:layout_marginTop="10dp"
                 android:entries="@array/progress_type"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:text="@string/set_current_progress"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                />
 
             <com.antonchuraev.becomebetter.views.utils.TimeSelectorView
                 android:id="@+id/progressSelector"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 app:type="progress">
 
             </com.antonchuraev.becomebetter.views.utils.TimeSelectorView>
@@ -126,28 +135,41 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/progressDaysSelector"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:visibility="gone"
-                tools:visibility="visible">
+                tools:visibility="visible"
+                android:layout_marginTop="10dp">
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/btMinusDays"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Button" />
+                    android:background="@drawable/bottom_bar_add_goal"/>
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/tvDaysCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
-
-                <Button
-                    android:id="@+id/button3"
+                    android:text="0 "
+                    android:layout_gravity="center"
+                    android:gravity="end"
+                    />
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Button" />
+                    android:layout_weight="1"
+                    android:text="@string/days_"
+                    android:layout_marginLeft="4dp"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    />
+
+                <Button
+                    android:id="@+id/btIncreaseDays"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_bar_add_goal" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
         </LinearLayout>

@@ -87,6 +87,22 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
 
             }
         }
+
+        binding.btMinusDays.setOnClickListener { changeDays(false) }
+        binding.btIncreaseDays.setOnClickListener { changeDays(true) }
+    }
+
+    private fun changeDays(action: Boolean) {
+        val currentNumber = binding.tvDaysCount.text.trim().toString().toInt()
+        if (action){
+            binding.tvDaysCount.text = (currentNumber+1).toString()
+        }
+        else{
+            //check zero
+            if (currentNumber>0){
+                binding.tvDaysCount.text = (currentNumber-1).toString()
+            }
+        }
     }
 
     private fun setProgressTypeVisible(ordinal: Int) {
