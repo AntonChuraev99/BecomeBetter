@@ -151,9 +151,12 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
             isActive = true
         )
 
-        getDatabase().goalsDao().insert(goal)
+        presenter.createGoal(goal , requireContext())
     }
 
+    override fun goalCreated() {
+        appRouter.exit()
+    }
 
     companion object {
         private const val GOAL_TAG = "GOAL_TAG"
