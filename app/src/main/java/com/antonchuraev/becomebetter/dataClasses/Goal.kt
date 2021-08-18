@@ -1,9 +1,13 @@
 package com.antonchuraev.becomebetter.dataClasses
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.io.Serializable
 import java.time.Duration
 
+@Entity
 data class Goal(
+    @PrimaryKey
     val name: String,
 
     /**
