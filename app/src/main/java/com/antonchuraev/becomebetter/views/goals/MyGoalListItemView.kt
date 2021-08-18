@@ -18,6 +18,8 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 
     lateinit var goal: Goal
 
+    var updateGoalListener: ((Goal) -> Unit)? = null
+
     init {
         this.setMatchWrap()
         setUpdateListeners()
@@ -25,8 +27,28 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 
     private fun setUpdateListeners() {
         binding.progressSelector.changeListener = {
-
+            goal.progress = it.toInt()
+            setNewProgressValue(it.toInt())
+            updateGoalListener?.invoke(goal)
         }
+
+        binding.btMinusDays.setOnClickListener {
+            val newProgress = binding.tvDaysCount.text.toString().trim().toInt() -1
+            goal.progress = newProgress
+            setNewProgressValue(newProgress)
+            updateGoalListener?.invoke(goal)
+        }
+        binding.btIncreaseDays.setOnClickListener {
+            val newProgress = binding.tvDaysCount.text.toString().trim().toInt() + 1
+            goal.progress = newProgress
+            setNewProgressValue(newProgress)
+            updateGoalListener?.invoke(goal)
+        }
+    }
+
+    private fun setNewProgressValue(progress: Int) {
+        binding.tvProgress.text = if (goal.progressType == Goal.ProgressType.PERCENTS) "${progress}%" else "$progress дней"
+        binding.tvDaysCount.text = "$progress "
     }
 
 
