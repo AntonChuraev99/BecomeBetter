@@ -53,6 +53,7 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
                 binding.edDescription.setText(goal.description)
                 binding.priorityTimeSelector.setValue(goal.priority)
                 binding.progressSelector.setValue(goal.progress.toFloat())
+                binding.tvDaysCount.text = goal.progress.toString()
                 binding.progressTypeSelector.setSelection(goal.progressType.ordinal)
                 setProgressTypeVisible(goal.progressType.ordinal)
             }
