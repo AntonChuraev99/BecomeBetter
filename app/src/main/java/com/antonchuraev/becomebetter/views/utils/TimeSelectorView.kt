@@ -12,7 +12,7 @@ class TimeSelectorView @JvmOverloads constructor(
 		context: Context , attrs: AttributeSet? = null , defStyleAttr: Int = 0) :
 		CustomView<ViewTimeSelectorBinding>(context , attrs , defStyleAttr) {
 
-	override fun getLayoutRes() = R.layout.view_time_selector
+
 
 	public enum class Type( val startFrom:Int,val values: Map<Float , Int>) {
 		GOAL_DURATION(
@@ -43,6 +43,8 @@ class TimeSelectorView @JvmOverloads constructor(
 
 	var style = Type.GOAL_DURATION
 
+	var changeListener: ((Float) -> Unit)? = null
+
 	init {
          context.theme.obtainStyledAttributes(
 			attrs , R.styleable.TimeSelectorView , 0 , 0
@@ -55,23 +57,18 @@ class TimeSelectorView @JvmOverloads constructor(
 		}
 
 		binding.slider.apply {
-			if (style != Type.PROGRESS){
-				valueTo = style.values.size.toFloat() - 1F
-				value = style.startFrom.toFloat()
-				binding.selectedSize.text = generateTextForSlider(style	 , value)
-				setLabelFormatter {
-					generateTextForSlider(style , it).apply { binding.selectedSize.text = this }
-				}
-			}
-			else{
-				valueTo = 100F
-				value = style.startFrom.toFloat()
-				binding.selectedSize.text = generateTextForSlider(style , value)
-				setLabelFormatter {
-					generateTextForSlider(style , it).apply { binding.selectedSize.text = this }
-				}
+			valueTo = if (style != Type.PROGRESS){
+				style.values.size.toFloat() - 1F
+			} else{
+				100F
 			}
 
+			value = style.startFrom.toFloat()
+			binding.selectedSize.text = generateTextForSlider(style , value)
+			setLabelFormatter {
+				changeListener?.invoke(it)
+				generateTextForSlider(style , it).apply { binding.selectedSize.text = this }
+			}
 
 		}
 	}
@@ -83,6 +80,7 @@ class TimeSelectorView @JvmOverloads constructor(
 			this.value = value
 			binding.selectedSize.text = generateTextForSlider(style , value)
 			setLabelFormatter {
+				changeListener?.invoke(it)
 				generateTextForSlider(style , it).apply { binding.selectedSize.text = this }
 			}
 		}
@@ -92,4 +90,6 @@ class TimeSelectorView @JvmOverloads constructor(
 		if (styleValue == Type.PROGRESS) return value.toInt().toString()
 		return context.getString(styleValue.values[value] ?: throw Exception("value больше допустимых значений") )
 	}
+
+	override fun getLayoutRes() = R.layout.view_time_selector
 }
