@@ -11,6 +11,7 @@ import com.antonchuraev.becomebetter.base.Screens
 import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.FragmentMyGoalsBinding
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createGoal.CreateGoalFragment
+import com.antonchuraev.becomebetter.helpers.adapters.GoalsAdapter
 import com.antonchuraev.becomebetter.views.goals.MyGoalListItemView
 import moxy.presenter.InjectPresenter
 
@@ -98,63 +99,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
         binding.llDisabledGoals.isVisible = goals.isNotEmpty()
     }
 
-    class GoalsAdapter : RecyclerView.Adapter<GoalsAdapter.GoalViewHolder>() {
 
-        var isActiveMode = true
-
-        var isSelectionEnabled = false
-            set(value) {
-                field = value
-                notifyDataSetChanged()
-            }
-
-        var onItemClickListener: ((Goal) -> Unit)? = null
-
-        var onItemSelectionChange:((Goal, Boolean) -> Unit)? = null
-
-        var items = mutableListOf<Goal>()
-            set(value) {
-                field = value
-                notifyDataSetChanged()
-            }
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GoalViewHolder {
-            return GoalViewHolder(
-                MyGoalListItemView(parent.context)
-            )
-        }
-
-        override fun onBindViewHolder(holder: GoalViewHolder, position: Int) {
-            items[position]?.let { item->
-                holder.bind(item)
-                holder.goalView.apply {
-                    setOnClickListener {
-                        if (isSelectionEnabled) {
-                            item.isActive = !item.isActive
-                            onItemSelectionChange?.invoke(item , item.isActive )
-                        }
-                        else{
-                            onItemClickListener?.invoke(item)
-                        }
-
-                    }
-                    setSelectionMode(isSelectionEnabled)
-                    setChecked(item.isActive)
-                    isInActiveMode(isActiveMode)
-                }
-            }
-
-        }
-
-        override fun getItemCount() = items.size
-
-        class GoalViewHolder(val goalView: MyGoalListItemView) : RecyclerView.ViewHolder(goalView) {
-            fun bind(template: Goal) {
-                goalView.setData(template)
-            }
-
-        }
-    }
 
     companion object {
         fun newInstance() = MyGoalsFragment().apply {
