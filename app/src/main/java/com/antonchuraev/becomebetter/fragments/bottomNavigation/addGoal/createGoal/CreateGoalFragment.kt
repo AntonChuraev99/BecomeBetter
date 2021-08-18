@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import androidx.annotation.StringRes
+import androidx.core.view.get
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import com.antonchuraev.becomebetter.R
@@ -127,9 +128,30 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
         }
 
         if (allFieldsChecked){
-            // TODO: 13.07.2021 save to database
+            createGoal()
         }
 
+    }
+
+    /**
+     * binding.priorityTimeSelector.setValue(goal.priority)
+    binding.progressSelector.setValue(goal.progress.toFloat())
+
+    binding.progressTypeSelector.setSelection(goal.progressType.ordinal)
+    setProgressTypeVisible(goal.progressType.ordinal)
+     */
+    private fun createGoal() {
+        val goal = Goal(
+            name = binding.edName.text.toString() ,
+            duration = binding.durationTimeSelector.getValue(),
+            description = binding.edDescription.text.toString(),
+            priority = binding.priorityTimeSelector.getValue(),
+            progressType = if (binding.progressTypeSelector.selectedItemPosition==0) Goal.ProgressType.PERCENTS else Goal.ProgressType.DAYS,
+            progress = if (binding.progressTypeSelector.selectedItemPosition==0) binding.progressSelector.getValue().toInt() else binding.tvDaysCount.text.toString().toInt() ,
+            isActive = true
+        )
+
+        getDatabase().goalsDao().insert(goal)
     }
 
 

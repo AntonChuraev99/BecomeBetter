@@ -22,9 +22,10 @@ data class Goal(
     2F to R.string.higherst_prority
      */
     val priority: Float = 1F,
+    var progressType: ProgressType = ProgressType.PERCENTS, //тип как ведется проогресс
     var progress: Int = 0,//прогресс от  0%=0 до 100%=100
-    var isActive: Boolean = false,//активная ли цель
-    var progressType: ProgressType = ProgressType.PERCENTS //тип как ведется проогресс
+    var isActive: Boolean = false//активная ли цель
+
 
 ) : Serializable {
 

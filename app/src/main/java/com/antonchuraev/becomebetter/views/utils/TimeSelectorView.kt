@@ -76,6 +76,8 @@ class TimeSelectorView @JvmOverloads constructor(
 		}
 	}
 
+	fun getValue() = binding.slider.value
+
 	fun setValue(value:Float){
 		binding.slider.apply {
 			this.value = value

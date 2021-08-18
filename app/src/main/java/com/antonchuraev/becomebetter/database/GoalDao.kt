@@ -11,12 +11,12 @@ public interface GoalDao {
     fun getGoals(isActive:Boolean): List<Goal>
 
     @Insert
-    fun insert(employee: Goal)
+    fun insert(goal: Goal)
 
     @Update
-    fun update(employee: Goal)
+    fun update(goal: Goal)
 
     @Delete
-    fun delete(employee: Goal)
+    fun delete(goal: Goal)
 
 }
