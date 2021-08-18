@@ -144,7 +144,7 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
         editedGoal.description = binding.edDescription.text.toString()
         editedGoal.priority = binding.priorityTimeSelector.getValue()
         editedGoal.progressType = if (binding.progressTypeSelector.selectedItemPosition==0) Goal.ProgressType.PERCENTS else Goal.ProgressType.DAYS
-        editedGoal.progress = if (binding.progressTypeSelector.selectedItemPosition==0) binding.progressSelector.getValue().toInt() else binding.tvDaysCount.text.toString().toInt()
+        editedGoal.progress = if (binding.progressTypeSelector.selectedItemPosition==0) binding.progressSelector.getValue().toInt() else binding.tvDaysCount.text.trim().toString().toInt()
 
         presenter.updateGoal(editedGoal , requireContext())
     }
