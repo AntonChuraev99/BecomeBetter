@@ -1,5 +1,8 @@
 package com.antonchuraev.becomebetter.base
 
+import android.content.Context
+import androidx.core.content.ContentProviderCompat.requireContext
+import com.antonchuraev.becomebetter.database.GoalsDatabase
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import moxy.MvpPresenter
@@ -10,6 +13,8 @@ abstract class BasePresenter<View : MvpView> : MvpPresenter<View>(), KoinCompone
     val tag = this.javaClass.toString()
 
     private val disposables = CompositeDisposable()
+
+    fun getDatabase(context:Context) = GoalsDatabase.getDatabase(context)
 
     protected fun Disposable.unsubscribeOnDestroy() {
         disposables.add(this)

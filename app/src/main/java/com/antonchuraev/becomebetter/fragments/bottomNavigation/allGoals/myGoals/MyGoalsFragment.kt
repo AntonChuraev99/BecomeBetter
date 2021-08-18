@@ -39,8 +39,8 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
         enableToolbar()
         setListeners()
         setRv()
-        presenter.loadActiveGoals()
-        presenter.loadDisabledGoals()
+        presenter.loadActiveGoals(requireContext())
+        presenter.loadDisabledGoals(requireContext())
     }
 
     private fun setRv() {
