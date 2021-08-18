@@ -32,4 +32,10 @@ class MyGoalsGoalsPresenter: BasePresenter<MyGoalsView>() {
 
     }
 
+    fun updateGoal(goal:Goal , context:Context){
+        CoroutineScope(Dispatchers.IO).launch {
+            getDatabase(context).goalsDao().update(goal)
+        }
+    }
+
 }

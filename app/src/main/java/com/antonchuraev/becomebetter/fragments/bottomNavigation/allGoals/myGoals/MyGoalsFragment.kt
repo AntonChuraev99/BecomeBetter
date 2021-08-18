@@ -71,6 +71,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
     private fun setListeners() {
         activeGoalsAdapter.onItemSelectionChange = { item,state ->
             if (!state){
+                presenter.updateGoal(item , requireContext())
                 activeGoalsAdapter.items.remove(item)
                 disabledGoalsAdapter.items.add(item)
                 chekAdaptersChangeVisibility()
@@ -78,6 +79,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
         }
         disabledGoalsAdapter.onItemSelectionChange = { item,state ->
             if (state){
+                presenter.updateGoal(item , requireContext())
                 disabledGoalsAdapter.items.remove(item)
                 activeGoalsAdapter.items.add(item)
                 chekAdaptersChangeVisibility()
