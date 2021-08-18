@@ -12,10 +12,10 @@
         android:icon="@drawable/bottom_bar_add_goal"
 
         android:title="@string/bottom_navigation_add_goal"/>
-    <item
+    <!--<item
         android:id="@+id/page_profile"
         android:enabled="true"
         android:icon="@drawable/bottom_bar_profile"
         android:title="@string/bottom_navigation_profile"
-        />
+        />-->
 </menu>

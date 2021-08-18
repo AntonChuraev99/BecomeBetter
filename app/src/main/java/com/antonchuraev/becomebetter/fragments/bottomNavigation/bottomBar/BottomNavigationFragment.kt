@@ -26,8 +26,8 @@ class BottomNavigationFragment : BaseFragment<FragmentMainBinding>() , BottomNav
     private val tabMenus: List<NavigationTab>
         get() = listOf(
                 NavigationTab.ALL_GOALS,
-                NavigationTab.ADD_GOAL,
-                NavigationTab.PROFILE
+                NavigationTab.ADD_GOAL
+                //NavigationTab.PROFILE
         )
 
     private val tabFragments: Map<NavigationTab, Fragment> by lazy {
@@ -39,11 +39,11 @@ class BottomNavigationFragment : BaseFragment<FragmentMainBinding>() , BottomNav
                 NavigationTab.ADD_GOAL to getFragmentByTag(
                         childFragmentManager,
                         NavigationTab.ADD_GOAL.code, AddGoalFragment.newInstance()
-                ),
+                )/*,
                 NavigationTab.PROFILE to getFragmentByTag(
                         childFragmentManager,
                         NavigationTab.PROFILE.code, TestFragment.newInstance()
-                )
+                )*/
         )
     }
 
@@ -69,10 +69,10 @@ class BottomNavigationFragment : BaseFragment<FragmentMainBinding>() , BottomNav
                     presenter.selectedNavigationTab = NavigationTab.ADD_GOAL
                     true
                 }
-                R.id.page_profile -> {
+                /*R.id.page_profile -> {
                     presenter.selectedNavigationTab = NavigationTab.PROFILE
                     true
-                }
+                }*/
                 else -> false
             }
         }

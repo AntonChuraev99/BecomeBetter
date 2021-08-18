@@ -20,7 +20,9 @@ class BottomNavigationPresenter: BasePresenter<BottomNavigationView>() {
 enum class NavigationTab(val code: String ,val menuId:Int) {
     ALL_GOALS("Все цели" , R.id.page_home),
     ADD_GOAL("Добавить цель" , R.id.page_add),
-    PROFILE("Профиль" , R.id.page_profile);
+    //PROFILE("Профиль" , R.id.page_profile);
+
+    ;
 
     companion object {
         operator fun get(code: String) = values().first { it.code == code }
