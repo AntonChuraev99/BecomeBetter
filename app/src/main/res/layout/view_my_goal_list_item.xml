@@ -8,7 +8,6 @@
         android:id="@+id/flContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
         android:background="@drawable/shape_rectangle_r_8_stroke_aston_martin">
 
         <androidx.constraintlayout.widget.ConstraintLayout
