@@ -10,7 +10,7 @@ class MyGoalsGoalsPresenter: BasePresenter<MyGoalsView>() {
     fun loadActiveGoals(){
         val templates = mutableListOf<Goal>()
 
-        templates.forEach { it.isSelected = true }
+        templates.forEach { it.isActive = true }
 
         viewState.showActiveGoals(templates)
     }

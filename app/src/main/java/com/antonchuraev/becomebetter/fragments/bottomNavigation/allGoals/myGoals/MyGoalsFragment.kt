@@ -130,8 +130,8 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
                 holder.goalView.apply {
                     setOnClickListener {
                         if (isSelectionEnabled) {
-                            item.isSelected = !item.isSelected
-                            onItemSelectionChange?.invoke(item , item.isSelected )
+                            item.isActive = !item.isActive
+                            onItemSelectionChange?.invoke(item , item.isActive )
                         }
                         else{
                             onItemClickListener?.invoke(item)
@@ -139,7 +139,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
 
                     }
                     setSelectionMode(isSelectionEnabled)
-                    setChecked(item.isSelected)
+                    setChecked(item.isActive)
                     isInActiveMode(isActiveMode)
                 }
             }

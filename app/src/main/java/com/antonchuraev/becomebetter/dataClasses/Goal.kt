@@ -23,7 +23,7 @@ data class Goal(
      */
     val priority: Float = 1F,
     var progress: Int = 0,//прогресс от  0%=0 до 100%=100
-    var isSelected: Boolean = false,//для адаптера выбранно ли
+    var isActive: Boolean = false,//активная ли цель
     var progressType: ProgressType = ProgressType.PERCENTS //тип как ведется проогресс
 
 ) : Serializable {
