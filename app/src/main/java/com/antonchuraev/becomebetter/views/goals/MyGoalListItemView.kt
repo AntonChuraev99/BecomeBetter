@@ -73,8 +73,7 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
                 binding.llProgress.isVisible = !state
             }
             Goal.ProgressType.DAYS->{
-                binding.btIncreaseDays.isVisible = state
-                binding.btMinusDays.isVisible = state
+                binding.progressDaysSelector.isVisible = state
             }
         }
 

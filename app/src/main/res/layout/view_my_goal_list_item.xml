@@ -86,8 +86,7 @@
                     android:id="@+id/btMinusDays"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_minus"
-                    android:visibility="gone" />
+                    android:background="@drawable/ic_minus" />
 
                 <TextView
                     android:id="@+id/tvDaysCount"
@@ -111,8 +110,7 @@
                     android:id="@+id/btIncreaseDays"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_plus"
-                    android:visibility="gone" />
+                    android:background="@drawable/ic_plus" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <LinearLayout
