@@ -142,9 +142,9 @@
 
                 <Button
                     android:id="@+id/btMinusDays"
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bottom_bar_add_goal"/>
+                    android:background="@drawable/ic_minus"/>
 
                 <TextView
                     android:id="@+id/tvDaysCount"
@@ -167,9 +167,9 @@
 
                 <Button
                     android:id="@+id/btIncreaseDays"
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bottom_bar_add_goal" />
+                    android:background="@drawable/ic_plus" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
         </LinearLayout>
