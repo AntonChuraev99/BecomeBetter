@@ -1,23 +1,31 @@
 package com.antonchuraev.becomebetter.fragments.bottomNavigation.allGoals
 
+import android.content.Context
 import com.antonchuraev.becomebetter.base.BasePresenter
-import com.antonchuraev.becomebetter.dataClasses.Goal
-import com.antonchuraev.becomebetter.views.goals.GoalInListView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import moxy.InjectViewState
 
 @InjectViewState
 class AllGoalsPresenter: BasePresenter<AllGoalsView>() {
 
     /**
-     * // TODO: 10.04.2021
-     * проинициализировать 3 первых цели
+     *
+     * проинициализировать активные
      * если таких нету то добавить заглушку с предложением
      */
-    fun initializeThreeFirstGoalsData(){
+    fun loadActiveGoals(context:Context){
 
-        val testGoals = listOf<Goal>( Goal( "первая") , Goal( "вторая") )
+        CoroutineScope(Dispatchers.IO).launch {
 
-        viewState.setThreeFirstGoalViews( testGoals )
+            val goals = getDatabase(context).goalsDao().getGoals(true)
+
+            CoroutineScope(Dispatchers.Main).launch {
+                viewState.showActiveGoals(goals)
+            }
+
+        }
     }
 
 }

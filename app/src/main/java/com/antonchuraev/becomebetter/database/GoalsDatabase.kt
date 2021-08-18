@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.antonchuraev.becomebetter.dataClasses.Goal
 
-@Database(entities = [Goal::class], version = 1)
+@Database(entities = [Goal::class], version = 2)
 public abstract class GoalsDatabase:RoomDatabase() {
 
     abstract fun goalsDao(): GoalDao
@@ -25,7 +25,9 @@ public abstract class GoalsDatabase:RoomDatabase() {
                     context.applicationContext,
                     GoalsDatabase::class.java,
                     "goal_database"
-                ).build()
+                )
+                    .fallbackToDestructiveMigration()
+                    .build()
                 INSTANCE = instance
                 // return instance
                 instance

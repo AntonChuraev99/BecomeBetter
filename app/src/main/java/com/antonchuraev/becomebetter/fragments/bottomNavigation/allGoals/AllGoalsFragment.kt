@@ -6,11 +6,7 @@ import com.antonchuraev.becomebetter.base.BaseFragment
 import com.antonchuraev.becomebetter.base.Screens
 import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.FragmentAllGoalsBinding
-import com.antonchuraev.becomebetter.fragments.bottomNavigation.BottomNavigationPresenter
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.NavigationTab
-import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.BottomNavigationView
-import com.antonchuraev.becomebetter.helpers.extensions.toast
-import com.antonchuraev.becomebetter.views.goals.GoalInListView
 import moxy.presenter.InjectPresenter
 
 
@@ -22,10 +18,9 @@ class AllGoalsFragment : BaseFragment<FragmentAllGoalsBinding>() , AllGoalsView 
     override val layoutView: Int = R.layout.fragment_all_goals
 
     override fun onCreateView(rootView: View) {
-        presenter.initializeThreeFirstGoalsData()
+        presenter.loadActiveGoals(requireContext())
 
         setListeners()
-
     }
 
     private fun setListeners() {
@@ -45,7 +40,7 @@ class AllGoalsFragment : BaseFragment<FragmentAllGoalsBinding>() , AllGoalsView 
         }
     }
 
-    override fun setThreeFirstGoalViews(goals: List<Goal>) {
+    override fun showActiveGoals(goals: List<Goal>) {
 
     }
 

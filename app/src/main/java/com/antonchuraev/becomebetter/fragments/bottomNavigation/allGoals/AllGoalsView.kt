@@ -9,7 +9,7 @@ import moxy.viewstate.strategy.StateStrategyType
 interface AllGoalsView: MvpView {
 
     @StateStrategyType(OneExecutionStateStrategy::class )
-    fun setThreeFirstGoalViews(views:List<Goal>)
+    fun showActiveGoals(views:List<Goal>)
 
 
 }
