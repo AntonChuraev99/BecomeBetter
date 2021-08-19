@@ -8,7 +8,7 @@ import ru.terrakok.cicerone.Router
 import ru.terrakok.cicerone.android.support.SupportAppScreen
 import javax.inject.Inject
 
-class Navigation(val baseRouter:CommonRouter) : NavigationInterface , Router() {
+class AnimatedNavigation(val baseRouter:CommonRouter) : NavigationInterface , Router() {
 
 
     override fun insertScreen(screen: SupportAppScreen) {

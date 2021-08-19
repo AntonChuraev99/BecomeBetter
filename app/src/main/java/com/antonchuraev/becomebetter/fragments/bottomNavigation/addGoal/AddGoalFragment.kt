@@ -31,11 +31,11 @@ class AddGoalFragment : BaseFragment<FragmentAddGoalBinding>() , AddGoalView {
 
 
     override fun toCreateYourGoal() {
-        appMainRouter.navigateTo(Screens.Screen.AddGoals.CreateGoal())
+        getRouter().navigateTo(Screens.Screen.AddGoals.CreateGoal())
     }
 
     override fun toCreateGoalFromTemplates() {
-        appMainRouter.navigateTo(Screens.Screen.AddGoals.CreateGoalFromTemplate())
+        getRouter().navigateTo(Screens.Screen.AddGoals.CreateGoalFromTemplate())
     }
 
     companion object {

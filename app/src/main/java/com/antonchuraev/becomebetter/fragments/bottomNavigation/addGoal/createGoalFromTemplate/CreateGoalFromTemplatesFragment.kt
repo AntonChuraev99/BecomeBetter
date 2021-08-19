@@ -28,7 +28,7 @@ class CreateGoalFromTemplatesFragment : BaseFragment<FragmentCreateGoalFromTempl
     }
 
     private fun onTemplateClick(item: Goal) {
-        appMainRouter.navigateTo(Screens.Screen.AddGoals.CreateGoal(item))
+        getRouter().navigateTo(Screens.Screen.AddGoals.CreateGoal(item))
     }
 
     override fun onCreateView(rootView: View) {
@@ -41,7 +41,7 @@ class CreateGoalFromTemplatesFragment : BaseFragment<FragmentCreateGoalFromTempl
         toolbar?.let { toolbar->
             toolbar.show()
             toolbar.setTittle(context?.getString(R.string.choose_template))
-            toolbar.defaultBackButton(appMainRouter)
+            toolbar.defaultBackButton(getRouter())
         }
     }
 

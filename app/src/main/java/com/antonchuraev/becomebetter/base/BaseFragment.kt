@@ -10,8 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.antonchuraev.becomebetter.R
-import com.antonchuraev.becomebetter.base.cicerone.Navigation
+import com.antonchuraev.becomebetter.base.cicerone.AnimatedNavigation
 import com.antonchuraev.becomebetter.database.GoalsDatabase
 import com.antonchuraev.becomebetter.views.toolbar.CustomToolbar
 import com.historic.app.global.navigation.FlowCiceroneViewModel
@@ -19,7 +18,6 @@ import com.historic.app.global.navigation.FlowRouter
 import moxy.MvpAppCompatFragment
 import org.koin.android.ext.android.inject
 import ru.likebz.toolbox.cicerone.CommonRouter
-import ru.terrakok.cicerone.Router
 
 abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
 {
@@ -30,7 +28,12 @@ abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
 
     val appRouter: CommonRouter by inject()
 
-    val appMainRouter = Navigation(appRouter)
+    /**
+     * мне не нравят анимации поэтому оставим стандартный
+     */
+    private val animatedRouter = AnimatedNavigation(appRouter)
+
+    fun getRouter() = appRouter
 
     protected val router: FlowRouter? by lazy {
         val flowParent = this as? FlowFragment ?: getParent(this)
@@ -80,7 +83,7 @@ abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
     }
 
     open fun onBackPressed() {
-        appMainRouter.exit()
+        animatedRouter.exit()
     }
 
     fun setDefaultToolbar(tittleRes:Int?){
