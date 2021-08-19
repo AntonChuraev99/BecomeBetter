@@ -3,7 +3,7 @@ package com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal
 import android.view.View
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BaseFragment
-import com.antonchuraev.becomebetter.base.Screens
+import com.antonchuraev.becomebetter.base.cicerone.Screens
 import com.antonchuraev.becomebetter.databinding.FragmentAddGoalBinding
 import moxy.presenter.InjectPresenter
 

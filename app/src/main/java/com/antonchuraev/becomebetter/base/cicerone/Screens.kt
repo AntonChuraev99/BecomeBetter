@@ -1,4 +1,4 @@
-package com.antonchuraev.becomebetter.base
+package com.antonchuraev.becomebetter.base.cicerone
 
 import androidx.fragment.app.Fragment
 import com.antonchuraev.becomebetter.dataClasses.Goal

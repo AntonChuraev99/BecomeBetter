@@ -6,11 +6,10 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BaseFragment
-import com.antonchuraev.becomebetter.base.Screens
+import com.antonchuraev.becomebetter.base.cicerone.Screens
 import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.FragmentAllGoalsBinding
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.NavigationTab
-import com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createGoal.CreateGoalFragment
 import com.antonchuraev.becomebetter.helpers.adapters.GoalsAdapter
 import com.antonchuraev.becomebetter.helpers.extensions.add10DpDecorator
 import moxy.presenter.InjectPresenter

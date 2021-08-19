@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BaseFragment
-import com.antonchuraev.becomebetter.base.Screens
+import com.antonchuraev.becomebetter.base.cicerone.Screens
 import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.FragmentCreateGoalFromTemplatesBinding
 import com.antonchuraev.becomebetter.views.goals.TemplateListItemView

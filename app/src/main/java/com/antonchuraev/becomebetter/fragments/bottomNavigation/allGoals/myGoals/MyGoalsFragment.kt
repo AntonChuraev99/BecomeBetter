@@ -1,21 +1,18 @@
 package com.antonchuraev.becomebetter.fragments.bottomNavigation.allGoals.myGoals
 
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BaseFragment
-import com.antonchuraev.becomebetter.base.Screens
+import com.antonchuraev.becomebetter.base.cicerone.Screens
 import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.FragmentMyGoalsBinding
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.NavigationTab
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createGoal.CreateGoalFragment
 import com.antonchuraev.becomebetter.helpers.adapters.GoalsAdapter
 import com.antonchuraev.becomebetter.helpers.extensions.add10DpDecorator
-import com.antonchuraev.becomebetter.views.goals.MyGoalListItemView
 import moxy.presenter.InjectPresenter
 
 

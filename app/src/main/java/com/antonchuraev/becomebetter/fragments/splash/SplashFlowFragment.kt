@@ -2,7 +2,7 @@ package com.antonchuraev.becomebetter.fragments.splash
 
 import android.view.View
 import com.antonchuraev.becomebetter.base.FlowFragment
-import com.antonchuraev.becomebetter.base.Screens
+import com.antonchuraev.becomebetter.base.cicerone.Screens
 import ru.terrakok.cicerone.android.support.SupportAppScreen
 
 class SplashFlowFragment : FlowFragment() {

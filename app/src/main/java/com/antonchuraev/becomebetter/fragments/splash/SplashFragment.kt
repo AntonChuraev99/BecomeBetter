@@ -2,7 +2,7 @@ package com.antonchuraev.becomebetter.fragments.splash
 
 import android.view.View
 import com.antonchuraev.becomebetter.base.BaseFragment
-import com.antonchuraev.becomebetter.base.Screens
+import com.antonchuraev.becomebetter.base.cicerone.Screens
 import com.antonchuraev.becomebetter.databinding.FragmentSplashBinding
 import moxy.presenter.InjectPresenter
 
