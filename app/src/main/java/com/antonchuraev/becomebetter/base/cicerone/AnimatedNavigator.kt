@@ -83,4 +83,8 @@ open class AnimatedNavigator(
         fragmentTransaction.add(containerId, fragment)
             .addToBackStack(screen.screenKey).commit()
     }
+
+    override fun activityBack() {
+
+    }
 }
