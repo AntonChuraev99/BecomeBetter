@@ -99,6 +99,11 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
         binding.btDelete.onClickListener {
             presenter.deleteGoal(editedGoal , requireContext())
         }
+
+        binding.edEnterMax.addTextChangedListener {
+            binding.progressSelector.setMaxValue( it.toString().trim().toInt().toFloat() )
+        }
+
     }
 
     private fun changeDays(action: Boolean) {
@@ -115,9 +120,10 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
     }
 
     private fun setProgressTypeVisible(ordinal: Int) {
-        binding.progressSelector.isVisible = ordinal == 0
+        binding.progressSelector.isVisible = ordinal == 0 || ordinal == 2
         binding.progressDaysSelector.isVisible = ordinal == 1
         binding.edEnterMax.isVisible = ordinal == 2
+        if ( ordinal!=2 ) binding.progressSelector.setMaxValue(100F)
     }
 
     private fun refreshButton() {

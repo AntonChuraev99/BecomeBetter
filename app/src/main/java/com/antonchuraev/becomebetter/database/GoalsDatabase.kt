@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.antonchuraev.becomebetter.dataClasses.Goal
 
-@Database(entities = [Goal::class], version = 2)
+@Database(entities = [Goal::class], version = 3)
 public abstract class GoalsDatabase:RoomDatabase() {
 
     abstract fun goalsDao(): GoalDao

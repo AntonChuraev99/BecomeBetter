@@ -27,8 +27,7 @@ class TimeSelectorView @JvmOverloads constructor(
 				2F to R.string.higherst_prority
 					 )
 					 ),
-		PROGRESS( 0 , mapOf()
-		)
+		PROGRESS( 0 , mapOf())
 
 		;
 
@@ -78,6 +77,17 @@ class TimeSelectorView @JvmOverloads constructor(
 	fun setValue(value:Float){
 		binding.slider.apply {
 			this.value = value
+			binding.selectedSize.text = generateTextForSlider(style , value)
+			setLabelFormatter {
+				changeListener?.invoke(it)
+				generateTextForSlider(style , it).apply { binding.selectedSize.text = this }
+			}
+		}
+	}
+
+	fun setMaxValue(value:Float){
+		binding.slider.apply {
+			valueTo = value
 			binding.selectedSize.text = generateTextForSlider(style , value)
 			setLabelFormatter {
 				changeListener?.invoke(it)
