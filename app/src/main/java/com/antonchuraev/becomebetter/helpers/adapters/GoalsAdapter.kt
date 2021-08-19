@@ -9,11 +9,18 @@ class GoalsAdapter : RecyclerView.Adapter<GoalsAdapter.GoalViewHolder>() {
 
     var isActiveMode = true
 
+    var selectionType = SelectionType.SHOW_CHECKBOX
+
     var isSelectionEnabled = false
         set(value) {
             field = value
             notifyDataSetChanged()
         }
+
+    enum class SelectionType{
+        SHOW_CHECKBOX,
+        HIDE_CHECKBOX;
+    }
 
     var onItemClickListener: ((Goal) -> Unit)? = null
 
@@ -48,7 +55,7 @@ class GoalsAdapter : RecyclerView.Adapter<GoalsAdapter.GoalViewHolder>() {
 
                 }
                 updateGoalListener = onItemUpdateListener
-                setSelectionMode(isSelectionEnabled)
+                setSelectionMode(isSelectionEnabled , selectionType)
                 setChecked(item.isActive)
                 isInActiveMode(isActiveMode)
             }

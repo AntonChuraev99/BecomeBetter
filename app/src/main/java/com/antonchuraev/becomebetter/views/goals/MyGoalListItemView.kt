@@ -8,6 +8,7 @@ import androidx.core.view.isVisible
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.ViewMyGoalListItemBinding
+import com.antonchuraev.becomebetter.helpers.adapters.GoalsAdapter
 import com.antonchuraev.becomebetter.helpers.extensions.setMatchWrap
 import com.antonchuraev.becomebetter.views.CustomView
 
@@ -66,7 +67,7 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
         binding.tvDaysCount.text = goal.progress.toString()
     }
 
-    fun setSelectionMode(state: Boolean) {
+    fun setSelectionMode(state: Boolean , selectionType: GoalsAdapter.SelectionType) {
         when (goal.progressType){
             Goal.ProgressType.PERCENTS->{
                 binding.progressSelector.isVisible  = state
@@ -77,7 +78,7 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
             }
         }
 
-        binding.checkBox.isVisible = state
+        binding.checkBox.isVisible = state && selectionType == GoalsAdapter.SelectionType.SHOW_CHECKBOX
     }
 
     fun setChecked(state: Boolean) {

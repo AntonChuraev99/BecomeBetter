@@ -24,7 +24,10 @@ class AllGoalsFragment : BaseFragment<FragmentAllGoalsBinding>() , AllGoalsView 
     override val layoutView: Int = R.layout.fragment_all_goals
 
     val activeGoalsAdapter = GoalsAdapter().apply {
-
+        selectionType = GoalsAdapter.SelectionType.HIDE_CHECKBOX
+        onItemUpdateListener = {
+            presenter.updateGoal(it , requireContext())
+        }
     }
 
     override fun onCreateView(rootView: View) {
@@ -49,6 +52,10 @@ class AllGoalsFragment : BaseFragment<FragmentAllGoalsBinding>() , AllGoalsView 
 
         binding.llAllMyGoals.setOnClickListener {
             appRouter.navigateTo ( Screens.Screen.AllGoals.MyGoals() )
+        }
+
+        binding.ivEdit.setOnClickListener {
+            activeGoalsAdapter.isSelectionEnabled = !activeGoalsAdapter.isSelectionEnabled
         }
     }
 
