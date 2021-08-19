@@ -42,7 +42,17 @@ class CreateGoalPresenter: BasePresenter<CreateGoalView>() {
         }
     }
 
+    fun deleteGoal(goal:Goal , context:Context){
+        CoroutineScope(Dispatchers.IO).launch {
 
+            getDatabase(context).goalsDao().delete(goal)
+
+            CoroutineScope(Dispatchers.Main).launch {
+                viewState.finishWork()
+            }
+
+        }
+    }
 
 
 }

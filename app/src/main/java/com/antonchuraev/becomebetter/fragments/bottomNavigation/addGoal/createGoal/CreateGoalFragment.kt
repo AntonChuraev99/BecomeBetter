@@ -94,6 +94,8 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
 
         binding.btMinusDays.setOnClickListener { changeDays(false) }
         binding.btIncreaseDays.setOnClickListener { changeDays(true) }
+
+        binding.btDelete.setOnClickListener { presenter.deleteGoal(editedGoal , requireContext()) }
     }
 
     private fun changeDays(action: Boolean) {
