@@ -107,11 +107,15 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
     override fun showActiveGoals(goals: MutableList<Goal>) {
         activeGoalsAdapter.items = goals
         binding.llActiveGoals.isVisible = goals.isNotEmpty()
+
+        binding.createFirstGoal.isVisible = activeGoalsAdapter.items.isEmpty() && disabledGoalsAdapter.items.isEmpty()
     }
 
     override fun showDisabledGoals(goals: MutableList<Goal>) {
         disabledGoalsAdapter.items = goals
         binding.llDisabledGoals.isVisible = goals.isNotEmpty()
+
+        binding.createFirstGoal.isVisible = activeGoalsAdapter.items.isEmpty() && disabledGoalsAdapter.items.isEmpty()
     }
 
 

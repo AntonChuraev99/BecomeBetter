@@ -22,6 +22,13 @@
             android:padding="15dp"
             >
 
+            <com.antonchuraev.becomebetter.views.helpers.CreateFirstGoal
+                android:id="@+id/createFirstGoal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
             <LinearLayout
                 android:id="@+id/llActiveGoals"
                 android:layout_width="match_parent"
