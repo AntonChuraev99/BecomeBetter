@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.databinding.ViewButtonBinding
 import com.antonchuraev.becomebetter.views.CustomView
+import java.lang.Exception
 import java.nio.file.Files.delete
 import kotlin.properties.Delegates
 
@@ -65,5 +66,9 @@ class ButtonView @JvmOverloads constructor(
 		binding.button.setOnClickListener {
 			action?.invoke()
 		}
+	}
+
+	override fun setOnClickListener(l: OnClickListener?) {
+		throw Exception("use onClickListener")
 	}
 }
