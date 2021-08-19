@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.antonchuraev.becomebetter.R
+import com.antonchuraev.becomebetter.base.cicerone.AnimatedNavigator
 import com.antonchuraev.becomebetter.views.toolbar.CustomToolbar
 import moxy.MvpAppCompatActivity
 import moxy.MvpView
@@ -22,7 +23,7 @@ class MainActivity:MvpAppCompatActivity() , MvpView
 
     private val navigatorHolder: NavigatorHolder by inject()
 
-    private val navigator: Navigator by lazy {
+    /*private val navigator: Navigator by lazy {
         object : SupportAppNavigator(this, supportFragmentManager, R.id.container) {
             private var doubleBackToExitPressedOnce: Boolean = false
 
@@ -44,7 +45,10 @@ class MainActivity:MvpAppCompatActivity() , MvpView
                 }
             }
         }
-    }
+    }*/
+
+    private val animatedNavigator: AnimatedNavigator =
+        object : AnimatedNavigator(this, supportFragmentManager, R.id.container) {}
 
     private val currentFragment: BaseFragment<*>?
         get() = supportFragmentManager.findFragmentById(R.id.container) as? BaseFragment<*>
@@ -70,7 +74,7 @@ class MainActivity:MvpAppCompatActivity() , MvpView
 
     override fun onResumeFragments() {
         super.onResumeFragments()
-        navigatorHolder.setNavigator(navigator)
+        navigatorHolder.setNavigator(animatedNavigator)
     }
 
     override fun onPause() {

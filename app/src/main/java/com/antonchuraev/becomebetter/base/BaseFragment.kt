@@ -17,6 +17,7 @@ import com.historic.app.global.navigation.FlowCiceroneViewModel
 import com.historic.app.global.navigation.FlowRouter
 import moxy.MvpAppCompatFragment
 import org.koin.android.ext.android.inject
+import ru.likebz.toolbox.cicerone.CommonRouter
 import ru.terrakok.cicerone.Router
 
 abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
@@ -26,7 +27,7 @@ abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
 
     var toolbar:CustomToolbar? = null
 
-    val appRouter: Router by inject()
+    val appRouter: CommonRouter by inject()
 
     protected val router: FlowRouter? by lazy {
         val flowParent = this as? FlowFragment ?: getParent(this)
