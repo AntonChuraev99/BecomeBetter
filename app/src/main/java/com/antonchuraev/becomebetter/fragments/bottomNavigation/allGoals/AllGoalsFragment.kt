@@ -46,7 +46,7 @@ class AllGoalsFragment : BaseFragment<FragmentAllGoalsBinding>() , AllGoalsView 
 
     private fun setListeners() {
         binding.createFirstGoal.setOnClickListener {
-            appMainRouter.replaceScreen ( Screens.Screen.BottomNavigation( NavigationTab.ADD_GOAL ) )
+            appMainRouter.newRootScreen ( Screens.Screen.BottomNavigation( NavigationTab.ADD_GOAL ) )
         }
 
         binding.llAllMyGoals.setOnClickListener {

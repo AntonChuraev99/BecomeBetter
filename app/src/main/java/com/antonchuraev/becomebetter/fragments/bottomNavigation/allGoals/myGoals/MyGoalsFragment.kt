@@ -94,7 +94,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
         }
 
         binding.createFirstGoal.setOnClickListener {
-            appMainRouter.replaceScreen ( Screens.Screen.BottomNavigation( NavigationTab.ADD_GOAL ) )
+            appMainRouter.newRootScreen ( Screens.Screen.BottomNavigation( NavigationTab.ADD_GOAL ) )
         }
     }
 
