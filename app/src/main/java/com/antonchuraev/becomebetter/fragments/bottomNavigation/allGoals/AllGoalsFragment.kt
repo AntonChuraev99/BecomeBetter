@@ -46,7 +46,7 @@ class AllGoalsFragment : BaseFragment<FragmentAllGoalsBinding>() , AllGoalsView 
     }
 
     private fun setListeners() {
-        binding.llCreateFirstGoal.setOnClickListener {
+        binding.createFirstGoal.setOnClickListener {
             appRouter.replaceScreen ( Screens.Screen.BottomNavigation( NavigationTab.ADD_GOAL ) )
         }
 
@@ -64,7 +64,7 @@ class AllGoalsFragment : BaseFragment<FragmentAllGoalsBinding>() , AllGoalsView 
 
         binding.ivEdit.isVisible = goals.isNotEmpty()
         binding.rvActiveGoals.isVisible = goals.isNotEmpty()
-        binding.llCreateFirstGoal.isVisible = goals.isEmpty()
+        binding.createFirstGoal.isVisible = goals.isEmpty()
     }
 
     companion object {

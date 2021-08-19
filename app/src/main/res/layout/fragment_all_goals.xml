@@ -84,42 +84,14 @@
                     app:srcCompat="@drawable/ic_edit" />
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/llCreateFirstGoal"
+            <com.antonchuraev.becomebetter.views.helpers.CreateFirstGoal
+                android:id="@+id/createFirstGoal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/shape_rectangle_r_8"
-                android:backgroundTint="@color/white"
-                android:padding="20dp"
+                android:layout_weight="1"
                 android:layout_marginHorizontal="15dp"
-
-                android:foreground="?android:attr/selectableItemBackground"
-
-                >
-
-                <ImageView
-                    android:layout_gravity="center"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="15dp"
-                    app:srcCompat="@drawable/bottom_bar_add_goal"
-                    app:tint="@color/aston_martin"
-                    />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/select_or_create_goal"
-                    android:gravity="center"
-                    android:textAllCaps="false"
-                    android:textColor="@color/black"
-                    android:textSize="19sp" />
-            </LinearLayout>
+                />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvActiveGoals"
