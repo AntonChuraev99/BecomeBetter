@@ -62,6 +62,7 @@ class AllGoalsFragment : BaseFragment<FragmentAllGoalsBinding>() , AllGoalsView 
     override fun showActiveGoals(goals: List<Goal>) {
         activeGoalsAdapter.items = goals.toMutableList()
 
+        binding.ivEdit.isVisible = goals.isNotEmpty()
         binding.rvActiveGoals.isVisible = goals.isNotEmpty()
         binding.llCreateFirstGoal.isVisible = goals.isEmpty()
     }
