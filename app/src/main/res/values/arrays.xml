@@ -8,8 +8,9 @@
     <array name="progress_type">
         <item>@string/percents</item>
         <item>@string/days</item>
+        <item>@string/custom_max</item>
     </array>
 
-    <string name="percents">Проценты</string>
-    <string name="days">Дни</string>
+
+
 </resources>
