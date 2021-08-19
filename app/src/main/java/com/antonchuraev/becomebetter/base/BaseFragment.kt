@@ -80,7 +80,7 @@ abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
     }
 
     open fun onBackPressed() {
-        router?.exit()
+        appMainRouter.exit()
     }
 
     fun setDefaultToolbar(tittleRes:Int?){
