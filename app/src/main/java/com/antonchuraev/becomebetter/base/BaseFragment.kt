@@ -27,7 +27,9 @@ abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
 
     var toolbar:CustomToolbar? = null
 
-    val appRouter: CommonRouter by inject()
+    private val appRouter: CommonRouter by inject()
+
+    val appMainRouter = Router()
 
     protected val router: FlowRouter? by lazy {
         val flowParent = this as? FlowFragment ?: getParent(this)
