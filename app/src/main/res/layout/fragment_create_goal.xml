@@ -116,6 +116,23 @@
                 android:entries="@array/progress_type"
                 />
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edEnterMax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_rectangle_r_8"
+                android:gravity="start"
+                android:hint="@string/enter_max"
+                android:inputType="number"
+                android:maxLength="300"
+                android:padding="16dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/с717685"
+                android:translationY="3dp"
+                android:visibility="gone"
+                />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

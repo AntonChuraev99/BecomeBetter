@@ -24,7 +24,10 @@ data class Goal(
      */
     var priority: Float = 1F,
     var progressType: ProgressType = ProgressType.PERCENTS, //тип как ведется проогресс
+
+
     var progress: Int = 0,//прогресс от  0%=0 до 100%=100
+    var progressMax:Int = 100 ,//максимум прогресса
     var isActive: Boolean = false//активная ли цель
 
 
@@ -37,6 +40,9 @@ data class Goal(
     enum class ProgressType() {
         PERCENTS,
         DAYS,
+        CUSTOM_MAX,
+
+        ;
 
     }
 

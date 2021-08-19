@@ -39,4 +39,5 @@
     <string name="percents">Проценты</string>
     <string name="days">Дни</string>
     <string name="custom_max">Счетчик с своим максимумом</string>
+    <string name="enter_max">Введите максимум</string>
 </resources>

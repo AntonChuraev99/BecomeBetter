@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import androidx.annotation.StringRes
+import androidx.core.net.toUri
 import androidx.core.view.get
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
@@ -116,6 +117,7 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
     private fun setProgressTypeVisible(ordinal: Int) {
         binding.progressSelector.isVisible = ordinal == 0
         binding.progressDaysSelector.isVisible = ordinal == 1
+        binding.edEnterMax.isVisible = ordinal == 2
     }
 
     private fun refreshButton() {
@@ -150,6 +152,7 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
         editedGoal.priority = binding.priorityTimeSelector.getValue()
         editedGoal.progressType = if (binding.progressTypeSelector.selectedItemPosition==0) Goal.ProgressType.PERCENTS else Goal.ProgressType.DAYS
         editedGoal.progress = if (binding.progressTypeSelector.selectedItemPosition==0) binding.progressSelector.getValue().toInt() else binding.tvDaysCount.text.trim().toString().toInt()
+        if ( binding.progressTypeSelector.selectedItemPosition==2 ) editedGoal.progressMax = binding.edEnterMax.text.toString().trim().toInt()
 
         presenter.updateGoal(editedGoal , requireContext())
     }
@@ -162,8 +165,9 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
             priority = binding.priorityTimeSelector.getValue(),
             progressType = if (binding.progressTypeSelector.selectedItemPosition==0) Goal.ProgressType.PERCENTS else Goal.ProgressType.DAYS,
             progress = if (binding.progressTypeSelector.selectedItemPosition==0) binding.progressSelector.getValue().toInt() else binding.tvDaysCount.text.toString().trim().toInt() ,
-            isActive = true
+            isActive = true,
         )
+        if ( binding.progressTypeSelector.selectedItemPosition==2 ) editedGoal.progressMax = binding.edEnterMax.text.toString().trim().toInt()
 
         presenter.createGoal(goal , requireContext())
     }
