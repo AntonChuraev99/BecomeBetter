@@ -23,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_rectangle_r_8_stroke_aston_martin"
+            android:foreground="?android:attr/selectableItemBackground"
             android:orientation="horizontal"
             android:paddingHorizontal="15dp">
 

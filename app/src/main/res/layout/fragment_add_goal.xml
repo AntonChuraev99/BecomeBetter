@@ -22,6 +22,7 @@
             android:layout_weight="1"
             android:layout_margin="10dp"
             android:background="@drawable/shape_rectangle_r_8_stroke_aston_martin"
+            android:foreground="?android:attr/selectableItemBackground"
             >
 
             <TextView
@@ -54,6 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/shape_rectangle_r_8_stroke_aston_martin"
+            android:foreground="?android:attr/selectableItemBackground"
             android:layout_margin="10dp"
             >
 
