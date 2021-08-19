@@ -104,8 +104,9 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
         binding.llDisabledGoals.isVisible = disabledGoalsAdapter.items.isNotEmpty()
     }
 
-    override fun showActiveGoals(templates: MutableList<Goal>) {
-        activeGoalsAdapter.items = templates
+    override fun showActiveGoals(goals: MutableList<Goal>) {
+        activeGoalsAdapter.items = goals
+        binding.llActiveGoals.isVisible = goals.isNotEmpty()
     }
 
     override fun showDisabledGoals(goals: MutableList<Goal>) {
