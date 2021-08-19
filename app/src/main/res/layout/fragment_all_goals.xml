@@ -50,15 +50,39 @@
             android:paddingVertical="15dp"
             >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/active_goals"
-                android:layout_gravity="center"
-                android:textSize="24sp"
-                android:textColor="@color/aston_martin"
-                />
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="15dp"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_edit"
+                    android:visibility="invisible"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/active_goals"
+                    android:textColor="@color/aston_martin"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:id="@+id/ivEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_edit" />
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/llCreateFirstGoal"
