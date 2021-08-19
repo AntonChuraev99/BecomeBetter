@@ -11,6 +11,7 @@ import com.antonchuraev.becomebetter.base.BaseFragment
 import com.antonchuraev.becomebetter.base.Screens
 import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.FragmentMyGoalsBinding
+import com.antonchuraev.becomebetter.fragments.bottomNavigation.NavigationTab
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createGoal.CreateGoalFragment
 import com.antonchuraev.becomebetter.helpers.adapters.GoalsAdapter
 import com.antonchuraev.becomebetter.helpers.extensions.add10DpDecorator
@@ -93,6 +94,10 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
                 chekAdaptersChangeVisibility()
             }
 
+        }
+
+        binding.createFirstGoal.setOnClickListener {
+            appRouter.replaceScreen ( Screens.Screen.BottomNavigation( NavigationTab.ADD_GOAL ) )
         }
     }
 
