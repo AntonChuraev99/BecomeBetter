@@ -29,12 +29,18 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
         onItemClickListener = { item ->
             appRouter.navigateTo(Screens.Screen.AddGoals.CreateGoal(item , mode = CreateGoalFragment.Companion.Mode.EDIT))
         }
+        onItemUpdateListener = {
+            presenter.updateGoal(it , requireContext())
+        }
     }
 
     val disabledGoalsAdapter = GoalsAdapter().apply {
         isActiveMode = false
         onItemClickListener = { item ->
             appRouter.navigateTo(Screens.Screen.AddGoals.CreateGoal(item ,mode = CreateGoalFragment.Companion.Mode.EDIT))
+        }
+        onItemUpdateListener = {
+            presenter.updateGoal(it , requireContext())
         }
     }
 

@@ -19,6 +19,8 @@ class GoalsAdapter : RecyclerView.Adapter<GoalsAdapter.GoalViewHolder>() {
 
     var onItemSelectionChange:((Goal, Boolean) -> Unit)? = null
 
+    var onItemUpdateListener: ((Goal) -> Unit)? = null
+
     var items = mutableListOf<Goal>()
         set(value) {
             field = value
@@ -45,6 +47,7 @@ class GoalsAdapter : RecyclerView.Adapter<GoalsAdapter.GoalViewHolder>() {
                     }
 
                 }
+                updateGoalListener = onItemUpdateListener
                 setSelectionMode(isSelectionEnabled)
                 setChecked(item.isActive)
                 isInActiveMode(isActiveMode)
