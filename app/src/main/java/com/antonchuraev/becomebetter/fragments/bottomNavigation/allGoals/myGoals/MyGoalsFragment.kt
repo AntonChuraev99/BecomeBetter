@@ -25,7 +25,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
 
     val activeGoalsAdapter = GoalsAdapter().apply {
         onItemClickListener = { item ->
-            appRouter.navigateTo(Screens.Screen.AddGoals.CreateGoal(item , mode = CreateGoalFragment.Companion.Mode.EDIT))
+            appMainRouter.navigateTo(Screens.Screen.AddGoals.CreateGoal(item , mode = CreateGoalFragment.Companion.Mode.EDIT))
         }
         onItemUpdateListener = {
             presenter.updateGoal(it , requireContext())
@@ -35,7 +35,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
     val disabledGoalsAdapter = GoalsAdapter().apply {
         isActiveMode = false
         onItemClickListener = { item ->
-            appRouter.navigateTo(Screens.Screen.AddGoals.CreateGoal(item ,mode = CreateGoalFragment.Companion.Mode.EDIT))
+            appMainRouter.navigateTo(Screens.Screen.AddGoals.CreateGoal(item ,mode = CreateGoalFragment.Companion.Mode.EDIT))
         }
         onItemUpdateListener = {
             presenter.updateGoal(it , requireContext())
@@ -94,7 +94,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
         }
 
         binding.createFirstGoal.setOnClickListener {
-            appRouter.replaceScreen ( Screens.Screen.BottomNavigation( NavigationTab.ADD_GOAL ) )
+            appMainRouter.replaceScreen ( Screens.Screen.BottomNavigation( NavigationTab.ADD_GOAL ) )
         }
     }
 

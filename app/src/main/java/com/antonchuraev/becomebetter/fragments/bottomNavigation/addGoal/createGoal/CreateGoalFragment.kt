@@ -68,7 +68,7 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
         toolbar?.let { toolbar->
             toolbar.show()
             toolbar.setTittle(context?.getString(screenType.toolbarTittle))
-            toolbar.defaultBackButton(appRouter)
+            toolbar.defaultBackButton(appMainRouter)
         }
     }
 
@@ -169,7 +169,7 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
     }
 
     override fun finishWork() {
-        appRouter.exit()
+        appMainRouter.exit()
     }
 
     companion object {

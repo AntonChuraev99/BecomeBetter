@@ -4,13 +4,12 @@ import com.antonchuraev.becomebetter.R
 import ru.likebz.toolbox.cicerone.AnimatedScreen
 import ru.likebz.toolbox.cicerone.CommonRouter
 import ru.likebz.toolbox.cicerone.NavigationInterface
+import ru.terrakok.cicerone.Router
 import ru.terrakok.cicerone.android.support.SupportAppScreen
 import javax.inject.Inject
 
-class Navigation : NavigationInterface {
+class Navigation(val baseRouter:CommonRouter) : NavigationInterface , Router() {
 
-    @Inject
-    lateinit var baseRouter: CommonRouter
 
     override fun insertScreen(screen: SupportAppScreen) {
         baseRouter.replaceScreen(screen)

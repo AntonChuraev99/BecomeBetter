@@ -11,6 +11,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.antonchuraev.becomebetter.R
+import com.antonchuraev.becomebetter.base.cicerone.Navigation
 import com.antonchuraev.becomebetter.database.GoalsDatabase
 import com.antonchuraev.becomebetter.views.toolbar.CustomToolbar
 import com.historic.app.global.navigation.FlowCiceroneViewModel
@@ -27,9 +28,9 @@ abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
 
     var toolbar:CustomToolbar? = null
 
-    private val appRouter: CommonRouter by inject()
+    val appRouter: CommonRouter by inject()
 
-    val appMainRouter = Router()
+    val appMainRouter = Navigation(appRouter)
 
     protected val router: FlowRouter? by lazy {
         val flowParent = this as? FlowFragment ?: getParent(this)
