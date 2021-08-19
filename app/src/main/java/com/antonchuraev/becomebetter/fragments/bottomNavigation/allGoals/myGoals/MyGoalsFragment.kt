@@ -70,6 +70,8 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
         toolbar?.setRightButton(R.drawable.ic_edit) {
             activeGoalsAdapter.isSelectionEnabled = !activeGoalsAdapter.isSelectionEnabled
             disabledGoalsAdapter.isSelectionEnabled = !disabledGoalsAdapter.isSelectionEnabled
+            if (activeGoalsAdapter.isSelectionEnabled) toolbar?.setRightButton(R.drawable.ic_apply) else toolbar?.setRightButton(R.drawable.ic_edit)
+
             chekAdaptersChangeVisibility()
         }
     }

@@ -44,6 +44,11 @@ class CustomToolbar @JvmOverloads constructor(context: Context , attrs: Attribut
 		setOnClickListener { clickListener?.invoke() }
 	}
 
+	fun setRightButton(@DrawableRes drawableRes: Int) = binding.rigthtImage.apply {
+		show()
+		setImageDrawable(ContextCompat.getDrawable(context , drawableRes))
+	}
+
 	fun setRightVisible(isVisible:Boolean) = binding.rigthtImage.apply {
 		this.isVisible = isVisible
 	}
