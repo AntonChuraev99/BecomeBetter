@@ -57,6 +57,12 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
                 binding.tvDaysCount.text = goal.progress.toString()
                 binding.progressTypeSelector.setSelection(goal.progressType.ordinal)
                 setProgressTypeVisible(goal.progressType.ordinal)
+
+                if (goal.progressType==Goal.ProgressType.CUSTOM_MAX){
+                    binding.edEnterMax.setText(goal.progressMax.toString())
+                    binding.progressSelector.setMaxValue(goal.progressMax.toFloat())
+                }
+
             }
 
             (args.getSerializable(MODE_TAG) as? Mode)?.let { mode:Mode ->
