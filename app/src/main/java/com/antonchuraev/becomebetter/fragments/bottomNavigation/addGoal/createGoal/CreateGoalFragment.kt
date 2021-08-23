@@ -113,7 +113,9 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
                 if (newMax>0){
                     binding.progressSelector.setMaxValue(  newMax  , true)
                 }
-1
+            }
+            else{
+                binding.progressSelector.setMaxValue(  100F  , true)
             }
         }
 
