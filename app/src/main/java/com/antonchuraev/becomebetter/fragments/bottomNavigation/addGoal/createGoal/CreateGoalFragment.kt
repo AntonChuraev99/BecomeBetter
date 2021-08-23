@@ -111,7 +111,7 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
             if (it.toString().isNotBlank() ){
                 val newMax = it.toString().trim().toInt().toFloat()
                 if (newMax>0){
-                    binding.progressSelector.setMaxValue(  newMax )
+                    binding.progressSelector.setMaxValue(  newMax  , true)
                 }
 1
             }

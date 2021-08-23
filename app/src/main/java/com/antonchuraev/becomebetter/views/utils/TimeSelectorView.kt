@@ -5,7 +5,6 @@ import android.util.AttributeSet
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.databinding.ViewTimeSelectorBinding
 import com.antonchuraev.becomebetter.views.CustomView
-import kotlin.math.log
 import kotlin.properties.Delegates
 
 
@@ -89,11 +88,14 @@ class TimeSelectorView @JvmOverloads constructor(
 		}
 	}
 
-	fun setMaxValue(value:Float){
+	/**
+	 * @param nullifyValue обнулить ли значение , использовать при установлении нового макса
+	 */
+	fun setMaxValue(newMaxValue:Float , nullifyValue:Boolean = false){
 		binding.slider.apply {
-			this.value = 0F
-			valueTo = value
-			binding.selectedSize.text = generateTextForSlider(style , value)
+			if (nullifyValue) this.value = 0F
+			valueTo = newMaxValue
+			binding.selectedSize.text = generateTextForSlider(style , this.value)
 		}
 	}
 
