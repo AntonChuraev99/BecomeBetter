@@ -48,7 +48,7 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
     }
 
     private fun setNewProgressValue(progress: Int) {
-        binding.tvProgress.text = "${progress}${goal.progressType}"
+        binding.tvProgress.text = "${progress}${goal.progressType.textEnd}"
         binding.tvDaysCount.text = "$progress "
     }
 
@@ -61,12 +61,15 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 
         binding.llProgress.isVisible = goal.progressType.isProgressVisible
         binding.progressBar.apply {
-            progress = goal.progress
             max = goal.progressMax
+            progress = goal.progress
         }
         binding.tvProgressMax.text = "${goal.progressMax}%"
 
-        binding.progressSelector.setValue(goal.progress.toFloat())
+        binding.progressSelector.apply {
+            setValue(goal.progress.toFloat())
+            setMaxValue(goal.progressMax.toFloat())
+        }
 
         binding.progressDaysSelector.isVisible = goal.progressType == Goal.ProgressType.DAYS
         binding.tvDaysCount.text = goal.progress.toString()
@@ -74,7 +77,7 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 
     fun setSelectionMode(state: Boolean , selectionType: GoalsAdapter.SelectionType) {
         when (goal.progressType){
-            Goal.ProgressType.PERCENTS->{
+            Goal.ProgressType.PERCENTS,Goal.ProgressType.CUSTOM_MAX->{
                 binding.progressSelector.isVisible  = state
                 binding.llProgress.isVisible = !state
             }
