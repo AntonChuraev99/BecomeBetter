@@ -48,7 +48,7 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
     }
 
     private fun setNewProgressValue(progress: Int) {
-        binding.tvProgress.text = if (goal.progressType == Goal.ProgressType.PERCENTS) "${progress}%" else "$progress дней"
+        binding.tvProgress.text = "${progress}${goal.progressType}"
         binding.tvDaysCount.text = "$progress "
     }
 
@@ -57,10 +57,15 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
         this.goal = goal
 
         binding.tvName.text = goal.name
-        binding.tvProgress.text = if (goal.progressType == Goal.ProgressType.PERCENTS) "${goal.progress}%" else "${goal.progress} дней"
+        binding.tvProgress.text = "${goal.progress}${goal.progressType.textEnd}"
 
-        binding.llProgress.isVisible = goal.progressType == Goal.ProgressType.PERCENTS
-        binding.progressBar.progress = goal.progress
+        binding.llProgress.isVisible = goal.progressType.isProgressVisible
+        binding.progressBar.apply {
+            progress = goal.progress
+            max = goal.progressMax
+        }
+        binding.tvProgressMax.text = "${goal.progressMax}%"
+
         binding.progressSelector.setValue(goal.progress.toFloat())
 
         binding.progressDaysSelector.isVisible = goal.progressType == Goal.ProgressType.DAYS

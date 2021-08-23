@@ -37,10 +37,10 @@ data class Goal(
      * тип как ведется прогресс
      * есть проценты и дни
      */
-    enum class ProgressType() {
-        PERCENTS,
-        DAYS,
-        CUSTOM_MAX,
+    enum class ProgressType(val textEnd:String , val isProgressVisible:Boolean = true) {
+        PERCENTS("%"),
+        DAYS(" дней" , isProgressVisible = false),
+        CUSTOM_MAX(""),
         ;
 
         companion object{
