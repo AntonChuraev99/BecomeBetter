@@ -107,7 +107,7 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
                 if (newMax>0){
                     binding.progressSelector.setMaxValue(  newMax )
                 }
-
+1
             }
         }
 
@@ -180,7 +180,7 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
             progress = if (binding.progressTypeSelector.selectedItemPosition==0) binding.progressSelector.getValue().toInt() else binding.tvDaysCount.text.toString().trim().toInt() ,
             isActive = true,
         )
-        if ( binding.progressTypeSelector.selectedItemPosition==2 ) editedGoal.progressMax = binding.edEnterMax.text.toString().trim().toInt()
+        if ( binding.progressTypeSelector.selectedItemPosition==2 ) goal.progressMax = binding.edEnterMax.text.toString().trim().toInt()
 
         presenter.createGoal(goal , requireContext())
     }
