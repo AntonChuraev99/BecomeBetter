@@ -2,6 +2,7 @@ package com.antonchuraev.becomebetter.views
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.LayoutInflater
 import android.widget.FrameLayout
 import androidx.annotation.LayoutRes
@@ -25,4 +26,8 @@ abstract class CustomView<B : ViewDataBinding>(context: Context, attrs: Attribut
     }
 
     @LayoutRes protected abstract fun getLayoutRes(): Int
+
+    fun loge(text:Any){
+        Log.e("tag", "log:${text.toString()}")
+    }
 }

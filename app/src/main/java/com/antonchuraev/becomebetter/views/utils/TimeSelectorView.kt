@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.databinding.ViewTimeSelectorBinding
 import com.antonchuraev.becomebetter.views.CustomView
+import kotlin.math.log
 import kotlin.properties.Delegates
 
 
@@ -81,6 +82,7 @@ class TimeSelectorView @JvmOverloads constructor(
 	fun getValue() = binding.slider.value
 
 	fun setValue(value:Float){
+		loge("setValue:$value")
 		binding.slider.apply {
 			this.value = value
 			binding.selectedSize.text = generateTextForSlider(style , value)
