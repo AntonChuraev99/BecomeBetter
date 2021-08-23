@@ -163,8 +163,8 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
         editedGoal.duration = binding.durationTimeSelector.getValue()
         editedGoal.description = binding.edDescription.text.toString()
         editedGoal.priority = binding.priorityTimeSelector.getValue()
-        editedGoal.progressType = if (binding.progressTypeSelector.selectedItemPosition==0) Goal.ProgressType.PERCENTS else Goal.ProgressType.DAYS
-        editedGoal.progress = if (binding.progressTypeSelector.selectedItemPosition==0) binding.progressSelector.getValue().toInt() else binding.tvDaysCount.text.trim().toString().toInt()
+        editedGoal.progressType = Goal.ProgressType.findByPosition(binding.progressTypeSelector.selectedItemPosition)
+        editedGoal.progress = if (binding.progressTypeSelector.selectedItemPosition==1) binding.tvDaysCount.text.trim().toString().toInt() else binding.progressSelector.getValue().toInt()
         if ( binding.progressTypeSelector.selectedItemPosition==2 ) editedGoal.progressMax = binding.edEnterMax.text.toString().trim().toInt()
 
         presenter.updateGoal(editedGoal , requireContext())
@@ -176,8 +176,8 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
             duration = binding.durationTimeSelector.getValue(),
             description = binding.edDescription.text.toString(),
             priority = binding.priorityTimeSelector.getValue(),
-            progressType = if (binding.progressTypeSelector.selectedItemPosition==0) Goal.ProgressType.PERCENTS else Goal.ProgressType.DAYS,
-            progress = if (binding.progressTypeSelector.selectedItemPosition==0) binding.progressSelector.getValue().toInt() else binding.tvDaysCount.text.toString().trim().toInt() ,
+            progressType = Goal.ProgressType.findByPosition(binding.progressTypeSelector.selectedItemPosition),
+            progress = if (binding.progressTypeSelector.selectedItemPosition==1) binding.tvDaysCount.text.trim().toString().toInt() else binding.progressSelector.getValue().toInt() ,
             isActive = true,
         )
         if ( binding.progressTypeSelector.selectedItemPosition==2 ) goal.progressMax = binding.edEnterMax.text.toString().trim().toInt()

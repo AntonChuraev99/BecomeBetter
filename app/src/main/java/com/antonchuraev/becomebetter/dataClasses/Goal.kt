@@ -41,8 +41,11 @@ data class Goal(
         PERCENTS,
         DAYS,
         CUSTOM_MAX,
-
         ;
+
+        companion object{
+            fun findByPosition(pos:Int) = values()[pos]
+        }
 
     }
 
