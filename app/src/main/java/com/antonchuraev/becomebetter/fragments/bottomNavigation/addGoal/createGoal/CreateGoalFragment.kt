@@ -101,7 +101,14 @@ class CreateGoalFragment : BaseFragment<FragmentCreateGoalBinding>() , CreateGoa
         }
 
         binding.edEnterMax.addTextChangedListener {
-            binding.progressSelector.setMaxValue( it.toString().trim().toInt().toFloat() )
+
+            if (it.toString().isNotBlank() ){
+                val newMax = it.toString().trim().toInt().toFloat()
+                if (newMax>0){
+                    binding.progressSelector.setMaxValue(  newMax )
+                }
+
+            }
         }
 
     }

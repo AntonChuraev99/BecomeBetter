@@ -70,6 +70,7 @@ class TimeSelectorView @JvmOverloads constructor(
 		}
 
 		binding.slider.apply {
+			this.value = 0F
 			setLabelFormatter {
 				changeListener?.invoke(it)
 				generateTextForSlider(style , it).apply { binding.selectedSize.text = this }
@@ -88,6 +89,7 @@ class TimeSelectorView @JvmOverloads constructor(
 
 	fun setMaxValue(value:Float){
 		binding.slider.apply {
+			this.value = 0F
 			valueTo = value
 			binding.selectedSize.text = generateTextForSlider(style , value)
 		}
