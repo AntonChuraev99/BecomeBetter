@@ -2,15 +2,20 @@ package com.antonchuraev.becomebetter.base
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.cicerone.AnimatedNavigator
 import com.antonchuraev.becomebetter.views.toolbar.CustomToolbar
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
 import moxy.MvpAppCompatActivity
 import moxy.MvpView
 import moxy.presenter.InjectPresenter
 import org.koin.android.ext.android.inject
+import org.koin.core.logger.KOIN_TAG
 import ru.terrakok.cicerone.Navigator
 import ru.terrakok.cicerone.NavigatorHolder
 import ru.terrakok.cicerone.android.support.SupportAppNavigator
@@ -64,6 +69,17 @@ class MainActivity:MvpAppCompatActivity() , MvpView
         // TODO: 10.04.2021 проверка стартового экрана
         presenter.onAppStartOpenScreen()
 
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                loge("Fetching FCM registration token failed ${task.exception}")
+                return@OnCompleteListener
+            }
+
+            // Get new FCM registration token
+            val token = task.result
+            loge("fcm token:$token")
+        })
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -89,6 +105,10 @@ class MainActivity:MvpAppCompatActivity() , MvpView
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    fun loge(text:Any){
+        Log.e("tag", "log:$text")
     }
 
 }
