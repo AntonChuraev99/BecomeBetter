@@ -12,6 +12,14 @@
         android:windowSoftInputMode="adjustResize"
         android:screenOrientation="portrait"
         android:theme="@style/Theme.BecomeBetter">
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_folder_24" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/aston_martin" />
+
         <activity android:name=".base.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
