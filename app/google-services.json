@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1028768471981",
+    "project_id": "becomebetter-90229",
+    "storage_bucket": "becomebetter-90229.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028768471981:android:f2ecc3534d3459731b1f24",
+        "android_client_info": {
+          "package_name": "com.antonchuraev.becomebetter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1028768471981-qrg7rtnelf4mjrdn1j0mclhbql45qpgk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.antonchuraev.becomebetter",
+            "certificate_hash": "85aa19a772d5d0ef0a13f9b457d9a5fc794257f2"
+          }
+        },
+        {
+          "client_id": "1028768471981-d2slak77et32ph5tlndj7lqq72813nmb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsrm_grP5ZNP1e_EApCD_0iYpaJn5vXvg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1028768471981-d2slak77et32ph5tlndj7lqq72813nmb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
