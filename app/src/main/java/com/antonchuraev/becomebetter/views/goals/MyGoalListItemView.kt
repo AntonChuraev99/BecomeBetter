@@ -48,7 +48,13 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
     }
 
     private fun setNewProgressValue(progress: Int) {
-        binding.tvProgress.text = "${progress}${goal.progressType.textEnd}"
+        if (goal.progressType.isTextPlural){
+            binding.tvProgress.text = context.resources.getQuantityString(goal.progressType.textRes!! , progress , progress)
+        }
+        else{
+            binding.tvProgress.text = "${progress}${goal.progressType.textEnd}"
+        }
+
         binding.tvDaysCount.text = "$progress "
     }
 
@@ -57,7 +63,12 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
         this.goal = goal
 
         binding.tvName.text = goal.name
-        binding.tvProgress.text = "${goal.progress}${goal.progressType.textEnd}"
+        if (goal.progressType.isTextPlural){
+            binding.tvProgress.text = context.resources.getQuantityString(goal.progressType.textRes!! , goal.progress , goal.progress)
+        }
+        else{
+            binding.tvProgress.text = "${goal.progress}${goal.progressType.textEnd}"
+        }
 
         binding.llProgress.isVisible = goal.progressType.isProgressVisible
         binding.progressBar.apply {

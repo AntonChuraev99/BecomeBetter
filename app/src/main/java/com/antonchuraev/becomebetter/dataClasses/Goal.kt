@@ -1,7 +1,9 @@
 package com.antonchuraev.becomebetter.dataClasses
 
+import androidx.annotation.StringRes
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.antonchuraev.becomebetter.R
 import java.io.Serializable
 import java.time.Duration
 
@@ -37,9 +39,9 @@ data class Goal(
      * тип как ведется прогресс
      * есть проценты и дни
      */
-    enum class ProgressType(val textEnd:String , val isProgressVisible:Boolean = true) {
+    enum class ProgressType(  val textEnd:String, val isTextPlural:Boolean = false, val textRes:Int? = null,  val isProgressVisible:Boolean = true) {
         PERCENTS("%"),
-        DAYS(" дней" , isProgressVisible = false),
+        DAYS( "" ,textRes = R.plurals.days_in ,isTextPlural = true, isProgressVisible = false),
         CUSTOM_MAX(""),
         ;
 
