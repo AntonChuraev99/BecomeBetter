@@ -29,8 +29,8 @@
             android:id="@+id/ivImage"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:scaleX="-1"
-            app:srcCompat="@drawable/ic_folder" />
+            android:paddingHorizontal="5dp"
+            app:srcCompat="@drawable/shape_rectangle_r_8_stroke_gray" />
     </FrameLayout>
 
 </layout>

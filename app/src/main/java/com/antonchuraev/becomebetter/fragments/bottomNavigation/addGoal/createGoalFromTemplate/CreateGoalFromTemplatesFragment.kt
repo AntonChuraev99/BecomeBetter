@@ -2,6 +2,7 @@ package com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createG
 
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.antonchuraev.becomebetter.R
@@ -9,6 +10,7 @@ import com.antonchuraev.becomebetter.base.BaseFragment
 import com.antonchuraev.becomebetter.base.cicerone.Screens
 import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.FragmentCreateGoalFromTemplatesBinding
+import com.antonchuraev.becomebetter.helpers.extensions.add10DpDecorator
 import com.antonchuraev.becomebetter.views.goals.TemplateListItemView
 import moxy.presenter.InjectPresenter
 
@@ -49,6 +51,7 @@ class CreateGoalFromTemplatesFragment : BaseFragment<FragmentCreateGoalFromTempl
     private fun bindRv() {
         binding.rvTemplates.apply {
             layoutManager = GridLayoutManager(context , 2) //3
+            add10DpDecorator(context , DividerItemDecoration.VERTICAL )
             adapter = templatesAdapter
         }
     }
