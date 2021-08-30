@@ -22,7 +22,7 @@
     <string name="create_goal">Create goal</string>
     <string name="small_prority">Small</string>
     <string name="standart_prority">Common</string>
-    <string name="higherst_prority">Higth</string>
+    <string name="higherst_prority">high</string>
     <string name="set_priority">Select priority (optional)</string>
     <string name="create">Create</string>
     <string name="choose_template">Choose template</string>
