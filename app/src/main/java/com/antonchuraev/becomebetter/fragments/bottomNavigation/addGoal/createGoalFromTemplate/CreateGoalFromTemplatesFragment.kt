@@ -36,7 +36,7 @@ class CreateGoalFromTemplatesFragment : BaseFragment<FragmentCreateGoalFromTempl
     override fun onCreateView(rootView: View) {
         enableToolbar()
         bindRv()
-        presenter.loadTemplates()
+        presenter.loadTemplates(requireContext())
     }
 
     private fun enableToolbar() {

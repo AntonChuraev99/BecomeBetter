@@ -47,4 +47,9 @@
         <item quantity="other">%s days</item>
     </plurals>
     <string name="edit_goal">Change goal</string>
+    <string name="dont_smoke_30_days">Dont smoke 30 days</string>
+    <string name="quit_smoking">Quit smoking in a month</string>
+    <string name="start_running_regulary">Start running regularly</string>
+    <string name="read_30_min">Read at least 30 minutes daily</string>
+    <string name="accumulate_money">Accumulate amount</string>
 </resources>
