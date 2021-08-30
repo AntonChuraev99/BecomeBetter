@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BecomeBetter</string>
+    <string name="bottom_navigation_home">Все цели</string>
+    <string name="bottom_navigation_profile">Профиль</string>
+    <string name="bottom_navigation_add_goal">Добавить цель</string>
+    <string name="all_goals">Все цели</string>
+    <string name="create_name">Придумайте имя</string>
+    <string name="add_goal">Создать цель</string>
+    <string name="name">Имя</string>
+    <string name="forever">Бессрочно</string>
+    <string name="one_day">Один день</string>
+    <string name="one_week">Одна неделя</string>
+    <string name="three_days">Три дня</string>
+    <string name="one_month">Один месяц</string>
+    <string name="one_year">Один год</string>
+    <string name="select_date">Выберите срок выполнения</string>
+    <string name="set_description">Введите описание (необязательно)</string>
+    <string name="description">Описание</string>
+    <string name="create_your">Создать собственную</string>
+    <string name="create_your_goal">Создать собственную цель</string>
+    <string name="choose_goal_from_asset">Выбрать цель из шаблонов</string>
+    <string name="create_goal">Создать цель</string>
+    <string name="small_prority">Маленький</string>
+    <string name="standart_prority">Обычный</string>
+    <string name="higherst_prority">Высокий</string>
+    <string name="set_priority">Установите приоритет (необязательно)</string>
+    <string name="create">Создать</string>
+    <string name="choose_template">Выберите шаблон</string>
+    <string name="all_my_goals">Все мои цели</string>
+    <string name="active_goals">Активные цели</string>
+    <string name="select_or_create_goal">Выберите или создайте первую цель</string>
+    <string name="disabled_goals">Неактивные цели</string>
+    <string name="edit_goal">Изменить цель</string>
+    <string name="set_current_progress">Установите текущий прогресс</string>
+    <string name="delete">Удалить</string>
+    <string name="save">"Сохранить "</string>
+    <string name="select_progress_type">Выберите тип прогресса</string>
+    <string name="days_">дней</string>
+    <string name="percents">Проценты</string>
+    <string name="days">Дни</string>
+    <string name="custom_max">Счетчик с своим максимумом</string>
+    <string name="enter_max">Введите максимум</string>
+</resources>
