@@ -48,4 +48,9 @@
         <item quantity="many">%s дней</item>
         <item quantity="other">%s дней</item>
     </plurals>
+    <string name="dont_smoke_30_days">Не курить 30 дней</string>
+    <string name="quit_smoking">Бросить курить за месяц</string>
+    <string name="start_running_regulary">Начать регулярно бегать</string>
+    <string name="read_30_min">Читать минимум 30 мин в день</string>
+    <string name="accumulate_money">Накопить сумму</string>
 </resources>
