@@ -40,7 +40,8 @@ class GoalsTabFragment : BaseFragment<FragmentGoalsTabBinding>(), GoalsTabView {
 
     private fun initArgs() {
         (arguments?.getSerializable(TAB_TAG) as NavigationTab)?.let { tabStyle ->
-            //binding.textView3.text = context?.getString(tabStyle.textRes)
+            binding.tvTittle.text = context?.getString(tabStyle.textRes)
+            binding.tvSubtittle.text = context?.getString(tabStyle.subTittleTextRes)
         }
     }
 

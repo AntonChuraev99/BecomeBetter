@@ -59,4 +59,7 @@
     <string name="enter_goal_name">введите название цели</string>
     <string name="start">начать!</string>
     <string name="about_project">подробнее о проекте</string>
+    <string name="motivation_subtittle">Хочу выполнять каждый день</string>
+    <string name="money_box_subtittle">Хочу накопить</string>
+    <string name="projects_subtittle">Надо сделать в срок</string>
 </resources>

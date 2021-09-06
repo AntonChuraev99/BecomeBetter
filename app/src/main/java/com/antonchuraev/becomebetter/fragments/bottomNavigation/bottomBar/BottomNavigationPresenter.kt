@@ -19,10 +19,10 @@ class BottomNavigationPresenter: BasePresenter<BottomNavigationView>() {
 
 }
 
-enum class NavigationTab(@StringRes val textRes: Int) {
-    MOTIVATION(R.string.motivation ),
-    MONEY(R.string.money_box),
-    PROJECTS(R.string.projects)
+enum class NavigationTab(@StringRes val textRes: Int, @StringRes val subTittleTextRes: Int  ) {
+    MOTIVATION(R.string.motivation , R.string.motivation_subtittle),
+    MONEY(R.string.money_box , R.string.money_box_subtittle),
+    PROJECTS(R.string.projects , R.string.projects_subtittle)
 
     ;
 
