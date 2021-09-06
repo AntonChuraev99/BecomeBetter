@@ -15,20 +15,14 @@ import com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.AddGoalF
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createGoal.CreateGoalFragment
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createGoalFromTemplate.CreateGoalFromTemplatesFragment
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.allGoals.AllGoalsFragment
+import com.antonchuraev.becomebetter.fragments.bottomNavigation.goalsTab.GoalsTabFragment
 
 /**
  * tabs = NavigationTab
  */
 class TabsAdapter(fragment:Fragment) : FragmentStateAdapter(fragment) {
 
-
-
-    override fun createFragment(position: Int): Fragment = when(position){
-        1->AddGoalFragment()
-
-
-        else->AllGoalsFragment()
-    }
+    override fun createFragment(position: Int): Fragment = GoalsTabFragment.newInstance(NavigationTab.getByPosition(position))
 
     override fun getItemCount(): Int = NavigationTab.values().size
 }
