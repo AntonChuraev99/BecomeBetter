@@ -3,7 +3,7 @@ package com.antonchuraev.becomebetter.helpers.adapters
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.antonchuraev.becomebetter.dataClasses.Goal
-import com.antonchuraev.becomebetter.views.goals.MyGoalListItemView
+import com.antonchuraev.becomebetter.views.goals.GoalListItemView
 
 class GoalsAdapter : RecyclerView.Adapter<GoalsAdapter.GoalViewHolder>() {
 
@@ -18,7 +18,7 @@ class GoalsAdapter : RecyclerView.Adapter<GoalsAdapter.GoalViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GoalViewHolder {
         return GoalViewHolder(
-            MyGoalListItemView(parent.context)
+            GoalListItemView(parent.context)
         )
     }
 
@@ -31,7 +31,7 @@ class GoalsAdapter : RecyclerView.Adapter<GoalsAdapter.GoalViewHolder>() {
 
     override fun getItemCount() = items.size
 
-    class GoalViewHolder(val goalView: MyGoalListItemView) : RecyclerView.ViewHolder(goalView) {
+    class GoalViewHolder(val goalView: GoalListItemView) : RecyclerView.ViewHolder(goalView) {
         fun bind(template: Goal) {
             goalView.setData(template)
         }

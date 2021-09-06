@@ -12,7 +12,7 @@ import com.antonchuraev.becomebetter.helpers.extensions.setMatchWrap
 import com.antonchuraev.becomebetter.views.CustomView
 
 
-class MyGoalListItemView @JvmOverloads
+class GoalListItemView @JvmOverloads
 constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) :
     CustomView<ViewMyGoalListItemBinding>(context, attrs, defStyleAttr) {
 
@@ -27,6 +27,7 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
     fun setData(goal: Goal) {
         this.goal = goal
 
+        binding.tvName.text = goal.name
 
     }
 
