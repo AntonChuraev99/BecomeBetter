@@ -10,7 +10,7 @@ data class Goal(
     var id:Int=0,
     var name: String,
 
-    var duration: Float = 0F,
+    var duration: Float = 0F, //0 = бесконечная цель
 
     var progressType: ProgressType = ProgressType.PERCENTS_AND_DAYS, //тип как ведется проогресс
 

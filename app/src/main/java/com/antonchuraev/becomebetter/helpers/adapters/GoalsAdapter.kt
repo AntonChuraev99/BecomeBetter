@@ -7,26 +7,8 @@ import com.antonchuraev.becomebetter.views.goals.MyGoalListItemView
 
 class GoalsAdapter : RecyclerView.Adapter<GoalsAdapter.GoalViewHolder>() {
 
-    var isActiveMode = true
-
-    var selectionType = SelectionType.SHOW_CHECKBOX
-
-    var isSelectionEnabled = false
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
-
-    enum class SelectionType{
-        SHOW_CHECKBOX,
-        HIDE_CHECKBOX;
-    }
-
     var onItemClickListener: ((Goal) -> Unit)? = null
 
-    var onItemSelectionChange:((Goal, Boolean) -> Unit)? = null
-
-    var onItemUpdateListener: ((Goal) -> Unit)? = null
 
     var items = mutableListOf<Goal>()
         set(value) {
@@ -43,22 +25,6 @@ class GoalsAdapter : RecyclerView.Adapter<GoalsAdapter.GoalViewHolder>() {
     override fun onBindViewHolder(holder: GoalViewHolder, position: Int) {
         items[position]?.let { item->
             holder.bind(item)
-            holder.goalView.apply {
-                setOnClickListener {
-                    if (isSelectionEnabled) {
-                        item.isActive = !item.isActive
-                        onItemSelectionChange?.invoke(item , item.isActive )
-                    }
-                    else{
-                        onItemClickListener?.invoke(item)
-                    }
-
-                }
-                updateGoalListener = onItemUpdateListener
-                setSelectionMode(isSelectionEnabled , selectionType)
-                setChecked(item.isActive)
-                isInActiveMode(isActiveMode)
-            }
         }
 
     }

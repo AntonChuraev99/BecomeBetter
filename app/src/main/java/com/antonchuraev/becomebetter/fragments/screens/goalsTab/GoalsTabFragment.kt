@@ -1,12 +1,14 @@
-package com.antonchuraev.becomebetter.fragments.bottomNavigation.goalsTab
+package com.antonchuraev.becomebetter.fragments.screens.goalsTab
 
 import android.view.View
 import androidx.core.os.bundleOf
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BaseFragment
 import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.FragmentGoalsTabBinding
-import com.antonchuraev.becomebetter.fragments.bottomNavigation.NavigationTab
+import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.NavigationTab
+import com.antonchuraev.becomebetter.helpers.adapters.GoalsAdapter
 import moxy.presenter.InjectPresenter
 import kotlin.properties.Delegates
 
@@ -18,13 +20,23 @@ class GoalsTabFragment : BaseFragment<FragmentGoalsTabBinding>(), GoalsTabView {
 
     override val layoutView: Int = R.layout.fragment_goals_tab
 
+    val goalsAdapter = GoalsAdapter()
+
     var goalsType: NavigationTab? by Delegates.observable(null){ _, _, new->
         new?.let { updateScreenType(it) }
     }
 
     override fun onCreateView(rootView: View) {
+        initRv()
         initArgs()
         setListeners()
+    }
+
+    private fun initRv() {
+        binding.rvGoals.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = goalsAdapter
+        }
     }
 
 
@@ -54,7 +66,11 @@ class GoalsTabFragment : BaseFragment<FragmentGoalsTabBinding>(), GoalsTabView {
     }
 
     private fun updateScreenType(screenType: NavigationTab) {
-        // TODO: 06.09.2021 load in presenter
+        presenter.loadGoals( requireContext() , screenType)
+    }
+
+    override fun showGoals(goals: List<Goal>) {
+        goalsAdapter.items = goals.toMutableList()
     }
 
     companion object {

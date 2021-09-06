@@ -10,9 +10,6 @@ public interface GoalDao {
     @Query("SELECT * FROM goal")
     fun getGoals(): List<Goal>
 
-    @Query("SELECT * FROM goal WHERE isActive = :isActive ")
-    fun getGoals(isActive:Boolean): List<Goal>
-
     @Insert
     fun insert(goal: Goal)
 

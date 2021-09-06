@@ -1,13 +1,13 @@
-package com.antonchuraev.becomebetter.fragments.bottomNavigation.addGoal.createGoalFromTemplate
+package com.antonchuraev.becomebetter.fragments.screens.goalsTab
 
 import com.antonchuraev.becomebetter.dataClasses.Goal
 import moxy.MvpView
 import moxy.viewstate.strategy.OneExecutionStateStrategy
 import moxy.viewstate.strategy.StateStrategyType
 
-interface CreateGoalFromTemplatesView: MvpView {
+interface GoalsTabView: MvpView {
 
     @StateStrategyType(OneExecutionStateStrategy::class )
-    fun showTemplates(templates: MutableList<Goal>)
+    fun showGoals(goals:List<Goal>)
 
 }

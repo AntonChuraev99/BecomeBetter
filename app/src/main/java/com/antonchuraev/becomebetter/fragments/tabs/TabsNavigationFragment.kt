@@ -1,20 +1,20 @@
-package com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar
+package com.antonchuraev.becomebetter.fragments.tabs
 
 import android.view.View
 import androidx.core.os.bundleOf
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BaseFragment
 import com.antonchuraev.becomebetter.databinding.FragmentMainBinding
-import com.antonchuraev.becomebetter.fragments.bottomNavigation.BottomNavigationPresenter
-import com.antonchuraev.becomebetter.fragments.bottomNavigation.NavigationTab
+import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.TabNavigationPresenter
+import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.NavigationTab
 import com.google.android.material.tabs.TabLayoutMediator
 import moxy.presenter.InjectPresenter
 
 
-class BottomNavigationFragment : BaseFragment<FragmentMainBinding>() , BottomNavigationView {
+class TabsNavigationFragment : BaseFragment<FragmentMainBinding>() , TabNavigationView {
 
     @InjectPresenter
-    lateinit var presenter: BottomNavigationPresenter
+    lateinit var presenter: TabNavigationPresenter
 
     val tabsAdapter: TabsAdapter by lazy {
         TabsAdapter(this)
@@ -49,7 +49,7 @@ class BottomNavigationFragment : BaseFragment<FragmentMainBinding>() , BottomNav
 
     companion object {
         private const val KEY_TAB = "tab"
-        fun newInstance(tab: NavigationTab = NavigationTab.MOTIVATION) = BottomNavigationFragment().apply {
+        fun newInstance(tab: NavigationTab = NavigationTab.MOTIVATION) = TabsNavigationFragment().apply {
             arguments = bundleOf(KEY_TAB to tab )
         }
     }

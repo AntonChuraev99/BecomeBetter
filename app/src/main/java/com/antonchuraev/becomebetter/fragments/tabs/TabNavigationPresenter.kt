@@ -1,16 +1,16 @@
-package com.antonchuraev.becomebetter.fragments.bottomNavigation
+package com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar
 
 import androidx.annotation.StringRes
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BasePresenter
 import com.antonchuraev.becomebetter.dataClasses.Goal
-import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.BottomNavigationView
+import com.antonchuraev.becomebetter.fragments.tabs.TabNavigationView
 import moxy.InjectViewState
 import java.lang.Exception
 import kotlin.properties.Delegates
 
 @InjectViewState
-class BottomNavigationPresenter: BasePresenter<BottomNavigationView>() {
+class TabNavigationPresenter: BasePresenter<TabNavigationView>() {
 
     var selectedNavigationTab by Delegates.observable<NavigationTab?>(NavigationTab.MOTIVATION) { _, old, new ->
         if (new != old)
