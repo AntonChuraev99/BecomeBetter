@@ -20,5 +20,26 @@ class CreateFirstGoal @JvmOverloads
 constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0)
 	: CustomView<ViewCreateFirstGoalBinding>(context , attrs , defStyleAttr) {
 
+	var expandedState:Boolean = false
+	set(value) {
+		binding.llExpandedState.isVisible = value
+		field = value
+	}
+
+
+	fun expandClickListener(action:()->Unit){
+		binding.newGoal.setOnClickListener {
+			if (!expandedState) action.invoke()
+		}
+	}
+
+	fun createNewGoalClickListener(action:()->Unit){
+		// TODO: 06.09.2021 create and return goal
+		binding.tvStart.setOnClickListener {
+			action.invoke()
+			expandedState = false
+		}
+	}
+
 	override fun getLayoutRes(): Int = R.layout.view_create_first_goal
 }

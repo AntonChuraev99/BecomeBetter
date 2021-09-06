@@ -4,15 +4,12 @@ import android.view.View
 import androidx.core.os.bundleOf
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BaseFragment
-import com.antonchuraev.becomebetter.databinding.FragmentAllGoalsBinding
 import com.antonchuraev.becomebetter.databinding.FragmentGoalsTabBinding
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.NavigationTab
-import com.antonchuraev.becomebetter.fragments.bottomNavigation.allGoals.AllGoalsPresenter
-import com.antonchuraev.becomebetter.fragments.bottomNavigation.allGoals.AllGoalsView
 import moxy.presenter.InjectPresenter
 
 
-class GoalsTabFragment : BaseFragment<FragmentGoalsTabBinding>() , GoalsTabView {
+class GoalsTabFragment : BaseFragment<FragmentGoalsTabBinding>(), GoalsTabView {
 
     @InjectPresenter
     lateinit var presenter: GoalsTabPresenter
@@ -21,11 +18,28 @@ class GoalsTabFragment : BaseFragment<FragmentGoalsTabBinding>() , GoalsTabView 
 
 
     override fun onCreateView(rootView: View) {
-       initArgs()
+        initArgs()
+        setListeners()
+    }
+
+    private fun setListeners() {
+        binding.createGoal.apply {
+            expandClickListener {
+                binding.createGoal.expandedState = !binding.createGoal.expandedState
+            }
+            createNewGoalClickListener {
+                // TODO: 06.09.2021 get goal and add to database
+            }
+        }
+        
+        binding.aboutProject.setOnClickListener {
+            // TODO: 06.09.2021
+        }
+
     }
 
     private fun initArgs() {
-        (arguments?.getSerializable(TAB_TAG) as NavigationTab)?.let { tabStyle->
+        (arguments?.getSerializable(TAB_TAG) as NavigationTab)?.let { tabStyle ->
             //binding.textView3.text = context?.getString(tabStyle.textRes)
         }
     }
