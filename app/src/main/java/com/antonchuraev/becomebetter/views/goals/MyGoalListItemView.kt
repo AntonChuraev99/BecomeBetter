@@ -2,7 +2,6 @@ package com.antonchuraev.becomebetter.views.goals
 
 import android.content.Context
 import android.util.AttributeSet
-import android.util.Log
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.antonchuraev.becomebetter.R
@@ -88,7 +87,7 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 
     fun setSelectionMode(state: Boolean , selectionType: GoalsAdapter.SelectionType) {
         when (goal.progressType){
-            Goal.ProgressType.PERCENTS,Goal.ProgressType.CUSTOM_MAX->{
+            Goal.ProgressType.PERCENTS_AND_DAYS,Goal.ProgressType.CUSTOM_MAX->{
                 binding.progressSelector.isVisible  = state
                 binding.llProgress.isVisible = !state
             }

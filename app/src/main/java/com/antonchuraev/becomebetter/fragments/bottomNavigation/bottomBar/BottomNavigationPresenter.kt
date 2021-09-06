@@ -3,6 +3,7 @@ package com.antonchuraev.becomebetter.fragments.bottomNavigation
 import androidx.annotation.StringRes
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BasePresenter
+import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.BottomNavigationView
 import moxy.InjectViewState
 import java.lang.Exception
@@ -19,10 +20,10 @@ class BottomNavigationPresenter: BasePresenter<BottomNavigationView>() {
 
 }
 
-enum class NavigationTab(@StringRes val textRes: Int, @StringRes val subTittleTextRes: Int  ) {
-    MOTIVATION(R.string.motivation , R.string.motivation_subtittle),
-    MONEY(R.string.money_box , R.string.money_box_subtittle),
-    PROJECTS(R.string.projects , R.string.projects_subtittle)
+enum class NavigationTab(@StringRes val textRes: Int, @StringRes val subTittleTextRes: Int , val relatedToGoalsType:Goal.ProgressType  ) {
+    MOTIVATION(R.string.motivation , R.string.motivation_subtittle , Goal.ProgressType.DAYS),
+    MONEY(R.string.money_box , R.string.money_box_subtittle , Goal.ProgressType.CUSTOM_MAX),
+    PROJECTS(R.string.projects , R.string.projects_subtittle , Goal.ProgressType.PERCENTS_AND_DAYS)
 
     ;
 
