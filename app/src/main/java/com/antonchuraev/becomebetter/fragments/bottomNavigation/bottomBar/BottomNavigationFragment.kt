@@ -23,6 +23,16 @@ class BottomNavigationFragment : BaseFragment<FragmentMainBinding>() , BottomNav
     override val layoutView: Int = R.layout.fragment_main
 
     override fun onCreateView(rootView: View) {
+        setupTabs()
+
+        presenter.selectedNavigationTab = presenter.selectedNavigationTab
+            ?: requireArguments().getSerializable(KEY_TAB) as NavigationTab
+
+        binding.viewPager.currentItem = presenter.selectedNavigationTab!!.ordinal
+
+    }
+
+    private fun setupTabs() {
         binding.viewPager.adapter = tabsAdapter
 
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
@@ -30,12 +40,6 @@ class BottomNavigationFragment : BaseFragment<FragmentMainBinding>() , BottomNav
                 tab.text = context?.getString(tabInfo.textRes)
             }
         }.attach()
-
-        presenter.selectedNavigationTab = presenter.selectedNavigationTab
-            ?: requireArguments().getSerializable(KEY_TAB) as NavigationTab
-
-        binding.viewPager.currentItem = presenter.selectedNavigationTab!!.ordinal
-
     }
 
     override fun openFragmentByTab(tab: NavigationTab?) {
