@@ -23,12 +23,6 @@ class BottomNavigationFragment : BaseFragment<FragmentMainBinding>() , BottomNav
     @InjectPresenter
     lateinit var presenter: BottomNavigationPresenter
 
-    private val tabMenus: List<NavigationTab>
-        get() = listOf(
-                NavigationTab.ALL_GOALS,
-                NavigationTab.ADD_GOAL
-                //NavigationTab.PROFILE
-        )
 
     private val tabFragments: Map<NavigationTab, Fragment> by lazy {
         mapOf(
