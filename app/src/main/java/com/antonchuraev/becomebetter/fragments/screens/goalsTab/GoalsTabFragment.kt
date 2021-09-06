@@ -22,7 +22,11 @@ class GoalsTabFragment : BaseFragment<FragmentGoalsTabBinding>(), GoalsTabView {
 
     override val layoutView: Int = R.layout.fragment_goals_tab
 
-    val goalsAdapter = GoalsAdapter()
+    val goalsAdapter = GoalsAdapter().apply {
+        onItemUpdateListener = {
+            presenter.updateGoal(it , requireContext())
+        }
+    }
 
     var goalsType: NavigationTab? by Delegates.observable(null){ _, _, new->
         new?.let { updateScreenType(it) }

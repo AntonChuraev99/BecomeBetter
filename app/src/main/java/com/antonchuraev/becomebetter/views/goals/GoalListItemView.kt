@@ -31,10 +31,15 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
         binding.tvCurrentProgress.text = goal.progress.toString()
         binding.tvMaxProgress.text = goal.duration.toInt().toString()
 
-
+        binding.progressBar.progress = (100/goal.progressMax * goal.duration).toInt()
 
     }
 
+    fun addDayListener(onAddListener:(Goal)->Unit){
+        binding.btAddDay.setOnClickListener {
+            onAddListener.invoke(goal.apply { duration += 1F })
+        }
+    }
 
     override fun getLayoutRes() = R.layout.view_my_goal_list_item
 
