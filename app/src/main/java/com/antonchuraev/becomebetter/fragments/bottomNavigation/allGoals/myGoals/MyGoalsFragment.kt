@@ -94,7 +94,7 @@ class MyGoalsFragment : BaseFragment<FragmentMyGoalsBinding>(), MyGoalsView {
         }
 
         binding.createFirstGoal.setOnClickListener {
-            getRouter().newRootScreen ( Screens.Screen.BottomNavigation( NavigationTab.ADD_GOAL ) )
+            getRouter().newRootScreen ( Screens.Screen.BottomNavigation( NavigationTab.MONEY ) )
         }
     }
 

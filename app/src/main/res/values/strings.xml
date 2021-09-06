@@ -52,4 +52,7 @@
     <string name="start_running_regulary">Start running regularly</string>
     <string name="read_30_min">Read at least 30 minutes daily</string>
     <string name="accumulate_money">Accumulate amount</string>
+    <string name="motivation">Мотивация</string>
+    <string name="money_box">Копилка</string>
+    <string name="projects">Проекты</string>
 </resources>
