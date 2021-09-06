@@ -62,4 +62,6 @@
     <string name="motivation_subtittle">Хочу выполнять каждый день</string>
     <string name="money_box_subtittle">Хочу накопить</string>
     <string name="projects_subtittle">Надо сделать в срок</string>
+    <string name="repeat">заново</string>
+    <string name="plus_one_day">+ 1 день</string>
 </resources>

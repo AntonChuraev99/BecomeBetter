@@ -2,6 +2,7 @@ package com.antonchuraev.becomebetter.fragments.screens.goalsTab
 
 import android.view.View
 import androidx.core.os.bundleOf
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BaseFragment
@@ -9,6 +10,7 @@ import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.FragmentGoalsTabBinding
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.NavigationTab
 import com.antonchuraev.becomebetter.helpers.adapters.GoalsAdapter
+import com.antonchuraev.becomebetter.helpers.extensions.add10DpDecorator
 import moxy.presenter.InjectPresenter
 import kotlin.properties.Delegates
 
@@ -35,6 +37,7 @@ class GoalsTabFragment : BaseFragment<FragmentGoalsTabBinding>(), GoalsTabView {
     private fun initRv() {
         binding.rvGoals.apply {
             layoutManager = LinearLayoutManager(context)
+            add10DpDecorator(context , DividerItemDecoration.VERTICAL)
             adapter = goalsAdapter
         }
     }

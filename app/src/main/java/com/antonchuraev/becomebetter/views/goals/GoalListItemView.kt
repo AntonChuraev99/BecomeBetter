@@ -28,6 +28,10 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
         this.goal = goal
 
         binding.tvName.text = goal.name
+        binding.tvCurrentProgress.text = goal.progress.toString()
+        binding.tvMaxProgress.text = goal.duration.toInt().toString()
+
+
 
     }
 

@@ -14,7 +14,6 @@ data class Goal(
 
     var progressType: ProgressType = ProgressType.PERCENTS_AND_DAYS, //тип как ведется проогресс
 
-
     var progress: Int = 0,//прогресс от  0%=0 до 100%=100
     var progressMax:Int = 100,//максимум прогресса
 ) : Serializable {
