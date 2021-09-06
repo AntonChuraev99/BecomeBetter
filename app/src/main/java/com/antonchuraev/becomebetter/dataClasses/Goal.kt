@@ -6,7 +6,7 @@ import java.io.Serializable
 
 @Entity
 data class Goal(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     var id:Int=0,
     var name: String,
 

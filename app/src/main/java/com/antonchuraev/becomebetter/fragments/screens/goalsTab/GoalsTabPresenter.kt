@@ -24,9 +24,21 @@ class GoalsTabPresenter: BasePresenter<GoalsTabView>() {
         }
     }
 
+    fun addGoal(goal: Goal, context:Context){
+        CoroutineScope(Dispatchers.IO).launch {
+            getDatabase(context).goalsDao().insert(goal)
+            CoroutineScope(Dispatchers.Main).launch {
+                viewState.reloadGoals()
+            }
+        }
+    }
+
     fun updateGoal(goal: Goal, context:Context){
         CoroutineScope(Dispatchers.IO).launch {
             getDatabase(context).goalsDao().update(goal)
+            CoroutineScope(Dispatchers.Main).launch {
+                viewState.reloadGoals()
+            }
         }
     }
 

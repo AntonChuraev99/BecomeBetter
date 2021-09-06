@@ -10,4 +10,7 @@ interface GoalsTabView: MvpView {
     @StateStrategyType(OneExecutionStateStrategy::class )
     fun showGoals(goals:List<Goal>)
 
+    @StateStrategyType(OneExecutionStateStrategy::class )
+    fun reloadGoals()
+
 }

@@ -54,8 +54,8 @@ class GoalsTabFragment : BaseFragment<FragmentGoalsTabBinding>(), GoalsTabView {
             expandClickListener {
                 binding.createGoal.expandedState = !binding.createGoal.expandedState
             }
-            createNewGoalClickListener {
-                // TODO: 06.09.2021 get goal and add to database
+            createNewGoalClickListener(goalsType!!) {
+                presenter.addGoal(it , context)
             }
         }
 
@@ -71,6 +71,10 @@ class GoalsTabFragment : BaseFragment<FragmentGoalsTabBinding>(), GoalsTabView {
 
     override fun showGoals(goals: List<Goal>) {
         goalsAdapter.items = goals.toMutableList()
+    }
+
+    override fun reloadGoals() {
+        presenter.loadGoals(requireContext() , goalsType!!)
     }
 
     companion object {
