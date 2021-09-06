@@ -55,4 +55,7 @@
     <string name="motivation">Мотивация</string>
     <string name="money_box">Копилка</string>
     <string name="projects">Проекты</string>
+    <string name="new_goal">Новая цель</string>
+    <string name="enter_goal_name">введите название цели</string>
+    <string name="start">начать!</string>
 </resources>
