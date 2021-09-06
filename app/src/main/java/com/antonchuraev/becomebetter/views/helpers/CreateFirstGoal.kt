@@ -32,7 +32,7 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 		binding.tvStart.setOnClickListener {
 			when(goalType){
 				NavigationTab.MOTIVATION ->{
-					action.invoke(Goal(name = binding.edName.text.toString() , duration = binding.edDaysCount.text.toString().toInt().toFloat(), progressType = goalType.relatedToGoalsType))
+					action.invoke(Goal(name = binding.edName.text.toString()  , maxDaysDuration = binding.edDaysCount.text.toString().toInt() , progressType = goalType.relatedToGoalsType))
 				}
 
 			}
