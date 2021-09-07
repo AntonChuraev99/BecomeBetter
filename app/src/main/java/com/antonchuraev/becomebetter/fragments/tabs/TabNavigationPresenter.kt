@@ -1,5 +1,6 @@
 package com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar
 
+import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BasePresenter
@@ -20,10 +21,10 @@ class TabNavigationPresenter: BasePresenter<TabNavigationView>() {
 
 }
 
-enum class NavigationTab(@StringRes val textRes: Int, @StringRes val subTittleTextRes: Int , val relatedToGoalsType:Goal.ProgressType  ) {
-    MOTIVATION(R.string.motivation , R.string.motivation_subtittle , Goal.ProgressType.DAYS),
-    MONEY(R.string.money_box , R.string.money_box_subtittle , Goal.ProgressType.CUSTOM_MAX),
-    PROJECTS(R.string.projects , R.string.projects_subtittle , Goal.ProgressType.PERCENTS_AND_DAYS)
+enum class NavigationTab(@StringRes val textRes: Int, @StringRes val subTittleTextRes: Int , val relatedToGoalsType:Goal.ProgressType , @DrawableRes val backgroundRes:Int ) {
+    MOTIVATION(R.string.motivation , R.string.motivation_subtittle , Goal.ProgressType.DAYS , R.drawable.first_background),
+    MONEY(R.string.money_box , R.string.money_box_subtittle , Goal.ProgressType.CUSTOM_MAX, R.drawable.second_background),
+    PROJECTS(R.string.projects , R.string.projects_subtittle , Goal.ProgressType.PERCENTS_AND_DAYS, R.drawable.third_background)
 
     ;
 

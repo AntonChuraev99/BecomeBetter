@@ -1,6 +1,7 @@
 package com.antonchuraev.becomebetter.fragments.screens.goalsTab
 
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -51,6 +52,7 @@ class GoalsTabFragment : BaseFragment<FragmentGoalsTabBinding>(), GoalsTabView {
         (arguments?.getSerializable(TAB_TAG) as NavigationTab)?.let { tabStyle ->
             binding.tvTittle.text = context?.getString(tabStyle.textRes)
             binding.tvSubtittle.text = context?.getString(tabStyle.subTittleTextRes)
+            binding.background.background = ContextCompat.getDrawable(requireContext() , tabStyle.backgroundRes)
 
             goalsType = tabStyle
         }
