@@ -50,10 +50,6 @@ class GoalsTabFragment : BaseFragment<FragmentGoalsTabBinding>(), GoalsTabView {
 
     private fun initArgs() {
         (arguments?.getSerializable(TAB_TAG) as NavigationTab)?.let { tabStyle ->
-            binding.tvTittle.text = context?.getString(tabStyle.textRes)
-            binding.tvSubtittle.text = context?.getString(tabStyle.subTittleTextRes)
-            binding.background.background = ContextCompat.getDrawable(requireContext() , tabStyle.backgroundRes)
-
             goalsType = tabStyle
         }
     }
@@ -74,8 +70,12 @@ class GoalsTabFragment : BaseFragment<FragmentGoalsTabBinding>(), GoalsTabView {
 
     }
 
-    private fun updateScreenType(screenType: NavigationTab) {
-        presenter.loadGoals( requireContext() , screenType)
+    private fun updateScreenType(tabStyle: NavigationTab) {
+        binding.tvTittle.text = context?.getString(tabStyle.textRes)
+        binding.tvSubtittle.text = context?.getString(tabStyle.subTittleTextRes)
+        binding.background.background = ContextCompat.getDrawable(requireContext() , tabStyle.backgroundRes)
+
+        presenter.loadGoals( requireContext() , tabStyle)
     }
 
     override fun showGoals(goals: List<Goal>) {
