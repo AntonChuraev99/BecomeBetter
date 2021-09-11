@@ -58,6 +58,8 @@ class GoalsTabFragment : BaseFragment<FragmentGoalsTabBinding>(), GoalsTabView {
 
     private fun setListeners() {
         binding.createGoal.apply {
+            style = goalsType
+
             expandClickListener {
                 binding.createGoal.expandedState = !binding.createGoal.expandedState
             }

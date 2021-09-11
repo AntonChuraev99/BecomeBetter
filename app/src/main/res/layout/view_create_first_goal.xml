@@ -79,12 +79,12 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/textView6"
+                                android:id="@+id/tvTextInSet"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
                                 android:layout_marginBottom="2dp"
-                                android:text="введите \nсрок выполенния:"
+                                tools:text="set by style"
                                 android:textColor="@color/с9FA2B4"
                                 android:textSize="20sp" />
 

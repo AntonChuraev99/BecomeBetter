@@ -8,6 +8,7 @@ import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.ViewCreateFirstGoalBinding
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.NavigationTab
 import com.antonchuraev.becomebetter.views.CustomView
+import kotlin.properties.Delegates
 
 
 class CreateFirstGoal @JvmOverloads
@@ -20,6 +21,14 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 		field = value
 	}
 
+	var style: NavigationTab? by Delegates.observable(null) {_,_,new->
+		new?.let {   setViewByStyle(new) }
+	}
+
+	private fun setViewByStyle(newStyle: NavigationTab) {
+		binding.tvTextInSet.text = context.getString(newStyle.createNewGoalText)
+
+	}
 
 	fun expandClickListener(action:()->Unit){
 		binding.newGoal.setOnClickListener {
@@ -34,6 +43,9 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 				NavigationTab.MOTIVATION ->{
 					action.invoke(Goal(name = binding.edName.text.toString()  , maxDaysDuration = binding.edDaysCount.text.toString().toInt() , progressType = goalType.relatedToGoalsType))
 				}
+				/*NavigationTab.MONEY ->{
+					action.invoke(Goal(name = binding.edName.text.toString()  , maxDaysDuration = binding.edDaysCount.text.toString().toInt() , progressType = goalType.relatedToGoalsType))
+				}*/
 
 			}
 

@@ -21,10 +21,10 @@ class TabNavigationPresenter: BasePresenter<TabNavigationView>() {
 
 }
 
-enum class NavigationTab(@StringRes val textRes: Int, @StringRes val subTittleTextRes: Int , val relatedToGoalsType:Goal.ProgressType , @DrawableRes val backgroundRes:Int ) {
-    MOTIVATION(R.string.motivation , R.string.motivation_subtittle , Goal.ProgressType.DAYS , R.drawable.first_background),
-    MONEY(R.string.money_box , R.string.money_box_subtittle , Goal.ProgressType.CUSTOM_MAX, R.drawable.second_background),
-    PROJECTS(R.string.projects , R.string.projects_subtittle , Goal.ProgressType.PERCENTS_AND_DAYS, R.drawable.third_background)
+enum class NavigationTab(@StringRes val textRes: Int, @StringRes val subTittleTextRes: Int , val relatedToGoalsType:Goal.ProgressType , @DrawableRes val backgroundRes:Int , @StringRes val createNewGoalText:Int ) {
+    MOTIVATION(R.string.motivation , R.string.motivation_subtittle , Goal.ProgressType.DAYS , R.drawable.first_background , R.string.create_goal_motivation_text),
+    MONEY(R.string.money_box , R.string.money_box_subtittle , Goal.ProgressType.CUSTOM_MAX, R.drawable.second_background ,  R.string.create_goal_money_text),
+    PROJECTS(R.string.projects , R.string.projects_subtittle , Goal.ProgressType.PERCENTS_AND_DAYS, R.drawable.third_background , R.string.todo)
 
     ;
 

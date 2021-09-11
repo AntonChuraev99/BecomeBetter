@@ -64,4 +64,7 @@
     <string name="projects_subtittle">Надо сделать в срок</string>
     <string name="repeat">заново</string>
     <string name="plus_one_day">+ 1 день</string>
+    <string name="create_goal_motivation_text">введите /n срок выполнения:</string>
+    <string name="create_goal_money_text">введите \n цель:</string>
+    <string name="todo">TODO</string>
 </resources>
