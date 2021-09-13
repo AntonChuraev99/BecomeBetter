@@ -75,7 +75,6 @@ class GoalsTabFragment : BaseFragment<FragmentGoalsTabBinding>(), GoalsTabView {
     }
 
     private fun updateScreenType(tabStyle: NavigationTab) {
-
         binding.tvTittle.text = context?.getString(tabStyle.textRes)
         binding.tvSubtittle.text = context?.getString(tabStyle.subTittleTextRes)
         binding.background.background = ContextCompat.getDrawable(requireContext() , tabStyle.backgroundRes)

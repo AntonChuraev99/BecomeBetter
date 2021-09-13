@@ -94,7 +94,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="-4dp"
                                 android:background="@color/white"
-                                android:hint="000"
+                                android:hint="@string/motivation_hint"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:textColor="@color/black"

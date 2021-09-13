@@ -1,12 +1,15 @@
 package com.antonchuraev.becomebetter.views.helpers
 
 import android.content.Context
+import android.text.InputFilter
 import android.util.AttributeSet
 import androidx.core.view.isVisible
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.ViewCreateFirstGoalBinding
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.NavigationTab
+import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.NavigationTab.Companion.MOTIVATION_MAX_INPUT_LENGTH
+import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.NavigationTab.Companion.OTHER_MAX_INPUT_LENGTH
 import com.antonchuraev.becomebetter.views.CustomView
 import kotlin.properties.Delegates
 
@@ -28,6 +31,11 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 	private fun setViewByStyle(newStyle: NavigationTab) {
 		binding.tvTextInSet.text = context.getString(newStyle.createNewGoalText)
 
+		binding.edDaysCount.apply {
+			filters = arrayOf(InputFilter.LengthFilter(newStyle.editMaxLength))
+			hint = context.getString(newStyle.editTextHint)
+		}
+
 	}
 
 	fun expandClickListener(action:()->Unit){
@@ -40,12 +48,10 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 		// TODO: 06.09.2021 create and return goal
 		binding.tvStart.setOnClickListener {
 			when(goalType){
-				NavigationTab.MOTIVATION ->{
-					action.invoke(Goal(name = binding.edName.text.toString()  , maxDaysDuration = binding.edDaysCount.text.toString().toInt() , progressType = goalType.relatedToGoalsType))
+				NavigationTab.MOTIVATION,NavigationTab.MONEY ->{
+					action.invoke(Goal(name = binding.edName.text.toString()  , progressMax = binding.edDaysCount.text.toString().toInt() , progressType = goalType.relatedToGoalsType))
 				}
-				/*NavigationTab.MONEY ->{
-					action.invoke(Goal(name = binding.edName.text.toString()  , maxDaysDuration = binding.edDaysCount.text.toString().toInt() , progressType = goalType.relatedToGoalsType))
-				}*/
+
 
 			}
 

@@ -24,21 +24,21 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
         this.goal = goal
 
         binding.tvName.text = goal.name
-        binding.tvCurrentProgress.text = goal.currentDayDuration.toString()
-        binding.tvMaxProgress.text = goal.maxDaysDuration.toString()
+        binding.tvCurrentProgress.text = goal.progress.toString()
+        binding.tvMaxProgress.text = goal.progressMax.toString()
 
         updateProgress()
     }
 
     fun addDayListener(onAddListener:(Goal)->Unit){
         binding.btAddDay.setOnClickListener {
-            onAddListener.invoke(goal.apply { currentDayDuration += 1 })
+            onAddListener.invoke(goal.apply { progress += 1 })
             updateProgress()
         }
     }
 
     private fun updateProgress() {
-        binding.progressBar.progress = (100F/goal.maxDaysDuration!!.toFloat() * goal.currentDayDuration.toFloat()).toInt()
+        binding.progressBar.progress = (100F/goal.progressMax!!.toFloat() * goal.progress.toFloat()).toInt()
     }
 
     override fun getLayoutRes() = R.layout.view_my_goal_list_item

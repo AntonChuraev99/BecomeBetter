@@ -10,9 +10,6 @@ data class Goal(
     var id:Int=0,
     var name: String,
 
-    var currentDayDuration: Int = 0,
-    var maxDaysDuration:Int? = null,
-
     var progress: Int = 0,//прогресс от  0%=0 до 100%=100
     var progressMax:Int = 100,//максимум прогресса
 
