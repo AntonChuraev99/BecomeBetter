@@ -2,6 +2,7 @@ package com.antonchuraev.becomebetter.dataClasses
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.NavigationTab
 import java.io.Serializable
 
 @Entity

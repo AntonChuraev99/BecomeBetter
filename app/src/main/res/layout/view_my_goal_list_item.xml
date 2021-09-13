@@ -70,22 +70,24 @@
             />
 
         <LinearLayout
+            android:id="@+id/llMotivationInput"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:orientation="horizontal"
             android:layout_marginTop="10dp"
-            >
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/repeat"
-                android:textColor="@color/white"
                 android:background="@color/black"
-
                 android:gravity="center_vertical"
                 android:paddingLeft="5dp"
+
+                android:text="@string/repeat"
+                android:textColor="@color/white"
 
                 />
 
@@ -94,14 +96,50 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/plus_one_day"
+                android:background="@drawable/shape_square_stroke_black"
 
                 android:gravity="center_vertical"
                 android:paddingLeft="5dp"
 
-                android:textColor="@color/black"
+                android:text="@string/plus_one_day"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llMoneyInput"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <EditText
+                android:id="@+id/edCountToAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:background="@drawable/shape_square_stroke_black"
+                android:paddingHorizontal="5dp"
+                android:maxLength="10"
+                android:gravity="center_vertical"
+
+
+                android:textColor="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+
+                android:text="@string/add"
+                android:textColor="@color/white"
+
                 />
+
+
         </LinearLayout>
 
     </androidx.appcompat.widget.LinearLayoutCompat>

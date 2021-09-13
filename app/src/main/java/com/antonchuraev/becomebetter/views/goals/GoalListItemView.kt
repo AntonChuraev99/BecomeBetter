@@ -2,9 +2,11 @@ package com.antonchuraev.becomebetter.views.goals
 
 import android.content.Context
 import android.util.AttributeSet
+import androidx.core.view.isVisible
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.ViewMyGoalListItemBinding
+import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.NavigationTab
 import com.antonchuraev.becomebetter.helpers.extensions.setMatchWrap
 import com.antonchuraev.becomebetter.views.CustomView
 
@@ -28,6 +30,12 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
         binding.tvMaxProgress.text = goal.progressMax.toString()
 
         updateProgress()
+        setStyle(goal.progressType)
+    }
+
+    private fun setStyle(progressType: Goal.ProgressType) {
+        binding.llMotivationInput.isVisible = progressType == Goal.ProgressType.DAYS
+        binding.llMoneyInput.isVisible = progressType == Goal.ProgressType.CUSTOM_MAX
     }
 
     fun addDayListener(onAddListener:(Goal)->Unit){

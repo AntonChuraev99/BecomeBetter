@@ -69,4 +69,5 @@
     <string name="todo">TODO</string>
     <string name="motivation_hint">000</string>
     <string name="money_hint">000 000 000</string>
+    <string name="add">Добавить</string>
 </resources>
