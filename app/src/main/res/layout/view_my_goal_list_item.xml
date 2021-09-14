@@ -240,8 +240,8 @@
                 android:gravity="center_vertical"
                 android:inputType="number"
                 android:textColor="@color/black"
-                android:maxLength="3"
-                android:hint="___%"
+                android:maxLength="5"
+                android:hint="_%"
                 android:textColorHint="@color/black"
                 />
 

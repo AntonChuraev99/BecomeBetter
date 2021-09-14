@@ -8,6 +8,7 @@ import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.dataClasses.Goal
 import com.antonchuraev.becomebetter.databinding.ViewMyGoalListItemBinding
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.NavigationTab
+import com.antonchuraev.becomebetter.helpers.extensions.addSuffix
 import com.antonchuraev.becomebetter.helpers.extensions.setMatchWrap
 import com.antonchuraev.becomebetter.views.CustomView
 
@@ -20,6 +21,7 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 
     init {
         this.setMatchWrap()
+        binding.edProcentsToAdd.addSuffix("%")
     }
 
 
@@ -70,6 +72,25 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
                 clearFocus()
             }
         }
+        binding.btProjectAddDay.setOnClickListener {
+            onAddListener.invoke(goal.apply { progress += 1 })
+            updateProgress()
+        }
+
+
+        binding.btAddProcentsProgress.setOnClickListener {
+            onAddListener.invoke(goal.apply { progressInPercentsForProject += binding.edProcentsToAdd.text.toString().removeSuffix("%").trim().toInt() })
+            updateProjectProgress()
+
+            binding.edProcentsToAdd.apply {
+                text.clear()
+                clearFocus()
+            }
+        }
+    }
+
+    private fun updateProjectProgress() {
+        binding.projectProgressBar.progress = goal.progressInPercentsForProject
     }
 
     private fun updateProgress() {
