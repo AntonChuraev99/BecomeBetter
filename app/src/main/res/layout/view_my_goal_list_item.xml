@@ -79,6 +79,7 @@
             tools:visibility="visible">
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btRestart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

@@ -44,6 +44,11 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
             onAddListener.invoke(goal.apply { progress += 1 })
             updateProgress()
         }
+        binding.btRestart.setOnClickListener {
+            onAddListener.invoke(goal.apply { progress = 0 })
+            updateProgress()
+        }
+
         binding.btAddCustomProgress.setOnClickListener {
             onAddListener.invoke(goal.apply { progress += binding.edCountToAdd.text.toString().toInt() })
             updateProgress()
