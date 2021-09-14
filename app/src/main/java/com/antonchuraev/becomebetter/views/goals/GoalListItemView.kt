@@ -30,6 +30,11 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
         binding.tvCurrentProgress.text = goal.progress.toString()
         binding.tvMaxProgress.text = goal.progressMax.toString()
 
+        binding.tvProjectDays.isVisible = goal.progressType == Goal.ProgressType.PERCENTS_AND_DAYS
+        if (goal.progressType == Goal.ProgressType.PERCENTS_AND_DAYS){
+            binding.tvProjectDays.text = resources.getQuantityString(R.plurals.days_no_in, goal.progressMax)
+        }
+
         updateProgress()
         setStyle(goal.progressType)
     }
@@ -38,6 +43,8 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
         binding.llMotivationInput.isVisible = progressType == Goal.ProgressType.DAYS
         binding.llMoneyInput.isVisible = progressType == Goal.ProgressType.CUSTOM_MAX
         binding.llProjectInput.isVisible = progressType == Goal.ProgressType.PERCENTS_AND_DAYS
+
+        binding.llProjectOutput.isVisible = progressType == Goal.ProgressType.PERCENTS_AND_DAYS
 
     }
 

@@ -26,48 +26,113 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:paddingHorizontal="5dp"
-            >
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvCurrentProgress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="35"
-                android:textSize="35sp"
-                android:textColor="@color/black"
-                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingHorizontal="5dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="/"
-                android:textSize="55sp"
-                android:textColor="@color/black"
-                />
+                <TextView
+                    android:id="@+id/tvCurrentProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="35sp"
+                    tools:text="35" />
 
-            <TextView
-                android:id="@+id/tvMaxProgress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="365"
-                android:textSize="55sp"
-                android:textColor="@color/black"
-                />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/"
+                    android:textColor="@color/black"
+                    android:textSize="55sp" />
+
+                <TextView
+                    android:id="@+id/tvMaxProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="55sp"
+                    tools:text="365" />
+
+                <TextView
+                    android:id="@+id/tvProjectDays"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="set in view"
+                    android:textColor="@color/black"
+                    android:textSize="35sp"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="350dp"
+
+                android:layout_height="20dp"
+                android:background="@color/white"
+                android:paddingHorizontal="5dp"
+                android:progressDrawable="@drawable/progress"
+                tools:progress="55" />
+
         </LinearLayout>
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:progressDrawable="@drawable/progress"
+        <LinearLayout
+            android:id="@+id/llProjectOutput"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
 
-            android:layout_width="350dp"
-            android:background="@color/white"
-            tools:progress="55"
-            android:layout_height="20dp"
-            android:paddingHorizontal="5dp"
-            />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingHorizontal="5dp">
+
+                <TextView
+                    android:id="@+id/tvProjectCurrentProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="35sp"
+                    tools:text="35" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/"
+                    android:textColor="@color/black"
+                    android:textSize="55sp" />
+
+                <TextView
+                    android:id="@+id/tvProjectMaxProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="55sp"
+                    tools:text="365" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/projectProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="350dp"
+
+                android:layout_height="20dp"
+                android:background="@color/white"
+                android:paddingHorizontal="5dp"
+                android:progressDrawable="@drawable/progress"
+                tools:progress="55" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/llMotivationInput"

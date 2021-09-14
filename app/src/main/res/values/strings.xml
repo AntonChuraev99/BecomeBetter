@@ -46,6 +46,13 @@
         <item quantity="many">%s days</item>
         <item quantity="other">%s days</item>
     </plurals>
+    <plurals name="days_no_in">
+        <item quantity="one">day</item>
+        <item quantity="two">days</item>
+        <item quantity="few">days</item>
+        <item quantity="many">days</item>
+        <item quantity="other">days</item>
+    </plurals>
     <string name="edit_goal">Change goal</string>
     <string name="dont_smoke_30_days">Dont smoke 30 days</string>
     <string name="quit_smoking">Quit smoking in a month</string>
