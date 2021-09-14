@@ -16,24 +16,24 @@
         <item quantity="other">days</item>
     </plurals>
 
-    <string name="motivation">Мотивация</string>
-    <string name="money_box">Копилка</string>
+    <string name="motivation">Motivation</string>
+    <string name="money_box">Money box</string>
     <string name="projects">Проекты</string>
-    <string name="new_goal">Новая цель</string>
-    <string name="enter_goal_name">введите название цели</string>
-    <string name="start">начать!</string>
-    <string name="about_project">подробнее о проекте</string>
-    <string name="motivation_subtittle">Хочу выполнять каждый день</string>
-    <string name="money_box_subtittle">Хочу накопить</string>
-    <string name="projects_subtittle">Надо сделать в срок</string>
-    <string name="repeat">заново</string>
-    <string name="plus_one_day">+ 1 день</string>
-    <string name="create_goal_motivation_text">введите \nсрок выполнения:</string>
-    <string name="create_goal_money_text">введите \nцель:</string>
+    <string name="new_goal">Projects</string>
+    <string name="enter_goal_name">enter name</string>
+    <string name="start">begin!</string>
+    <string name="about_project">about the project</string>
+    <string name="motivation_subtittle">I want to do it every day</string>
+    <string name="money_box_subtittle">I want to have</string>
+    <string name="projects_subtittle">Must be done on time</string>
+    <string name="repeat">repeat</string>
+    <string name="plus_one_day">+ 1 day</string>
+    <string name="create_goal_motivation_text">enter \ndue date:</string>
+    <string name="create_goal_money_text">enter \ntarget:</string>
     <string name="todo">TODO</string>
     <string name="motivation_hint">000</string>
     <string name="money_hint">000</string>
-    <string name="add">Добавить</string>
-    <string name="increase_progress">увеличить прогресс</string>
-    <string name="reqiured">Обязательно</string>
+    <string name="add">Add</string>
+    <string name="increase_progress">increase progress</string>
+    <string name="reqiured">required</string>
 </resources>
