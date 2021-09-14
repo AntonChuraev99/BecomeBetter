@@ -75,7 +75,7 @@
     <string name="create_goal_money_text">введите \nцель:</string>
     <string name="todo">TODO</string>
     <string name="motivation_hint">000</string>
-    <string name="money_hint">000 000 000</string>
+    <string name="money_hint">000</string>
     <string name="add">Добавить</string>
     <string name="increase_progress">увеличить прогресс</string>
     <string name="reqiured">Обязательно</string>
