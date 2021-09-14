@@ -26,7 +26,7 @@ class GoalsAdapter : RecyclerView.Adapter<GoalsAdapter.GoalViewHolder>() {
     override fun onBindViewHolder(holder: GoalViewHolder, position: Int) {
         items[position]?.let { item->
             holder.bind(item)
-            holder.goalView.addDayListener { onItemUpdateListener?.invoke(it) }
+            holder.goalView.addListener { onItemUpdateListener?.invoke(it) }
         }
 
     }

@@ -38,10 +38,15 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
         binding.llMoneyInput.isVisible = progressType == Goal.ProgressType.CUSTOM_MAX
     }
 
-    fun addDayListener(onAddListener:(Goal)->Unit){
+    fun addListener(onAddListener:(Goal)->Unit){
         binding.btAddDay.setOnClickListener {
             onAddListener.invoke(goal.apply { progress += 1 })
             updateProgress()
+        }
+        binding.btAddCustomProgress.setOnClickListener {
+            onAddListener.invoke(goal.apply { progress += binding.edCountToAdd.text.toString().toInt() })
+            updateProgress()
+            binding.edCountToAdd.text.clear()
         }
     }
 
