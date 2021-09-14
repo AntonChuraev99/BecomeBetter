@@ -47,14 +47,7 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 	fun createNewGoalClickListener(goalType: NavigationTab , action: (Goal) -> Unit){
 		// TODO: 06.09.2021 create and return goal
 		binding.tvStart.setOnClickListener {
-			when(goalType){
-				NavigationTab.MOTIVATION,NavigationTab.MONEY ->{
-					action.invoke(Goal(name = binding.edName.text.toString()  , progressMax = binding.edDaysCount.text.toString().toInt() , progressType = goalType.relatedToGoalsType))
-				}
-
-
-			}
-
+			action.invoke(Goal(name = binding.edName.text.toString()  , progressMax = binding.edDaysCount.text.toString().toInt() , progressType = goalType.relatedToGoalsType))
 			expandedState = false
 		}
 	}
