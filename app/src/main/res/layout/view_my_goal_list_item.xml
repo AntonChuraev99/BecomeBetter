@@ -145,6 +145,46 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/llProjectInput"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <EditText
+                android:id="@+id/edProcentsToAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_square_stroke_black"
+                android:paddingHorizontal="5dp"
+                android:gravity="center_vertical"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:maxLength="3"
+                android:hint="___%"
+                android:textColorHint="@color/black"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btAddProcentsProgress"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:background="@color/black"
+                android:gravity="center_vertical"
+                android:text="@string/increase_progress"
+                android:textColor="@color/white"
+
+                />
+
+
+        </LinearLayout>
+
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </layout>

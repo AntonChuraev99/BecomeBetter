@@ -37,6 +37,8 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
     private fun setStyle(progressType: Goal.ProgressType) {
         binding.llMotivationInput.isVisible = progressType == Goal.ProgressType.DAYS
         binding.llMoneyInput.isVisible = progressType == Goal.ProgressType.CUSTOM_MAX
+        binding.llProjectInput.isVisible = progressType == Goal.ProgressType.PERCENTS_AND_DAYS
+
     }
 
     fun addListener(onAddListener:(Goal)->Unit){
