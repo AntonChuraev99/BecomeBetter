@@ -5,23 +5,37 @@
       <map>
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable-xxhdpi/bottom_bar_add_goal.xml" value="0.17861842105263157" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable-xxhdpi/ic_edit.xml" value="0.17861842105263157" />
+        <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/bottom_bar_add_goal.xml" value="0.15592105263157896" />
+        <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/bottom_bar_home.xml" value="0.15592105263157896" />
+        <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/bottom_bar_profile.xml" value="0.15592105263157896" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/empty_divider_s_10.xml" value="0.15462962962962962" />
+        <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/ic_add.xml" value="0.15592105263157896" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/ic_apply.xml" value="0.18055555555555555" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/ic_arrow_back.xml" value="0.1574074074074074" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/ic_edit.xml" value="0.1574074074074074" />
+        <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/ic_folder.xml" value="0.15592105263157896" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/ic_folder_24.xml" value="0.15092592592592594" />
+        <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/ic_launcher_background.xml" value="0.15592105263157896" />
+        <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/ic_minus.xml" value="0.15592105263157896" />
+        <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/ic_plus.xml" value="0.15592105263157896" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/main_icon_foreground.xml" value="0.11388888888888889" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/progress.xml" value="0.26286644951140065" />
+        <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/shape_rectangle_r_8.xml" value="0.15592105263157896" />
+        <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/shape_rectangle_r_8_error.xml" value="0.15592105263157896" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/shape_rectangle_r_8_stroke_aston_martin.xml" value="0.14351851851851852" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/shape_rectangle_r_8_stroke_gray.xml" value="0.14351851851851852" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/drawable/shape_square_stroke_black.xml" value="0.26286644951140065" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/layout/activity_main.xml" value="0.11481481481481481" />
+        <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/layout/container.xml" value="0.1457236842105263" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/layout/fragment_add_goal.xml" value="0.13240740740740742" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/layout/fragment_all_goals.xml" value="0.25" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/layout/fragment_create_goal.xml" value="0.22" />
+        <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/layout/fragment_create_goal_from_templates.xml" value="0.1457236842105263" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/layout/fragment_goals_tab.xml" value="0.12" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/layout/fragment_main.xml" value="0.2" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/layout/fragment_my_goals.xml" value="0.25" />
+        <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/layout/fragment_splash.xml" value="0.1457236842105263" />
+        <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/layout/fragment_test.xml" value="0.1457236842105263" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/layout/tab_item.xml" value="0.19655521783181357" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/layout/view_button.xml" value="0.18385416666666668" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/layout/view_create_first_goal.xml" value="0.5720720720720721" />
@@ -30,7 +44,7 @@
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/layout/view_my_goal_list_item.xml" value="0.264" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/layout/view_template_list_item.xml" value="0.5" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/layout/view_time_selector.xml" value="0.17831813576494426" />
-        <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.176" />
         <entry key="..\:/Android/projects/BecomeBetter/app/src/main/res/mipmap-anydpi-v26/main_icon_round.xml" value="0.11388888888888889" />
       </map>
     </option>

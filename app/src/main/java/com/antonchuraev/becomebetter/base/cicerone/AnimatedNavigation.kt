@@ -20,23 +20,23 @@ class AnimatedNavigation(val baseRouter:CommonRouter) : NavigationInterface , Ro
     }
 
     override fun openNeighborScreen(screen: SupportAppScreen) {
-        baseRouter.navigateToWithAdd(getNeighborAnimatedScreen(screen))
+        baseRouter.navigateToWithAdd(screen)
     }
 
     override fun openFromBottomScreen(screen: SupportAppScreen) {
-        baseRouter.navigateToWithAdd(getFromBottomAnimatedScreen(screen))
+        baseRouter.navigateToWithAdd(screen)
     }
 
     override fun openFadeScreen(screen: SupportAppScreen) {
-        baseRouter.navigateToWithAdd(getFadeAnimatedScreen(screen))
+        baseRouter.navigateToWithAdd(screen)
     }
 
     override fun navigateTo(screen: SupportAppScreen) {
-        baseRouter.navigateTo(getNeighborAnimatedScreen(screen))
+        baseRouter.navigateTo(screen)
     }
 
     override fun newRootScreen(screen: SupportAppScreen) {
-        baseRouter.newRootScreen(getNeighborAnimatedScreen(screen))
+        baseRouter.newRootScreen(screen)
     }
 
 
@@ -48,29 +48,6 @@ class AnimatedNavigation(val baseRouter:CommonRouter) : NavigationInterface , Ro
         baseRouter.exit()
     }
 
-    private fun getNeighborAnimatedScreen(screen: SupportAppScreen) = AnimatedScreen(
-        screen,
-        R.anim.fragment_from_end_to_start,
-        R.anim.fragment_from_start_to_left,
-        R.anim.fragment_from_left_to_start,
-        R.anim.fragment_from_start_to_end
-    )
-
-    private fun getFromBottomAnimatedScreen(screen: SupportAppScreen) = AnimatedScreen(
-        screen,
-        R.anim.from_bottom_to_top,
-        R.anim.from_top_to_bottom,
-        R.anim.from_bottom_to_top,
-        R.anim.from_top_to_bottom
-    )
-
-    private fun getFadeAnimatedScreen(screen: SupportAppScreen) = AnimatedScreen(
-        screen,
-        R.anim.fade_in,
-        R.anim.fragment_def,
-        R.anim.fragment_def,
-        R.anim.fade_out
-    )
 
 
 }

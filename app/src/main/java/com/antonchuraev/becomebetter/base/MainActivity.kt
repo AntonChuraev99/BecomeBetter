@@ -3,23 +3,15 @@ package com.antonchuraev.becomebetter.base
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.cicerone.AnimatedNavigator
-import com.antonchuraev.becomebetter.views.toolbar.CustomToolbar
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 import moxy.MvpAppCompatActivity
 import moxy.MvpView
 import moxy.presenter.InjectPresenter
 import org.koin.android.ext.android.inject
-import org.koin.core.logger.KOIN_TAG
-import ru.terrakok.cicerone.Navigator
 import ru.terrakok.cicerone.NavigatorHolder
-import ru.terrakok.cicerone.android.support.SupportAppNavigator
-import ru.terrakok.cicerone.commands.Command
 
 class MainActivity:MvpAppCompatActivity() , MvpView
 {
@@ -58,13 +50,12 @@ class MainActivity:MvpAppCompatActivity() , MvpView
     private val currentFragment: BaseFragment<*>?
         get() = supportFragmentManager.findFragmentById(R.id.container) as? BaseFragment<*>
 
-    var toolbar:CustomToolbar?=null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        toolbar = findViewById<CustomToolbar>(R.id.customToolbar)
 
         // TODO: 10.04.2021 проверка стартового экрана
         presenter.onAppStartOpenScreen()

@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.antonchuraev.becomebetter.base.cicerone.AnimatedNavigation
 import com.antonchuraev.becomebetter.database.GoalsDatabase
-import com.antonchuraev.becomebetter.views.toolbar.CustomToolbar
 import com.historic.app.global.navigation.FlowCiceroneViewModel
 import com.historic.app.global.navigation.FlowRouter
 import moxy.MvpAppCompatFragment
@@ -23,8 +22,6 @@ abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
 {
 
     fun getDatabase() = GoalsDatabase.getDatabase(requireContext())
-
-    var toolbar:CustomToolbar? = null
 
     val appRouter: CommonRouter by inject()
 
@@ -69,8 +66,6 @@ abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
             savedInstanceState: Bundle?
     ): View? {
         initBinding(inflater, container)
-        toolbar = (activity as MainActivity).toolbar
-        toolbar?.clearData()
         onCreateView(binding.root)
         return binding.root
     }
@@ -84,14 +79,6 @@ abstract class BaseFragment<T : ViewDataBinding>:MvpAppCompatFragment()
 
     open fun onBackPressed() {
         animatedRouter.exit()
-    }
-
-    fun setDefaultToolbar(tittleRes:Int?){
-        toolbar?.let { toolbar->
-            toolbar.show()
-            tittleRes?.let { tittleRes-> toolbar.setTittle(context?.getString(tittleRes)) }
-            toolbar.defaultBackButton(appRouter)
-        }
     }
 
     fun <D> log(text:D){

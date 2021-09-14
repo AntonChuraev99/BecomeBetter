@@ -1,44 +1,6 @@
 <resources>
     <string name="app_name">BecomeBetter</string>
-    <string name="bottom_navigation_home">All goals</string>
-    <string name="bottom_navigation_profile">Profile</string>
-    <string name="bottom_navigation_add_goal">Create goal</string>
-    <string name="all_goals">All goals</string>
-    <string name="add_goal">Create goal</string>
-    <string name="create_name">Choose name</string>
-    <string name="name">Name</string>
-    <string name="forever">Forever</string>
-    <string name="one_day">One day</string>
-    <string name="one_week">One week</string>
-    <string name="three_days">Three days</string>
-    <string name="one_month">One month</string>
-    <string name="one_year">One year</string>
-    <string name="select_date">Choose duration</string>
-    <string name="set_description">Enter description (optional)</string>
-    <string name="description">Description</string>
-    <string name="create_your">Create own</string>
-    <string name="create_your_goal">Create own goal</string>
-    <string name="choose_goal_from_asset">Choose goal from template</string>
-    <string name="create_goal">Create goal</string>
-    <string name="small_prority">Small</string>
-    <string name="standart_prority">Common</string>
-    <string name="higherst_prority">high</string>
-    <string name="set_priority">Select priority (optional)</string>
-    <string name="create">Create</string>
-    <string name="choose_template">Choose template</string>
-    <string name="all_my_goals">All my goals</string>
-    <string name="active_goals">Active goals</string>
-    <string name="select_or_create_goal">"Choose or create first goal "</string>
-    <string name="disabled_goals">Disabled goals</string>
-    <string name="set_current_progress">Set current progress</string>
-    <string name="delete">Delete</string>
-    <string name="save">Save</string>
-    <string name="select_progress_type">Choose progress type</string>
-    <string name="days_">days</string>
-    <string name="percents">Percents</string>
-    <string name="days">Days</string>
-    <string name="custom_max">Counter with its maximum</string>
-    <string name="enter_max">Enter maximum</string>
+
     <plurals name="days_in">
         <item quantity="one">%s day</item>
         <item quantity="two">%s days</item>
@@ -53,12 +15,7 @@
         <item quantity="many">days</item>
         <item quantity="other">days</item>
     </plurals>
-    <string name="edit_goal">Change goal</string>
-    <string name="dont_smoke_30_days">Dont smoke 30 days</string>
-    <string name="quit_smoking">Quit smoking in a month</string>
-    <string name="start_running_regulary">Start running regularly</string>
-    <string name="read_30_min">Read at least 30 minutes daily</string>
-    <string name="accumulate_money">Accumulate amount</string>
+
     <string name="motivation">Мотивация</string>
     <string name="money_box">Копилка</string>
     <string name="projects">Проекты</string>
