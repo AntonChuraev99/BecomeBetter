@@ -1,15 +1,18 @@
 package com.antonchuraev.becomebetter.helpers.extensions
 
+import android.app.Activity
 import android.content.Context
 import android.text.Editable
 import android.text.Selection
 import android.text.TextWatcher
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.antonchuraev.becomebetter.R
@@ -127,4 +130,17 @@ fun EditText.addSuffix(suffix: String) {
         override fun onTextChanged(charSequence: CharSequence?, start: Int, before: Int, count: Int) {
         }
     })
+}
+
+fun Fragment.hideKeyboard() {
+    view?.let { activity?.hideKeyboard(it) }
+}
+
+fun Activity.hideKeyboard() {
+    hideKeyboard(currentFocus ?: View(this))
+}
+
+fun Context.hideKeyboard(view: View) {
+    val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+    inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
 }
