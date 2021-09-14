@@ -18,8 +18,8 @@
 
     <string name="motivation">Motivation</string>
     <string name="money_box">Money box</string>
-    <string name="projects">Проекты</string>
-    <string name="new_goal">Projects</string>
+    <string name="projects">Projects</string>
+    <string name="new_goal">New goal</string>
     <string name="enter_goal_name">enter name</string>
     <string name="start">begin!</string>
     <string name="about_project">about the project</string>
@@ -28,7 +28,7 @@
     <string name="projects_subtittle">Must be done on time</string>
     <string name="repeat">repeat</string>
     <string name="plus_one_day">+ 1 day</string>
-    <string name="create_goal_motivation_text">enter \ndue date:</string>
+    <string name="create_goal_motivation_text">enter \ndeadline:</string>
     <string name="create_goal_money_text">enter \ntarget:</string>
     <string name="todo">TODO</string>
     <string name="motivation_hint">000</string>
