@@ -68,6 +68,16 @@
                     android:visibility="gone"
                     tools:visibility="visible" />
 
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btProjectAddDay"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/ic_add"
+                    android:backgroundTint="@color/black"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
             </LinearLayout>
 
             <ProgressBar

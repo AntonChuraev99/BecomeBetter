@@ -31,6 +31,7 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
         binding.tvMaxProgress.text = goal.progressMax.toString()
 
         binding.tvProjectDays.isVisible = goal.progressType == Goal.ProgressType.PERCENTS_AND_DAYS
+        binding.btProjectAddDay.isVisible = goal.progressType == Goal.ProgressType.PERCENTS_AND_DAYS
         if (goal.progressType == Goal.ProgressType.PERCENTS_AND_DAYS){
             binding.tvProjectDays.text = resources.getQuantityString(R.plurals.days_no_in, goal.progressMax)
         }
