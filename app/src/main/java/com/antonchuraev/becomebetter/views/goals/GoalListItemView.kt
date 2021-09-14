@@ -1,6 +1,7 @@
 package com.antonchuraev.becomebetter.views.goals
 
 import android.content.Context
+import android.text.InputType
 import android.util.AttributeSet
 import androidx.core.view.isVisible
 import com.antonchuraev.becomebetter.R
@@ -46,7 +47,10 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
         binding.btAddCustomProgress.setOnClickListener {
             onAddListener.invoke(goal.apply { progress += binding.edCountToAdd.text.toString().toInt() })
             updateProgress()
-            binding.edCountToAdd.text.clear()
+            binding.edCountToAdd.apply {
+                text.clear()
+                clearFocus()
+            }
         }
     }
 
