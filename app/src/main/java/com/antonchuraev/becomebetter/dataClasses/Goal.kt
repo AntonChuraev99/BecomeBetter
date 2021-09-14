@@ -11,10 +11,11 @@ data class Goal(
     var id:Int=0,
     var name: String,
 
-    var progress: Int = 0,//прогресс от  0%=0 до 100%=100
+    var progress: Int = 0,//прогресс
     var progressMax:Int = 100,//максимум прогресса
-
     var progressType: ProgressType = ProgressType.PERCENTS_AND_DAYS, //тип как ведется проогресс
+
+    var progressInPercentsForProject:Int = 0
 ) : Serializable {
 
     /**
