@@ -47,7 +47,6 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 	}
 
 	fun createNewGoalClickListener(goalType: NavigationTab , action: (Goal) -> Unit){
-		// TODO: 06.09.2021 create and return goal
 		binding.tvStart.setOnClickListener {
 			binding.edName.apply {
 				hint = context.getString(if (binding.edName.text.isBlank()) R.string.reqiured else R.string.enter_goal_name )
@@ -57,7 +56,7 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 			}
 
 
-			if (binding.edName.text.isNotBlank()){
+			if (binding.edName.text.isNotBlank() && binding.edDaysCount.text.isNotBlank()){
 				action.invoke(Goal(name = binding.edName.text.toString()  , progressMax = binding.edDaysCount.text.toString().toInt() , progressType = goalType.relatedToGoalsType))
 				expandedState = false
 
@@ -71,10 +70,6 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 		}
 	}
 
-	private fun showError() {
-
-
-	}
 
 	override fun getLayoutRes(): Int = R.layout.view_create_first_goal
 }

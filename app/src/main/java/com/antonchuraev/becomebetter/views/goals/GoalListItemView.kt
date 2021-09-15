@@ -21,7 +21,7 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 
     init {
         this.setMatchWrap()
-        binding.edProcentsToAdd.addSuffix("%")
+        //binding.edProcentsToAdd.addSuffix("%")
     }
 
 
@@ -65,11 +65,13 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
         }
 
         binding.btAddCustomProgress.setOnClickListener {
-            onAddListener.invoke(goal.apply { progress += binding.edCountToAdd.text.toString().toInt() })
-            updateProgress()
-            binding.edCountToAdd.apply {
-                text.clear()
-                clearFocus()
+            if (binding.edCountToAdd.text.isNotBlank()){
+                onAddListener.invoke(goal.apply { progress += binding.edCountToAdd.text.toString().toInt() })
+                updateProgress()
+                binding.edCountToAdd.apply {
+                    text.clear()
+                    clearFocus()
+                }
             }
         }
         binding.btProjectAddDay.setOnClickListener {
@@ -79,12 +81,14 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 
 
         binding.btAddProcentsProgress.setOnClickListener {
-            onAddListener.invoke(goal.apply { progressInPercentsForProject += binding.edProcentsToAdd.text.toString().removeSuffix("%").trim().toInt() })
-            updateProjectProgress()
+            if (binding.edProcentsToAdd.text.isNotBlank()){
+                onAddListener.invoke(goal.apply { progressInPercentsForProject += binding.edProcentsToAdd.text.toString().removeSuffix("%").trim().toInt() })
+                updateProjectProgress()
 
-            binding.edProcentsToAdd.apply {
-                text.clear()
-                clearFocus()
+                binding.edProcentsToAdd.apply {
+                    text.clear()
+                    clearFocus()
+                }
             }
         }
     }
