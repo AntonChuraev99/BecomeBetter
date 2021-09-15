@@ -20,7 +20,8 @@
                 android:background="@color/white"
                 android:textColor="@color/aston_martin"
                 android:textAllCaps="true"
-                android:paddingHorizontal="5dp"
+
+                android:padding="15dp"
                 />
 
 

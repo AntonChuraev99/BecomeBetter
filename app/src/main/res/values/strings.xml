@@ -36,4 +36,5 @@
     <string name="add">Add</string>
     <string name="increase_progress">increase progress</string>
     <string name="reqiured">required</string>
+    <string name="minus_one_day">-1 day</string>
 </resources>
