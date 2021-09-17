@@ -90,7 +90,6 @@ class GoalsTabFragment : BaseFragment<FragmentGoalsTabBinding>(), GoalsTabView {
             .centerCrop()
             .into(binding.backgroundImage);
 
-        //binding.background.background = ContextCompat.getDrawable(requireContext() , tabStyle.backgroundRes)
 
         presenter.loadGoals( requireContext() , tabStyle)
     }
