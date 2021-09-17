@@ -54,6 +54,12 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 
     }
 
+    fun addDeleteListener(onAddListener:(Goal)->Unit){
+        binding.ivDelete.setOnClickListener {
+            onAddListener.invoke(goal.apply { progress += 1 })
+        }
+    }
+
     fun addListener(onAddListener:(Goal)->Unit){
         binding.btAddDay.setOnClickListener {
             onAddListener.invoke(goal.apply { progress += 1 })

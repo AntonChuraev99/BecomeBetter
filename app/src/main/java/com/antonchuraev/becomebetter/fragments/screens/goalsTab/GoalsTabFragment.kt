@@ -27,6 +27,10 @@ class GoalsTabFragment : BaseFragment<FragmentGoalsTabBinding>(), GoalsTabView {
         onItemUpdateListener = {
             presenter.updateGoal(it , requireContext())
         }
+
+        onItemDeleteClickListener = {
+            presenter.deleteGoal(it , requireContext())
+        }
     }
 
     var goalsType: NavigationTab? by Delegates.observable(null){ _, _, new->

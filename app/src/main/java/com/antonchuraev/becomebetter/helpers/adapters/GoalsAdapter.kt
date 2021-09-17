@@ -7,7 +7,7 @@ import com.antonchuraev.becomebetter.views.goals.GoalListItemView
 
 class GoalsAdapter : RecyclerView.Adapter<GoalsAdapter.GoalViewHolder>() {
 
-    var onItemClickListener: ((Goal) -> Unit)? = null
+    var onItemDeleteClickListener: ((Goal) -> Unit)? = null
 
     var onItemUpdateListener: ((Goal) -> Unit)? = null
 
@@ -27,8 +27,8 @@ class GoalsAdapter : RecyclerView.Adapter<GoalsAdapter.GoalViewHolder>() {
         items[position]?.let { item->
             holder.bind(item)
             holder.goalView.addListener { onItemUpdateListener?.invoke(it) }
+            holder.goalView.addDeleteListener { onItemDeleteClickListener?.invoke(it) }
         }
-
     }
 
     override fun getItemCount() = items.size
