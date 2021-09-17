@@ -1,6 +1,9 @@
 package com.antonchuraev.becomebetter.fragments.screens.goalsTab
 
+import android.graphics.drawable.Drawable
+import android.os.Build
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -13,6 +16,9 @@ import com.antonchuraev.becomebetter.databinding.FragmentGoalsTabBinding
 import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.NavigationTab
 import com.antonchuraev.becomebetter.helpers.adapters.GoalsAdapter
 import com.antonchuraev.becomebetter.helpers.extensions.add10DpDecorator
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.transition.Transition
 import moxy.presenter.InjectPresenter
 import java.util.jar.Manifest
 import kotlin.properties.Delegates
@@ -77,7 +83,14 @@ class GoalsTabFragment : BaseFragment<FragmentGoalsTabBinding>(), GoalsTabView {
     private fun updateScreenType(tabStyle: NavigationTab) {
         binding.tvTittle.text = context?.getString(tabStyle.textRes)
         binding.tvSubtittle.text = context?.getString(tabStyle.subTittleTextRes)
-        binding.background.background = ContextCompat.getDrawable(requireContext() , tabStyle.backgroundRes)
+
+        Glide
+            .with(this)
+            .load(tabStyle.backgroundRes)
+            .centerCrop()
+            .into(binding.backgroundImage);
+
+        //binding.background.background = ContextCompat.getDrawable(requireContext() , tabStyle.backgroundRes)
 
         presenter.loadGoals( requireContext() , tabStyle)
     }
