@@ -53,7 +53,6 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 				setHintTextColor(context.getColor(if (binding.edName.text.isBlank()) R.color.error else R.color.с9FA2B4 ))
 
 				if (binding.edName.text.isBlank()) requestFocus()
-				binding.edDaysCount.text.clear()
 			}
 
 
@@ -67,7 +66,11 @@ constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 					context.hideKeyboard(this)
 				}
 
-				binding.edDaysCount.text.clear()
+				binding.edDaysCount.apply {
+					text.clear()
+					clearFocus()
+					context.hideKeyboard(this)
+				}
 			}
 
 		}
