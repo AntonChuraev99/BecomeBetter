@@ -1,14 +1,9 @@
 package com.antonchuraev.becomebetter.fragments.screens.goalsTab
 
-import android.graphics.drawable.Drawable
-import android.os.Build
 import android.view.View
-import androidx.annotation.RequiresApi
-import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.antonchuraev.becomebetter.BuildConfig
 import com.antonchuraev.becomebetter.R
 import com.antonchuraev.becomebetter.base.BaseFragment
 import com.antonchuraev.becomebetter.dataClasses.Goal
@@ -17,10 +12,7 @@ import com.antonchuraev.becomebetter.fragments.bottomNavigation.bottomBar.Naviga
 import com.antonchuraev.becomebetter.helpers.adapters.GoalsAdapter
 import com.antonchuraev.becomebetter.helpers.extensions.add10DpDecorator
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.target.CustomTarget
-import com.bumptech.glide.request.transition.Transition
 import moxy.presenter.InjectPresenter
-import java.util.jar.Manifest
 import kotlin.properties.Delegates
 
 

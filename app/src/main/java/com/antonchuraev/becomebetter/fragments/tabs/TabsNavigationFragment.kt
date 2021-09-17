@@ -25,6 +25,8 @@ class TabsNavigationFragment : BaseFragment<FragmentMainBinding>() , TabNavigati
     override fun onCreateView(rootView: View) {
         setupTabs()
 
+        binding.viewPager.offscreenPageLimit = 3
+
         presenter.selectedNavigationTab = presenter.selectedNavigationTab
             ?: requireArguments().getSerializable(KEY_TAB) as NavigationTab
 
