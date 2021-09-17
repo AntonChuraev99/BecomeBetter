@@ -35,5 +35,6 @@
     <string name="projects">Проекты</string>
     <string name="money_box">Копилка</string>
     <string name="motivation">Мотивация</string>
+    <string name="minus_one_day">- 1 день</string>
 
 </resources>
